@@ -1,0 +1,83 @@
+alias ll='ls -l'
+alias la='ls -a'
+alias l='ls -cf'
+
+#clear screen and list contents uber quicks
+alias clr="clear; ls -a"
+
+# a quick way to get out of current directory ##
+alias ..='cd ..'
+alias ...='cd ../../'
+alias ....='cd ../../../'
+alias .....='cd ../../../../'
+alias .4='cd ../../../../'
+alias .5='cd ../../../../..'
+
+alias topper='cd /'
+
+alias rootme='sudo su'
+
+alias mount='mount |column -t'
+
+alias path='echo -e ${PATH//:/\\n}'
+
+alias now='date +"%T"'
+alias nowtime=now
+alias nowdate='date +"%d-%m-%Y"'
+alias ports='sudo netstat -tulanp'
+
+# reboot / halt / poweroff
+alias reboot='sudo /sbin/reboot'
+alias poweroff='sudo /sbin/poweroff'
+alias halt='sudo /sbin/halt'
+alias shutdown='sudo /sbin/shutdown'
+
+# get top process eating memory
+alias psmem='ps auxf | sort -nr -k 4'
+alias psmem10='ps auxf | sort -nr -k 4 | head -10'
+ 
+# get top process eating cpu ##
+alias pscpu='ps auxf | sort -nr -k 3'
+alias pscpu10='ps auxf | sort -nr -k 3 | head -10'
+ 
+# Get server cpu info ##
+alias cpuinfo='lscpu'
+
+# Go to the test box folder
+alias gotest='cd /home/bread/Testboxxers; ls'
+
+# Make a new script with name and template start
+alias makescript='Make_Script.sh'
+
+# Find file with 2 parameters script
+alias find2='Find2.sh'
+
+# combine two files into a new one
+alias combo2='Combo2.sh'
+
+# combine three files into a new one
+alias combo3='Combo3.sh'
+
+# source variable for gowork shortcut to the work directory
+# path can be changed by changing gowork file
+source /home/bread/gowork
+# go to current work directory
+alias gowork='cd $path; ls'
+
+# move work from where it is to working directory
+alias copysource='Copy_Contents_Move.sh'
+
+# change the path for go work
+alias chgwork='Change_Work.sh'
+
+# moves to ut repo
+alias ut='cd /home/bread/Documents/UT-MCC-CYBER-PT-01-2020-U-C; ls'
+
+# unzips all .zip's in the current directory backs them up and moves the unzip'd files.
+alias unzipnmove='Unzip_and_Move.sh'
+
+# backsup all files in the current directory to a named directory
+alias backmeup='Back_Me_Up.sh'
+
+# set screen resolution
+alias screenrez='xrandr --output Virtual1 --mode 1920x1200'
