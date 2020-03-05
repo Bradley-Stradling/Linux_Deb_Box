@@ -2,3 +2,4 @@ Need to add alias automation for Make_script.sh
 
 Need to make a script for iplookup.
 
+Script for changing etc files permissions needs to be added.
