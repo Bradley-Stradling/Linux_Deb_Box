@@ -3,7 +3,8 @@
 #*******************************************************************************
 
 INPUT1=$1
-input2=$2
+INPUT2=$2
 
+# greps something then writes it to a file
 grep $1 * > $2
 
