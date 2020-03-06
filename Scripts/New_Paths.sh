@@ -10,7 +10,7 @@
 #(")_(")  root account? Needs testing. Wherever the target .bashrc is.
 #*******************************************************************************
 
-# !!!incomplete and entirely untested!!!
+# !!!incomplete and needs more testing!!!
 
 # Needs error checking to ensure paths and directories were generated correctly
 
