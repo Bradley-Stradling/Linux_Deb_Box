@@ -50,13 +50,10 @@ echo "# Added path to my scripts directorys." >> .bashrc
 echo -e "export PATH=\"${cwd}/My_Scripts:$PATH\"" >> .bashrc
 
 # add aliases file (will need manual connection from bash rc for now.)
+cp ${Repo_Path}/aliases .bash_aliases
 
-
-
-
-# Need to add cp of aliases to .bash_aliases
-
-# Need to add cp of scripts to Scripts folder from repo
+# add cp of scripts to Scripts folder from repo
+cp ${Repo_Path}/Scripts/* ${cwd}/My_Scripts
 
 # need to add removal of common unwanted directories
 
