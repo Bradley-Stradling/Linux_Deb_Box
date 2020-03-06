@@ -2,8 +2,9 @@
 
 #*******************************************************************************
 
-INPUT1=$1 #name for zip file back up
-INPUT2=$2 #path to move unzipped files to
+# Script is broken until paths source is connected. then needs refactor.
+
+read -p "Enter the location of the .zips to unpack."
 
 mkdir //home/bread/Back-ups/$1
 
