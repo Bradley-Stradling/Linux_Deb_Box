@@ -1,4 +1,5 @@
-Need to add alias automation for Make_script.sh
+Need to add alias automation for Make_script.sh ??
 
-Need to make a script for iplookup.
+Need to make a script for iplookup and dns lookup.
 
+Script for changing etc files permissions needs to be added.
