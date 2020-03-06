@@ -10,5 +10,5 @@ a repo pull.
 (Trim out shorter menial scripts.)
 
 Need to research: a functions source file and whether or not a source file full of functions can be called by scripts
-and the command line to cut down on potentially exessive coding in scripts. Would also have these functions call paths 
-from the above mentioned paths source.
+and the command line to cut down on potentially exessive coding in scripts Turning shorter ones into functions. 
+Would also have these functions call paths from the above mentioned paths source.
