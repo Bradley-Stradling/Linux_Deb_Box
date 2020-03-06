@@ -5,7 +5,7 @@ I set my box's up with all my scripts in one directory so they can be called whe
 (permissions set so only I can run these on the box)
 
 Todo-
-Portability: Set up a script to create a source file with variables for my local paths on a new box. Set up my aliases and scripts to source these paths/variables to increase portability and decrease the times it takes to get my entire set-up done after
+Portability: Set up a script to create a source file with variables for my local paths on a new box. Set up my aliases and scripts to source these paths/variables to increase portability and decrease the time it takes to get my entire set-up done after
 a repo pull. 
 (Trim out shorter menial scripts.)
 
