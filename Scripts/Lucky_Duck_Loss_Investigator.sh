@@ -17,7 +17,7 @@
 # will need to be altered to reflect the change.
 #
 # This script was desgined to trim down logs to more pertinent info while
-# maintaining their original compostion at each data stream for integrity.
+# maintaining their original composition at each data stream for integrity.
 #-------------------------------------------------------------------------------
 # Future improvements: Option input to select number of needed days.
 #   General error checking.
