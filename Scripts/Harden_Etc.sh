@@ -10,7 +10,6 @@ chmod 600 /etc/shadow
 chmod 600 /etc/gshadow
 chmod 644 /etc/group
 chmod 644 /etc/passwd
-# I used 640 as I don't want this files veiwable by non users.
 
 echo -e "Permissions should be changed! see below \n"
 
