@@ -81,3 +81,6 @@ alias backmeup='Back_Me_Up.sh'
 
 # set screen resolution
 alias screenrez='xrandr --output Virtual1 --mode 1920x1200'
+
+# gotest will go to my testing directory
+alias gotest='cd /home/bread/Testboxxers'
