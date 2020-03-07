@@ -28,6 +28,8 @@ bashrc_Dir=Set-up
 pathz_File=Paths.txt
 workz_File=Workpath.txt
 
+# Need to concantenate paths into single variables for easier reading and editing
+
 # make new directories
 mkdir ${cwd}/${source_Dir}
 mkdir ${cwd}/${test_Dir}
