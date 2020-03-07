@@ -71,14 +71,11 @@ echo "source ${cwd}/${source_Dir}/${pathz_File}" | cat - .bash_aliases > temp \
 echo "source ${cwd}/${source_Dir}/${workz_File}" | cat - .bash_aliases > temp \
  && mv temp .bash_aliases
 
-# This section of code is not behaving at runtime as expected works from terminal tho...
-# attempting to source file with variables sucess, need to loop this for all scripts
-#echo "source ${cwd}/${source_Dir}/${pathz_File}" | cat - ${cwd}/${scripts_Dir}/Change_Work.sh > \
-#${cwd}/${scripts_Dir}/temp && mv ${cwd}/${scripts_Dir}/temp ${cwd}/${scripts_Dir}/Change_Work.sh
-# remove temp file
-#rm ${cwd}/${scripts_Dir}/temp
-
 # add cp of scripts to Scripts folder from repo
 cp ${Repo_Path}/Scripts/* ${cwd}/${scripts_Dir}
+
+# attempting to source file with variables sucess, need to loop this for all scripts
+echo "source ${cwd}/${source_Dir}/${pathz_File}" | cat - ${cwd}/${scripts_Dir}/Change_Work.sh > \
+${cwd}/${scripts_Dir}/temp && mv ${cwd}/${scripts_Dir}/temp ${cwd}/${scripts_Dir}/Change_Work.sh
 
 # need to add removal of common unwanted directories
