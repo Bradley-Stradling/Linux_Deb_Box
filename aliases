@@ -3,7 +3,7 @@ alias la='ls -a'
 alias l='ls -cf'
 
 #clear screen and list contents uber quicks
-alias clr="clear; ls -a"
+alias clr="clear; ls"
 
 # a quick way to get out of current directory ##
 alias ..='cd ..'
