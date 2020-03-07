@@ -86,4 +86,4 @@ alias goscripts='cd ${scripts_Path}'
 alias findscriptwork='grep incomplete *'
 
 # gowork will go to the set path in work path file changed by change_work
-alias gowork=cd '${work_Path_File}'
+alias gowork='cd ${work_Path}'

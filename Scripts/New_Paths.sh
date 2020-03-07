@@ -6,7 +6,7 @@
 #(")_(")  Lincense: https://unlicense.org/
 #*******************************************************************************
 # (\_/)   This script is intended to be run after pulling the repo to a new box
-# (*.*)   or account. Should be run from home directory? Could be used for a 
+# (*.*)   or account. Should be run from home directory? Could be used for a
 #(")_(")  root account? Needs testing. Wherever the target .bashrc is.
 #*******************************************************************************
 
@@ -47,6 +47,7 @@ echo "source_Path=${cwd}/${source_Dir}" >> ${cwd}/${source_Dir}/${pathz_File}
 echo "test_Path=${cwd}/${test_Dir}" >> ${cwd}/${source_Dir}/${pathz_File}
 echo "scripts_Path=${cwd}/${scripts_Dir}" >> ${cwd}/${source_Dir}/${pathz_File}
 echo "back_Up_Files_Path=${cwd}/${back_Up_Dir}" >> ${cwd}/${source_Dir}/${pathz_File}
+# target for change work to change work target with go work alias
 echo "work_Path_File=${cwd}/${source_Dir}/${workz_File}" >> ${cwd}/${source_Dir}/${pathz_File}
 
 # back up the .bashrc
@@ -64,6 +65,8 @@ cp ${Repo_Path}/aliases .bash_aliases
 echo "source ${cwd}/${source_Dir}/${pathz_File}" | cat - .bash_aliases > temp \
  && mv temp .bash_aliases
 
+echo "source ${cwd}/${source_Dir}/${workz_File}" | cat - .bash_aliases > temp \
+ && mv temp .bash_aliases
 
 # add cp of scripts to Scripts folder from repo
 cp ${Repo_Path}/Scripts/* ${cwd}/${scripts_Dir}
