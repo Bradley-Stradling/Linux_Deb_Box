@@ -18,7 +18,7 @@ cwd=$(pwd)
 
 # Need to add prompt to ask for dependancies before script run y/n
 
-read -p "Please enter the full path the the Linux_Deb_Box repo." Repo_Path
+read -p "Please enter the full path the the Linux_Deb_Box repo -->" Repo_Path
 
 source_Dir=Sources
 test_Dir=Test_Boxs

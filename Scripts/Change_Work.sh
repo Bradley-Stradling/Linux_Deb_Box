@@ -4,6 +4,7 @@
 
 # !!!incomplete and needs more testing!!!
 
-INPUT$1
+read -p "Enter the new work spot ==>" werkpath
 
-echo  "work_Path=${1}" > ${work_Path_File}
+echo  "work_Path=${werkpath}" > ${work_Path_File}
+
