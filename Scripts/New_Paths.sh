@@ -14,6 +14,7 @@
 
 # Needs error checking to ensure paths and directories were generated correctly?
 
+# Grab current working directory and store in variable cwd
 cwd=$(pwd)
 
 # Need to add prompt to ask for dependancies before script run y/n
