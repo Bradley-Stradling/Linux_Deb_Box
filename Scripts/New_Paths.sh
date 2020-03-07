@@ -50,7 +50,7 @@ cp .bashrc ${cwd}/${back_Up_Dir}/${bashrc_Dir}/bashrc.bak
 
 # add scripts directory to my path.
 echo "# Added path to my scripts directorys." >> .bashrc
-echo -e "export PATH=\"${cwd}/${scripts_Dir}:$PATH\"" >> .bashrc
+echo -e "export PATH=\"${cwd}/${scripts_Dir}:\$PATH\"" >> .bashrc
 
 # add aliases file (will need manual connection from bash rc for now.)
 cp ${Repo_Path}/aliases .bash_aliases
