@@ -55,9 +55,6 @@ alias copysource='Copy_Contents_Move.sh'
 # change the path for go work
 alias chgwork='Change_Work.sh'
 
-# moves to ut repo
-alias ut='cd /home/bread/Documents/UT-MCC-CYBER-PT-01-2020-U-C; ls'
-
 # backsup all files in the current directory to a named directory
 alias backmeup='Back_Me_Up.sh'
 
