@@ -33,7 +33,7 @@ mkdir ${cwd}/Back_Ups/Set-up
 chmod 600 ${cwd}/Sources
 chmod 600 ${cwd}/Test_Boxs
 chmod 700 ${cwd}/My_Scripts
-chmod 600 ${cwd}/Back_Ups
+chmod 600 ${cwd}/Back_Ups_Files
 
 touch ${cwd}/Sources/My_Paths.txt
 
@@ -43,7 +43,7 @@ echo "Scripts_Path=${cwd}/My_Scripts" >> ${cwd}/Sources/My_Paths.txt
 echo "Back_Up_Path=${cwd}/Back_Ups" >> ${cwd}/Sources/My_Paths.txt
 
 # back up the .bashrc
-cp .bashrc ${cwd}/Back_Ups/Set-up/.bashrc.bak
+cp .bashrc ${cwd}/Back_Ups_Files/Set-up/.bashrc.bak
 
 # add scripts directory to my path.
 echo "# Added path to my scripts directorys." >> .bashrc
@@ -56,4 +56,6 @@ cp ${Repo_Path}/aliases .bash_aliases
 cp ${Repo_Path}/Scripts/* ${cwd}/My_Scripts
 
 # need to add removal of common unwanted directories
+rmdir Pictures
+rmdir Music
 

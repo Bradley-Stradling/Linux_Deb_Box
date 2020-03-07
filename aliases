@@ -60,6 +60,8 @@ alias combo3='Combo3.sh'
 
 # source variable for gowork shortcut to the work directory
 # path can be changed by changing gowork file
+
+# !!!incomplete and needs more testing!!!
 source /home/bread/gowork
 # go to current work directory
 alias gowork='cd $path; ls'
@@ -73,9 +75,6 @@ alias chgwork='Change_Work.sh'
 # moves to ut repo
 alias ut='cd /home/bread/Documents/UT-MCC-CYBER-PT-01-2020-U-C; ls'
 
-# unzips all .zip's in the current directory backs them up and moves the unzip'd files.
-alias unzipnmove='Unzip_and_Move.sh'
-
 # backsup all files in the current directory to a named directory
 alias backmeup='Back_Me_Up.sh'
 
@@ -84,3 +83,6 @@ alias screenrez='xrandr --output Virtual1 --mode 1920x1200'
 
 # gotest will go to my testing directory
 alias gotest='cd /home/bread/Testboxxers'
+
+# find scripts tagged incomplete
+alias findscriptwork='grep incomplete *'
