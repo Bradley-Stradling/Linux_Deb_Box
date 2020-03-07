@@ -2,7 +2,7 @@
 
 #*******************************************************************************
 # (\_/)   Author: Bradley Stradling
-# (o.o)   Date of first revision: 3/6/20
+# (o.o)   Date of first revision: 3/6/20 (Refactoring ongoing)
 #(")_(")  Lincense: https://unlicense.org/
 #*******************************************************************************
 # (\_/)   This script is intended to be run after pulling the repo to a new box
