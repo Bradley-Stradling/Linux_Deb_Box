@@ -74,8 +74,16 @@ echo "source ${cwd}/${source_Dir}/${workz_File}" | cat - .bash_aliases > temp \
 # add cp of scripts to Scripts folder from repo
 cp ${Repo_Path}/Scripts/* ${cwd}/${scripts_Dir}
 
-# attempting to source file with variables sucess, need to loop this for all scripts
-echo "source ${cwd}/${source_Dir}/${pathz_File}" | cat - ${cwd}/${scripts_Dir}/Change_Work.sh > \
-${cwd}/${scripts_Dir}/temp && mv ${cwd}/${scripts_Dir}/temp ${cwd}/${scripts_Dir}/Change_Work.sh
+# attempting to prepend source file to all scripts 
+for script in $(ls ${cwd}/${scripts_Dir});
+do
+echo "source ${cwd}/${source_Dir}/${pathz_File}" | cat - ${cwd}/${scripts_Dir}/$script > \
+${cwd}/${scripts_Dir}/temp && mv ${cwd}/${scripts_Dir}/temp ${cwd}/${scripts_Dir}/$script
+done
+
+for script in $(ls ${cwd}/${scripts_Dir});
+do
+chmod 700 ${cwd}/${scripts_Dir}$script
+done
 
 # need to add removal of common unwanted directories
