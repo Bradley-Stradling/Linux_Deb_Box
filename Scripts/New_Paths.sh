@@ -64,9 +64,13 @@ cp ${Repo_Path}/aliases .bash_aliases
 # prepend source of path file to aliases file
 echo "source ${cwd}/${source_Dir}/${pathz_File}" | cat - .bash_aliases > temp \
  && mv temp .bash_aliases
-
+# prepend
 echo "source ${cwd}/${source_Dir}/${workz_File}" | cat - .bash_aliases > temp \
  && mv temp .bash_aliases
+
+# attempting to source file with variables sucess, need to loop this for all scripts
+echo "source ${cwd}/${source_Dir}/${pathz_File}" | cat - ${cwd}/${scripts_Dir}Change_Work.sh \
+> ${cwd}/${scripts_Dir}/temp && mv ${cwd}/${scripts_Dir}/temp ${cwd}/${scripts_Dir}/Change_Work.sh
 
 # add cp of scripts to Scripts folder from repo
 cp ${Repo_Path}/Scripts/* ${cwd}/${scripts_Dir}
