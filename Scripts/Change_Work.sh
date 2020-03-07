@@ -6,4 +6,4 @@
 
 INPUT$1
 
-echo -e "path=\""$1"\"" > /home/bread/gowork
+echo  "work_Path=${1}" > ${cwd}/${source_Dir}workpath

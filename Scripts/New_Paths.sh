@@ -38,10 +38,14 @@ mkdir ${cwd}/${back_Up_Dir}/${bashrc_Dir}
 
 touch ${cwd}/${source_Dir}/${pathz_File}
 
-echo "Home_Path=${cwd}/${source_Dir}" >> ${cwd}/${source_Dir}/${pathz_File}
-echo "Test_Path=${cwd}/${test_Dir}" >> ${cwd}/${source_Dir}/${pathz_File}
-echo "Scripts_Path=${cwd}/${scripts_Dir}" >> ${cwd}/${source_Dir}/${pathz_File}
-echo "Back_Up_Files_Path=${cwd}/${back_Up_Dir}" >> ${cwd}/${source_Dir}/${pathz_File}
+# Change work script needs to be targeted to the file
+touch ${cwd}/${source_Dir}workpath
+
+# write variable for paths to path source file
+echo "source_Path=${cwd}/${source_Dir}" >> ${cwd}/${source_Dir}/${pathz_File}
+echo "test_Path=${cwd}/${test_Dir}" >> ${cwd}/${source_Dir}/${pathz_File}
+echo "scripts_Path=${cwd}/${scripts_Dir}" >> ${cwd}/${source_Dir}/${pathz_File}
+echo "back_Up_Files_Path=${cwd}/${back_Up_Dir}" >> ${cwd}/${source_Dir}/${pathz_File}
 
 # back up the .bashrc
 cp .bashrc ${cwd}/${back_Up_Dir}/${bashrc_Dir}/bashrc.bak
@@ -49,13 +53,16 @@ cp .bashrc ${cwd}/${back_Up_Dir}/${bashrc_Dir}/bashrc.bak
 # add scripts directory to my path.
 echo "# Added path to my scripts directorys." >> .bashrc
 echo "export PATH=\"${cwd}/${scripts_Dir}:\$PATH\"" >> .bashrc
-
-# add aliases file (will need manual connection from bash rc for now.)
+echo "source ${cwd}/${source_Dir}/${pathz_File}" >> .bashrc
+# add aliases file
 cp ${Repo_Path}/aliases .bash_aliases
+
+# prepend source of path file to aliases file
+echo "source ${cwd}/${source_Dir}/${pathz_File}" | cat - .bash_aliases > temp \
+ && mv temp .bash_aliases
+
 
 # add cp of scripts to Scripts folder from repo
 cp ${Repo_Path}/Scripts/* ${cwd}/${scripts_Dir}
 
 # need to add removal of common unwanted directories
-
-

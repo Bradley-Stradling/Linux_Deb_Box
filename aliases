@@ -58,14 +58,6 @@ alias combo2='Combo2.sh'
 # combine three files into a new one
 alias combo3='Combo3.sh'
 
-# source variable for gowork shortcut to the work directory
-# path can be changed by changing gowork file
-
-# !!!incomplete and needs more testing!!!
-source /home/bread/gowork
-# go to current work directory
-alias gowork='cd $path; ls'
-
 # move work from where it is to working directory
 alias copysource='Copy_Contents_Move.sh'
 
@@ -82,7 +74,13 @@ alias backmeup='Back_Me_Up.sh'
 alias screenrez='xrandr --output Virtual1 --mode 1920x1200'
 
 # gotest will go to my testing directory
-alias gotest='cd /home/bread/Testboxxers'
+alias gotest='cd ${test_Path}'
+
+# gobackup will go to my back_up_files
+alias gobackup='cd ${back_Up_Files_Path}'
+
+# goscripts will go to my scripts directory
+alias goscripts='cd ${scripts_Path}
 
 # find scripts tagged incomplete
 alias findscriptwork='grep incomplete *'
