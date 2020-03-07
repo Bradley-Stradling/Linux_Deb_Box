@@ -43,20 +43,11 @@ alias pscpu10='ps auxf | sort -nr -k 3 | head -10'
 # Get server cpu info ##
 alias cpuinfo='lscpu'
 
-# Go to the test box folder
-alias gotest='cd /home/bread/Testboxxers; ls'
-
 # Make a new script with name and template start
 alias makescript='Make_Script.sh'
 
 # Find file with 2 parameters script
-alias find2='Find2.sh'
-
-# combine two files into a new one
-alias combo2='Combo2.sh'
-
-# combine three files into a new one
-alias combo3='Combo3.sh'
+alias findfile='Find_1_File.sh'
 
 # move work from where it is to working directory
 alias copysource='Copy_Contents_Move.sh'
@@ -74,16 +65,16 @@ alias backmeup='Back_Me_Up.sh'
 alias screenrez='xrandr --output Virtual1 --mode 1920x1200'
 
 # gotest will go to my testing directory
-alias gotest='cd ${test_Path}'
+alias gotest='cd ${test_Path}; ls'
 
 # gobackup will go to my back_up_files
-alias gobackup='cd ${back_Up_Files_Path}'
+alias gobackup='cd ${back_Up_Files_Path; ls}'
 
 # goscripts will go to my scripts directory
-alias goscripts='cd ${scripts_Path}'
+alias goscripts='cd ${scripts_Path}; ls'
 
 # find scripts tagged incomplete
 alias findscriptwork='grep incomplete *'
 
 # gowork will go to the set path in work path file changed by change_work
-alias gowork='cd ${work_Path}'
+alias gowork='cd ${work_Path}; ls'
