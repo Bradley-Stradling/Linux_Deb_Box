@@ -26,6 +26,7 @@ scripts_Dir=My_Scripts
 back_Up_Dir=Back_Up_Files
 bashrc_Dir=Set-up
 pathz_File=Paths.txt
+workz_File=Workpath.txt
 
 # make new directories
 mkdir ${cwd}/${source_Dir}
@@ -39,13 +40,14 @@ mkdir ${cwd}/${back_Up_Dir}/${bashrc_Dir}
 touch ${cwd}/${source_Dir}/${pathz_File}
 
 # Change work script needs to be targeted to the file
-touch ${cwd}/${source_Dir}workpath
+touch ${cwd}/${source_Dir}/${workz_File}
 
 # write variable for paths to path source file
 echo "source_Path=${cwd}/${source_Dir}" >> ${cwd}/${source_Dir}/${pathz_File}
 echo "test_Path=${cwd}/${test_Dir}" >> ${cwd}/${source_Dir}/${pathz_File}
 echo "scripts_Path=${cwd}/${scripts_Dir}" >> ${cwd}/${source_Dir}/${pathz_File}
 echo "back_Up_Files_Path=${cwd}/${back_Up_Dir}" >> ${cwd}/${source_Dir}/${pathz_File}
+echo "work_Path_File=${cwd}/${source_Dir}/${workz_File} >> ${cwd}/${source_Dir}/${pathz_File}
 
 # back up the .bashrc
 cp .bashrc ${cwd}/${back_Up_Dir}/${bashrc_Dir}/bashrc.bak
@@ -54,6 +56,7 @@ cp .bashrc ${cwd}/${back_Up_Dir}/${bashrc_Dir}/bashrc.bak
 echo "# Added path to my scripts directorys." >> .bashrc
 echo "export PATH=\"${cwd}/${scripts_Dir}:\$PATH\"" >> .bashrc
 echo "source ${cwd}/${source_Dir}/${pathz_File}" >> .bashrc
+
 # add aliases file
 cp ${Repo_Path}/aliases .bash_aliases
 

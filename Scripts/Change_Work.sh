@@ -6,4 +6,4 @@
 
 INPUT$1
 
-echo  "work_Path=${1}" > ${cwd}/${source_Dir}workpath
+echo  "work_Path=${1}" > ${work_Path_File}

@@ -80,7 +80,7 @@ alias gotest='cd ${test_Path}'
 alias gobackup='cd ${back_Up_Files_Path}'
 
 # goscripts will go to my scripts directory
-alias goscripts='cd ${scripts_Path}
+alias goscripts='cd ${scripts_Path}'
 
 # find scripts tagged incomplete
 alias findscriptwork='grep incomplete *'
