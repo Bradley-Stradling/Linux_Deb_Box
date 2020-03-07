@@ -47,7 +47,7 @@ echo "source_Path=${cwd}/${source_Dir}" >> ${cwd}/${source_Dir}/${pathz_File}
 echo "test_Path=${cwd}/${test_Dir}" >> ${cwd}/${source_Dir}/${pathz_File}
 echo "scripts_Path=${cwd}/${scripts_Dir}" >> ${cwd}/${source_Dir}/${pathz_File}
 echo "back_Up_Files_Path=${cwd}/${back_Up_Dir}" >> ${cwd}/${source_Dir}/${pathz_File}
-echo "work_Path_File=${cwd}/${source_Dir}/${workz_File} >> ${cwd}/${source_Dir}/${pathz_File}
+echo "work_Path_File=${cwd}/${source_Dir}/${workz_File}" >> ${cwd}/${source_Dir}/${pathz_File}
 
 # back up the .bashrc
 cp .bashrc ${cwd}/${back_Up_Dir}/${bashrc_Dir}/bashrc.bak
