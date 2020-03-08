@@ -10,8 +10,6 @@
 #(")_(")  root account? Needs testing. Wherever the target .bashrc is.
 #*******************************************************************************
 
-# !!!incomplete and needs more testing!!!
-
 # Needs error checking to ensure paths and directories were generated correctly?
 
 # Grab current working directory and store in variable cwd

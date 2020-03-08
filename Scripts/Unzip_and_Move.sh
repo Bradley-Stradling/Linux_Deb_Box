@@ -6,12 +6,18 @@
 
 # !!!incomplete and needs more testing!!!
 
-read -p "Enter the location of the .zips to unpack."
+cwd=${pwd}
 
-mkdir //home/bread/Back-ups/$1
+zip_Back_Up=${date}
 
-cp -r * //home/bread/Back-ups/$1
+read -p "Enter the location of the .zips to unpack -->" zip_Files
+
+cd $zip_Files
+
+mkdir ${back_Up_Files_Path}/${zip_Back_Up}
+
+cp -r * ${back_Up_Files_Path}/${zip_Back_Up}
 
 unzip \*.zip; find . -name "*.zip" -type f -delete
 
-cp -r * /$2
+cd $cwd
