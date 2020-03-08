@@ -2,7 +2,6 @@
 
 #*******************************************************************************
 
-# !!!incomplete and needs more testing!!!
 INPUT1=$1 # file string name 1
 
 touch ${scripts_Path}/$1.sh

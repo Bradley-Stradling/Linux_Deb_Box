@@ -2,8 +2,6 @@
 
 #*******************************************************************************
 
-# !!!incomplete and needs more testing!!!
-
 # name of new back up directory
 INPUT$1
 
