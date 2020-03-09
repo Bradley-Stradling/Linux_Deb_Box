@@ -135,6 +135,7 @@ then
 echo "${Repo_Path}/aliases copied to .bash_aliases"
 else
 echo "${Repo_Path}/aliases was not copied to .bash_aliases"
+fi
 
 # prepend source of path file to aliases file
 echo "source ${path_Sources_Dir}/${pathz_File}" | cat - .bash_aliases > temp \
