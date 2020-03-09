@@ -12,7 +12,10 @@
 #(")_(")  root account? Needs testing. Wherever the target .bashrc is.
 #*******************************************************************************
 
-# Needs error checking to ensure paths and directories were generated correctly?
+# Lot of new code added to script needs to be tested.
+
+# Need to look into making functions for some sections as code is getting long
+# May look into creating directories based on prompt input
 
 # Grab current working directory and store in variable cwd
 cwd=$(pwd)
@@ -25,27 +28,57 @@ source_Dir=Sources
 test_Dir=Test_Boxs
 scripts_Dir=My_Scripts
 back_Up_Dir=Back_Up_Files
-
 bashrc_Dir=Set-up
 
+# files to be created for writing source paths to
 pathz_File=Paths.txt
 workz_File=Workpath.txt
 
+# array of files to be created
+list_Files=(
+'${pathz_File}'
+'${workz_File}'
+
+#concatenating paths to easier to work with variables
 path_Source_Dir=${cwd}/${source_Dir}
 path_Test_Dir=${cwd}/${test_Dir}
 path_Scripts_Dir=${cwd}/${scripts_Dir}
 path_Back_Up_Dir=${cwd}/${back_Up_Dir}
 
+# array of created directories for iteration
+list_Directories=(
+'${path_Source_Dir}'
+'${path_Test_Dir}'
+'${path_Scripts_Dir}'
+'${path_Back_Up_Dir'}
+'${path_Back_Up_Dir}/${bashrc_Dir}'
+)
 
-# make new directories
-mkdir ${path_Sources_Dir}
-mkdir ${path_Test_Dir}
-mkdir ${path_Scripts_Dir}
-mkdir ${path_Back_Up_Dir}
-mkdir ${path_Back_Up_Dir}/${bashrc_Dir}
+# loop creations of new directories  # may want to loop creation and checks together
+for directory in "${list_Directories}";
+do
+mkdir ${directory}
+done
+# make new directories this can be omitted once loop creation is tested
+# mkdir ${path_Sources_Dir}
+# mkdir ${path_Test_Dir}
+# mkdir ${path_Scripts_Dir}
+# mkdir ${path_Back_Up_Dir}
+# mkdir ${path_Back_Up_Dir}/${bashrc_Dir}
 
-# If error check here for directories
+# for if error check here for directories
+for directory in "${list_Directories}";
+do
+if [ -d ${directory} ]; then
+echo "New directory path created as: ${directory}"
+else
+echo "Failed to created directory path as: ${directory}"
+fi
+done
 
+# lock down directories in home or root.
+# this may break this box depending on where deployment is launched from
+# needs further testing and likely if confirmation message
 for directory in $(ls ${cwd});
 do
 chmod 700 ${path_Scripts_Dir}/$directory
@@ -54,7 +87,15 @@ done
 touch ${path_Sources_Dir}/${pathz_File}
 touch ${path_Sources_Dir}/${workz_File}
 
-# If error check here for created files
+for file in ${list_Files};
+do
+if [ -f $file];
+then
+echo "${file} has been created successfully!"
+else
+echo "${file} was not created sucessfully :("
+fi
+done
 
 # write variable for paths to path source file
 echo "source_Path=${path_Sources_Dir}" >> ${path_Sources_Dir}/${pathz_File}
