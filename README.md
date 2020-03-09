@@ -13,4 +13,7 @@ Make comments more verbose as to what each script and/or alias does within my se
 
 May move Deploy_Set-up.sh to a sub directory of it's own so it can have it's own source file of functions seperated from the main script.
 
-Todo later. Add functions file and source it to scripts along with paths.
+Todo later-
+Add general functions file and source it to scripts along with paths.
+
+Increase portability and flexibilty of script by sourcing a list file of directories to be created to the deploy set-up script, to further increase the ease of adding new directories to script. (depending on Deploy_Setup.sh ease of adding new directories this may not be needed.)
