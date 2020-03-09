@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# incomplete and untested as is!!!
+
 #*******************************************************************************
 # (\_/)   Author: Bradley Stradling
 # (o.o)   Date of first revision: 3/6/20 (Refactoring ongoing)
@@ -43,6 +45,11 @@ mkdir ${path_Back_Up_Dir}
 mkdir ${path_Back_Up_Dir}/${bashrc_Dir}
 
 # If error check here for directories
+
+for directory in $(ls ${cwd});
+do
+chmod 700 ${path_Scripts_Dir}/$directory
+done
 
 touch ${path_Sources_Dir}/${pathz_File}
 touch ${path_Sources_Dir}/${workz_File}
