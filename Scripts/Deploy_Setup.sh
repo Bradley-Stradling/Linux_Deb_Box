@@ -28,6 +28,7 @@ deploy set-up? y/n -->" setup_Check
 if [ setup_Check -ne 'y' ];
 then
 echo "alright then don't run the script here >.> exiting..."
+echo -e " (\_/)\n (v.v) Sad Rabbit...\n(\")_(\")"
 exit
 fi
 
@@ -39,6 +40,7 @@ then
 echo "Path to linux_Deb_Repo found successfully as ${Repo_Path}"
 else
 echo "Unfortunately ${Repo_Path} was not found exiting script."
+echo -e " (\_/)\n (v.v) Sad Rabbit...\n(\")_(\")"
 exit
 done
 
