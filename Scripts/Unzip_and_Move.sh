@@ -8,7 +8,7 @@
 
 cwd=${pwd}
 
-zip_Back_Up=${date}
+zip_Back_Up=$(date)_zips
 
 read -p "Enter the location of the .zips to unpack -->" zip_Files
 
