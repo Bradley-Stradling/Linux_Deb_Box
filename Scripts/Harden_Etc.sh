@@ -2,9 +2,12 @@
 
 #*******************************************************************************
 
+
+# incomplete and untested as is!!!
+
 echo "This script is designed to run from root on a linux box with standard \
     locations for etc/shadow, etc/gshadow, etc/group and etc/passwd. " ;
-
+# need to add contional to check if user is in root if not exit script
 
 chmod 600 /etc/shadow
 chmod 600 /etc/gshadow
