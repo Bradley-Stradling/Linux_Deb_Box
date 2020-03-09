@@ -22,6 +22,6 @@ if [ -d ${target_Dir} ];
     cp -r * ${target_Dir}
     echo "Contents of ${cwd} copied to ${target_Dir}"
   else
-    echo "Unable to path to ${target_Dir} exiting script."
+    echo "Unable to path to ${target_Dir} copy failed."
     exit
 fi
