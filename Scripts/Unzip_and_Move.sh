@@ -16,7 +16,7 @@ cd $zip_Files
 
 mkdir ${back_Up_Files_Path}/${zip_Back_Up}
 
-cp -r * ${back_Up_Files_Path}/${zip_Back_Up}
+cp -r "*.zip" ${back_Up_Files_Path}/${zip_Back_Up}
 
 unzip \*.zip; find . -name "*.zip" -type f -delete
 
