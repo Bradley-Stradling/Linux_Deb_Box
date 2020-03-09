@@ -147,6 +147,8 @@ echo "source ${path_Sources_Dir}/${workz_File}" | cat - .bash_aliases > temp \
 echo "source ${path_Sources_Dir}/${workz_File} prepended to .bash_aliases."
 
 # add cp of scripts to Scripts folder from repo
+# may want to change this to loop iteration and check each file as it's copied
+# and output to terminal file copy success for each script
 cp ${Repo_Path}/Scripts/* ${path_Scripts_Dir}
 echo "${Repo_Path}/Scripts/ copied to ${path_Scripts_Dir}"
 
