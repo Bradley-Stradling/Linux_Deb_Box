@@ -22,6 +22,15 @@ cwd=$(pwd)
 
 # Need to add prompt to ask for dependancies before script run y/n
 
+read -p "is the current working directory of $(cwd) where you want to \
+deploy set-up? y/n -->" setup_Check
+
+if [ setup_Check -ne 'y' ];
+then
+echo "alright then don't run the script here >.> exiting..."
+exit
+fi
+
 read -p "Please enter the full path the the Linux_Deb_Box repo -->" Repo_Path
 
 # check repo path is reachable
@@ -33,6 +42,7 @@ echo "Unfortunately ${Repo_Path} was not found exiting script."
 exit
 done
 
+# these currently help to name directories
 source_Dir=Sources
 test_Dir=Test_Boxs
 scripts_Dir=My_Scripts
@@ -43,7 +53,11 @@ bashrc_Dir=Set-up
 pathz_File=Paths.txt
 workz_File=Workpath.txt
 
-# array of files to be created here?
+# array of files to be created for iteration
+list_Files=(
+'${path_Sources_Dir}/${pathz_File}'
+'${path_Sources_Dir}/${workz_File}'
+)
 
 #concatenating paths to easier to work with variables
 path_Source_Dir=${cwd}/${source_Dir}
@@ -94,12 +108,6 @@ done
 #likely replacing with iterative loop for file creations based on list_Files
 #touch ${path_Sources_Dir}/${pathz_File}
 #touch ${path_Sources_Dir}/${workz_File}
-
-list_Files=(
-'${path_Sources_Dir}/${pathz_File}'
-'${path_Sources_Dir}/${workz_File}'
-)
-
 for file in ${list_Files[@]};
 do
 touch $file
