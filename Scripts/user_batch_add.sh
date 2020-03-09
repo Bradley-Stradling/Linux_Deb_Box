@@ -1,6 +1,14 @@
 #!/bin/bash
 
 #*******************************************************************************
+# (\_/)   Author: Bradley Stradling
+# (o.o)   Date of first revision: 
+#(")_(")  Lincense: 
+#*******************************************************************************
+# (\_/)   Script not started yet see below for general plan.
+# (*.*)   
+#(")_(")  
+#*******************************************************************************
 
 # this will be a more involved script to add x users and set groups for each 
 # and create x folders and give specific users access.
