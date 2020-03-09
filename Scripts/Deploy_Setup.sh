@@ -73,7 +73,7 @@ done
 # mkdir ${path_Back_Up_Dir}/${bashrc_Dir}
 
 # for if error check here for directories
-for directory in "${list_Directories}";
+for directory in "${list_Directories[@]}";
 do
 if [ -d ${directory} ]; then
 echo "New directory path created as: ${directory}"
@@ -91,10 +91,21 @@ chmod 600 ${path_Scripts_Dir}/${directory}
 echo "Permission set to ${directory} to user only read write"
 done
 
-touch ${path_Sources_Dir}/${pathz_File}
-touch ${path_Sources_Dir}/${workz_File}
+#likely replacing with iterative loop for file creations based on list_Files
+#touch ${path_Sources_Dir}/${pathz_File}
+#touch ${path_Sources_Dir}/${workz_File}
 
-for file in ${list_Files};
+list_Files=(
+'${path_Sources_Dir}/${pathz_File}'
+'${path_Sources_Dir}/${workz_File}'
+)
+
+for file in ${list_Files[@]};
+do
+touch $file
+done
+
+for file in ${list_Files[@]};
 do
 if [ -f $file];
 then
