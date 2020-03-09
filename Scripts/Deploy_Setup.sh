@@ -27,7 +27,7 @@ deploy set-up? y/n -->" setup_Check
 
 if [ setup_Check -ne 'y' ];
 then
-echo "alright then don't run the script here >.> exiting..."
+echo "Alright then don't run the script here >.> exiting..."
 echo -e " (\_/)\n (v.v) Sad Rabbit...\n(\")_(\")"
 exit
 fi
@@ -76,36 +76,31 @@ list_Directories=(
 '${path_Back_Up_Dir}/${bashrc_Dir}'
 )
 
-# loop creations of new directories  # may want to loop creation and checks together
-for directory in "${list_Directories}";
-do
-mkdir ${directory}
-done
-# make new directories this can be omitted once loop creation is tested
-# mkdir ${path_Sources_Dir}
-# mkdir ${path_Test_Dir}
-# mkdir ${path_Scripts_Dir}
-# mkdir ${path_Back_Up_Dir}
-# mkdir ${path_Back_Up_Dir}/${bashrc_Dir}
-
-# for if error check here for directories
+# make new directories and check them
 for directory in "${list_Directories[@]}";
 do
-if [ -d ${directory} ]; then
-echo "New directory path created as: ${directory}"
-else
-echo "Failed to created directory path as: ${directory}"
-fi
+  mkdir ${directory}
+    if [ -d ${directory} ]; then
+    echo "New directory path created as: ${directory}"
+    else
+    echo "Failed to created directory path as: ${directory}"
+    fi
 done
 
 # lock down directories in home or root.
 # this may break this box depending on where deployment is launched from
 # needs further testing and likely if confirmation message
-for directory in $(ls ${cwd});
-do
-chmod 600 ${path_Scripts_Dir}/${directory}
-echo "Permission set to ${directory} to user only read write"
-done
+read -p "Do you want to set all directories under ${cwd} to user only read \
+write? y/n -->" permission_Set
+
+if [ permission_Set -eq 'y' ]; # -eq may not be the right conditonal to use
+then
+  for directory in $(ls ${cwd});
+   do
+    chmod 600 ${path_Scripts_Dir}/${directory}
+    echo "Permission set to ${directory} to user only read write"
+  done
+fi  
 
 #likely replacing with iterative loop for file creations based on list_Files
 #touch ${path_Sources_Dir}/${pathz_File}
@@ -116,13 +111,13 @@ touch $file
 done
 
 for file in ${list_Files[@]};
-do
-if [ -f $file];
-then
-echo "${file} has been created successfully!"
-else
-echo "${file} was not created sucessfully :("
-fi
+  do
+  if [ -f $file];
+    then
+    echo "${file} has been created successfully!"
+    else
+    echo "${file} was not created sucessfully :("
+  fi
 done
 
 # write variable for paths to path source file
@@ -161,10 +156,10 @@ echo "source ${path_Sources_Dir}/${pathz_File} written to .bashrc"
 cp ${Repo_Path}/aliases .bash_aliases
 # confirm to terminal aliases file copied
 if [ -f .bash_aliases];
-then
-echo "${Repo_Path}/aliases copied to .bash_aliases"
-else
-echo "${Repo_Path}/aliases was not copied to .bash_aliases"
+  then
+  echo "${Repo_Path}/aliases copied to .bash_aliases"
+  else
+  echo "${Repo_Path}/aliases was not copied to .bash_aliases"
 fi
 
 # prepend source of path file to aliases file
