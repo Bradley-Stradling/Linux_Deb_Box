@@ -1,9 +1,10 @@
 # Linux_Deb_Box
 Aliases and scripts for my linux bash set-up. 
 
-Repo design to pull repo and run 1 script to set-up a box the way I want it in progress.
+Repo design to pull repo and run 1 script to set-up a box the way I want it in progress. End goal is a script that is easy to add new directories/files to with minimal effort yet robust output and creation.
 
 Todo-
-Loop prepend of path sourcing to scripts is complete, need to change paths in scripts to sourced variables
+Test Deploy_setup script, lots of new code added to it. Now outputs to terminal what it is doing. Error checking has been added
+but no stop or exit conditions exist. Need to determine fail to exit conditions and add them.
 
 Todo later. Add functions file and source it to scripts along with paths.
