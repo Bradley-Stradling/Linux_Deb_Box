@@ -24,6 +24,15 @@ cwd=$(pwd)
 
 read -p "Please enter the full path the the Linux_Deb_Box repo -->" Repo_Path
 
+# check repo path is reachable
+if [ -d ${Repo_Path} ];
+then
+echo "Path to linux_Deb_Repo found successfully as ${Repo_Path}"
+else
+echo "Unfortunately ${Repo_Path} was not found exiting script."
+exit
+done
+
 source_Dir=Sources
 test_Dir=Test_Boxs
 scripts_Dir=My_Scripts
