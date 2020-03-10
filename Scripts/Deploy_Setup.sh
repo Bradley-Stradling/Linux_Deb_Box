@@ -105,15 +105,16 @@ done
 #likely replacing with iterative loop for file creations based on list_Files
 #touch ${path_Sources_Dir}/${pathz_File}
 #touch ${path_Sources_Dir}/${workz_File}
-for file in ${list_Files[@]};
-do
-touch $file
-done
+#for file in ${list_Files[@]};
+#do
+#touch $file
+#done
 
 echo " "
 
 for file in "${list_Files[@]}";
   do
+  touch ${file}
   if [ -f {$file} ];
     then
     echo "${file} has been created successfully!"
