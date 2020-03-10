@@ -62,16 +62,16 @@ alias backmeup='Back_Me_Up.sh'
 alias screenrez='xrandr --output Virtual1 --mode 1920x1200'
 
 # gotest will go to my testing directory
-alias gotest='cd ${test_Path}; ls'
+alias gotest='cd ${test_Path}'
 
 # gobackup will go to my back_up_files
-alias gobackup='cd ${back_Up_Files_Path; ls}'
+alias gobackup='cd ${back_Up_Files_Path}'
 
 # goscripts will go to my scripts directory
-alias goscripts='cd ${scripts_Path}; ls'
+alias goscripts='cd ${scripts_Path}'
 
 # find scripts tagged incomplete
 alias findscriptwork='grep incomplete *'
 
 # gowork will go to the set path in work path file changed by change_work
-alias gowork='cd ${work_Path}; ls'
+alias gowork='cd ${work_Path}'
