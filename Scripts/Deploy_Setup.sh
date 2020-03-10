@@ -167,7 +167,7 @@ echo "source ${path_Sources_Dir}/${pathz_File} written to .bashrc"
 # add aliases file
 cp ${Repo_Path}/aliases .bash_aliases
 # confirm to terminal aliases file copied
-if [ -f .bash_aliases];
+if [ -f .bash_aliases ];
   then
   echo "${Repo_Path}/aliases copied to .bash_aliases"
   else
