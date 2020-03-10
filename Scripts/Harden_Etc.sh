@@ -23,7 +23,7 @@ read -p "Are u running this as root? y/n -->" runasroot
 if [ ${runasroot} -ne y];
 then
 echo "Script must be run as root. Exiting."
-exit
+exit 1
 fi
 
 chmod 600 /etc/shadow
