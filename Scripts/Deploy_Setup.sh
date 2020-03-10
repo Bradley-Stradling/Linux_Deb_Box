@@ -112,7 +112,7 @@ done
 
 echo " "
 
-for file in ${ list_Files[@] };
+for file in "${list_Files[@]}";
   do
   if [ -f {$file} ];
     then
