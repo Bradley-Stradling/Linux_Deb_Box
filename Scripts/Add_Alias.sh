@@ -18,10 +18,12 @@ cwd=$(pwd)
 # or source path to home directory through variable
 cd $HOME
 
+# need to check that spaces in input and full string is passed to comment variable
 read -p "What will this new alias do? -->" comment
 read -p "What will call this alias? -->" alias_Call
 read -p "what will this alias do? -->" alias_Do
 
+echo ""
 echo "# ${comment}" >> .bash_aliases
 echo -e "alias ${alias_Call}=\'${alias_Do}\'" >> .bash_aliases
 
