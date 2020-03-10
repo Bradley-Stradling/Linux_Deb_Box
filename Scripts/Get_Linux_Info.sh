@@ -30,7 +30,7 @@ lscpu | grep "Model name"
 
 echo "Ready to pull some system information."
 read -p "Do you want to ouput to the 1. terminal, 2. a file in the current \
-directory of ${cwd} or 3. both  -->" file_Write 
+directory of ${cwd} or 3. both: enter 1 2 or 3 -->" file_Write 
 
 echo " "
 
