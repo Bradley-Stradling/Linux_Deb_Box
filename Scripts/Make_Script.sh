@@ -24,7 +24,7 @@ if [ ${create} == 'y' ];
     echo "${1}.sh has been created within ${scripts_Path}."
   else
     echo "Whoops nevermind exiting script..."
-    exit
+    exit 1
 fi
 
 echo "#!/bin/bash" > ${scripts_Path}/$1.sh
@@ -51,6 +51,6 @@ if [ ${perm_Set} == 'y' ];
     echo "${1}.sh has been set to only user read write execute."
   else
   echo "You will have to change the permissions on ${1}.sh later on your own to run it..."
-  exit
+  exit 1
 fi
     
