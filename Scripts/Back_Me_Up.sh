@@ -22,7 +22,7 @@ INPUT=$1
 if [ -z $1 ];
 then
   echo "Please run the script again with a name for the backup directory passed."
-  exit
+  exit 1
 fi
 
 new_Back_Up_Dir=${back_Up_Files_Path}/$1
@@ -35,5 +35,5 @@ if [ -d ${new_Back_Up_Dir} ];
     echo "contents of ${cwd} copied to ${new_Back_Up_Dir} successfully."
   else
     echo "Unable to create path to ${new_Back_Up_Dir}. Copy failed."
-    exit
+    exit 1
 fi
