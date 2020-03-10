@@ -24,7 +24,7 @@ then
 echo "was not able to locate .bash_aliases in ${HOME} please check script. Exiting."
 #return to working directory
 cd ${cwd}
-exit
+exit 1
 fi
 
 # need to check that spaces in input and full string is passed to comment variable
@@ -49,10 +49,10 @@ echo -e "alias ${alias_Call}=\'${alias_Do}\' appened to to .bash_aliases"
 exec bash
 #return to working directory
 cd ${cwd}
-exit
+exit 1
 else
 echo "Whoops check the script or your inputs and try running again. Exiting."
 #return to working directory
 cd ${cwd}
-exit
+exit 1
 
