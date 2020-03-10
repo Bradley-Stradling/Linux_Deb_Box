@@ -17,8 +17,6 @@
 # name of new back up directory
 INPUT=$1
 
-cwd=$(pwd)
-
 # not sure if this will do what I want but want to try it
 # if input string is empty error message and exit script
 if [ -z $1 ];
