@@ -10,8 +10,6 @@
 #(")_(")  
 #*******************************************************************************
 
-# incomplete and untested as is.
-
 read -p "Enter the full path to the new work spot ==>" werkpath
 
 if [ -d ${werkpath} ];
