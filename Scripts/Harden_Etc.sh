@@ -1,7 +1,14 @@
 #!/bin/bash
 
 #*******************************************************************************
-
+# (\_/)   Author: Bradley Stradling
+# (o.o)   Date of first revision: 3/6/20
+#(")_(")  Lincense: https://unlicense.org/
+#*******************************************************************************
+# (\_/)   Script to set some /etc files to root only access and read only for 
+# (*.*)   others.
+#(")_(")  
+#*******************************************************************************
 
 # incomplete and untested as is!!!
 
