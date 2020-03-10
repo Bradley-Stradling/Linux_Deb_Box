@@ -23,5 +23,5 @@ if [ -d ${target_Dir} ];
     echo "Contents of ${cwd} copied to ${target_Dir}"
   else
     echo "Unable to path to ${target_Dir} copy failed."
-    exit
+    exit 1
 fi
