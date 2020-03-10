@@ -13,3 +13,5 @@
 # Place holder for future work to be done.
 
 # want a quick and easy way to add a new resolution setting to a box.
+
+# need to play with xrandr commands and flags before a script is written.
