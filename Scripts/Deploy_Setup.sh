@@ -114,7 +114,7 @@ echo " "
 
 for file in ${list_Files[@] };
   do
-  if [ -f {$file}];
+  if [ -f {$file} ];
     then
     echo "${file} has been created successfully!"
     else
