@@ -10,8 +10,6 @@
 #(")_(")  remove .zip files from target location.
 #*******************************************************************************
 
-# Script is broken until paths source is connected. then needs refactor.
-
 # !!!incomplete and needs more testing!!!
 
 # needs a lot of error checking and output confirmation to terminal of success
