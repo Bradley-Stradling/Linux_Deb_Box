@@ -128,6 +128,7 @@ echo "source_Path=${path_Sources_Dir}" >> ${path_Sources_Dir}/${pathz_File}
 echo "test_Path=${path_Test_Dir}" >> ${path_Sources_Dir}/${pathz_File}
 echo "scripts_Path=${path_Scripts_Dir}" >> ${path_Sources_Dir}/${pathz_File}
 echo "back_Up_Files_Path=${path_Back_Up_Dir}" >> ${path_Sources_Dir}/${pathz_File}
+echo "repo_Path=${Repo_Path}" >> ${path_Sources_Dir}/${pathz_File}
 # target for change work to change work target with go work alias
 echo "work_Path_File=${path_Sources_Dir}/${workz_File}" >> ${path_Sources_Dir}/${pathz_File}
 
