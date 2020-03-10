@@ -16,7 +16,7 @@
 # variable to scripts from source path is scripts_Path
 # variable to repo from source path is repo_Path
 
-read - p "Pack up and replace alises list in repo? y/n -->" pack_Aliases
+read - p "Pack up and replace aliases list in repo? y/n -->" pack_Aliases
 
 if [ ${pack_Aliases} == 'y' ];
 then
