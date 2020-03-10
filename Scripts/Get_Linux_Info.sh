@@ -25,7 +25,7 @@ echo -e "The dns servers are: \n$(cat /etc/resolv.conf | awk NR\>1)"
 echo -e "\n The memory info is as below."
 free | head -n +2
 echo -e "\n The cpu model is."
-lscpu | grep "Model name" | cut -d " " -f 4-#!/bin/bash
+lscpu | grep "Model name"
 }
 
 echo "Ready to pull some system information."
@@ -34,12 +34,14 @@ directory of ${cwd} or 3. both  -->" file_Write
 
 echo " "
 
-if [ file_Write -eq '1' ];
+if [ ${file_Write} == '1' ];
   then
     (get_Sys_Info)
-    elif [ file_Write -eq '2' ];
+    elif [ ${file_Write} == '2' ];
+      then
       (get_Sys_Info) > Sys_Info_Output.txt
-      elif [ file_Write -eq '3' ];
+      elif [ ${file_Write} == '3' ];
+        then
         (get_Sys_Info)
         (get_Sys_Info) > Sys_Info_Output.txt
           else

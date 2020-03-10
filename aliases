@@ -50,7 +50,7 @@ alias makescript='Make_Script.sh'
 alias findfile='Find_1_File.sh'
 
 # move work from where it is to working directory
-alias copysource='Copy_Contents_Move.sh'
+alias copynmove='Copy_Contents_Move.sh'
 
 # change the path for go work
 alias chgwork='Change_Work.sh'

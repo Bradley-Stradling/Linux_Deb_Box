@@ -13,7 +13,7 @@ read -p "Are u running this as root? y/n -->" runasroot
 
 # this is not dummy proof but will work for now, should be more verbose check on
 # what the user calling this script is logged in as.
-if [ $runasroot -ne y];
+if [ ${runasroot} -ne y];
 then
 echo "Script must be run as root. Exiting."
 exit

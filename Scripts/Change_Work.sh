@@ -22,3 +22,6 @@ if [ -d ${werkpath} ];
     echo "Unable to locate ${werkpath}. ${work_Path_File} is unchanged."
     exit
 fi
+
+# reset bash shell env
+exec bash

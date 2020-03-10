@@ -15,7 +15,7 @@
 # need to add error checking and maybe change arugment pass to a prompt
 
 # name of new back up directory
-INPUT$1
+INPUT=$1
 
 cwd=$(pwd)
 

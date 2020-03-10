@@ -22,14 +22,14 @@ cwd=$(pwd)
 
 # Need to add prompt to ask for dependancies before script run y/n
 
-read -p "is the current working directory of $(cwd) where you want to \
+read -p "is the current working directory of ${cwd} where you want to \
 deploy set-up? y/n -->" setup_Check
 
-if [ setup_Check -ne 'y' ];
+if [ $setup_Check != 'y' ];
 then
 echo "Alright then don't run the script here >.> exiting..."
 echo -e " (\_/)\n (v.v) Sad Rabbit...\n(\")_(\")"
-exit
+exit 1
 fi
 
 read -p "Please enter the full path the the Linux_Deb_Box repo -->" Repo_Path
@@ -37,12 +37,12 @@ read -p "Please enter the full path the the Linux_Deb_Box repo -->" Repo_Path
 # check repo path is reachable
 if [ -d ${Repo_Path} ];
 then
-echo "Path to linux_Deb_Repo found successfully as ${Repo_Path}"
-else
-echo "Unfortunately ${Repo_Path} was not found exiting script."
-echo -e " (\_/)\n (v.v) Sad Rabbit...\n(\")_(\")"
-exit
-done
+  echo "Path to linux_Deb_Repo found successfully as ${Repo_Path}"
+  else
+  echo "Unfortunately ${Repo_Path} was not found exiting script."
+  echo -e " (\_/)\n (v.v) Sad Rabbit...\n(\")_(\")"
+  exit 1
+fi
 
 # these currently help to name directories
 source_Dir=Sources
@@ -55,26 +55,28 @@ bashrc_Dir=Set-up
 pathz_File=Paths.txt
 workz_File=Workpath.txt
 
-# array of files to be created for iteration
-list_Files=(
-'${path_Sources_Dir}/${pathz_File}'
-'${path_Sources_Dir}/${workz_File}'
-)
-
 #concatenating paths to easier to work with variables
-path_Source_Dir=${cwd}/${source_Dir}
+path_Sources_Dir=${cwd}/${source_Dir}
 path_Test_Dir=${cwd}/${test_Dir}
 path_Scripts_Dir=${cwd}/${scripts_Dir}
 path_Back_Up_Dir=${cwd}/${back_Up_Dir}
 
 # array of created directories for iteration
 list_Directories=(
-'${path_Source_Dir}'
-'${path_Test_Dir}'
-'${path_Scripts_Dir}'
-'${path_Back_Up_Dir}'
-'${path_Back_Up_Dir}/${bashrc_Dir}'
+"${path_Sources_Dir}"
+"${path_Test_Dir}"
+"${path_Scripts_Dir}"
+"${path_Back_Up_Dir}"
+"${path_Back_Up_Dir}/${bashrc_Dir}"
 )
+
+# array of files to be created for iteration
+list_Files=(
+"${path_Sources_Dir}/${pathz_File}"
+"${path_Sources_Dir}/${workz_File}"
+)
+
+echo " "
 
 # make new directories and check them
 for directory in "${list_Directories[@]}";
@@ -90,17 +92,17 @@ done
 # lock down directories in home or root.
 # this may break this box depending on where deployment is launched from
 # needs further testing and likely if confirmation message
-read -p "Do you want to set all directories under ${cwd} to user only read \
-write? y/n -->" permission_Set
+# read -p "Do you want to set all directories under ${cwd} to user only read \
+# write? y/n -->" permission_Set
 
-if [ permission_Set -eq 'y' ]; # -eq may not be the right conditonal to use
-then
-  for directory in $(ls ${cwd});
-   do
-    chmod 600 ${path_Scripts_Dir}/${directory}
-    echo "Permission set to ${directory} to user only read write"
-  done
-fi  
+#if [ $permission_Set == 'y' ]; # -eq may not be the right conditonal to use
+#then
+ # for directory in $(ls ${cwd});
+  # do
+   # chmod 600 ${path_Scripts_Dir}/${directory}
+  #  echo "Permission set to ${directory} to user only read write"
+ # done
+#fi  
 
 #likely replacing with iterative loop for file creations based on list_Files
 #touch ${path_Sources_Dir}/${pathz_File}
@@ -110,15 +112,18 @@ do
 touch $file
 done
 
+echo " "
+
 for file in ${list_Files[@]};
   do
-  if [ -f $file];
+  if [ -f {$file}];
     then
     echo "${file} has been created successfully!"
     else
     echo "${file} was not created sucessfully :("
   fi
 done
+
 
 # write variable for paths to path source file
 echo "source_Path=${path_Sources_Dir}" >> ${path_Sources_Dir}/${pathz_File}
@@ -128,6 +133,8 @@ echo "back_Up_Files_Path=${path_Back_Up_Dir}" >> ${path_Sources_Dir}/${pathz_Fil
 # target for change work to change work target with go work alias
 echo "work_Path_File=${path_Sources_Dir}/${workz_File}" >> ${path_Sources_Dir}/${pathz_File}
 
+echo " "
+
 # confrim to terminal output paths written to files
 echo "source_Path=${path_Sources_Dir} written to ${path_Sources_Dir}/${pathz_File}"
 echo "test_Path=${path_Test_Dir} written to ${path_Sources_Dir}/${pathz_File}"
@@ -136,15 +143,21 @@ echo "back_Up_Files_Path=${path_Back_Up_Dir} written to ${path_Sources_Dir}/${pa
 # target for change work to change work target with go work alias
 echo "work_Path_File=${path_Sources_Dir}/${workz_File} written to ${path_Sources_Dir}/${pathz_File}"
 
+echo " "
+
 # back up the .bashrc
 cp .bashrc ${path_Back_Up_Dir}/${bashrc_Dir}/bashrc.bak
 # confirm to terminal back up of bashrc
 echo ".bashrc backed up to ${path_Back_Up_Dir}/${bashrc_Dir}/bashrc.bak"
 
+echo " "
+
 # add scripts directory to my path.
 echo "# Added path to my scripts directorys." >> .bashrc
 echo "export PATH=\"${path_Scripts_Dir}:\$PATH\"" >> .bashrc
 echo "source ${path_Sources_Dir}/${pathz_File}" >> .bashrc
+
+echo " "
 
 # confrim what is appended to bashrc
 echo "# Added path to my scripts directorys. written to .bashrc"
@@ -162,6 +175,8 @@ if [ -f .bash_aliases];
   echo "${Repo_Path}/aliases was not copied to .bash_aliases"
 fi
 
+echo " "
+
 # prepend source of path file to aliases file
 echo "source ${path_Sources_Dir}/${pathz_File}" | cat - .bash_aliases > temp \
  && mv temp .bash_aliases
@@ -177,6 +192,8 @@ echo "source ${path_Sources_Dir}/${workz_File} prepended to .bash_aliases."
 cp ${Repo_Path}/Scripts/* ${path_Scripts_Dir}
 echo "${Repo_Path}/Scripts/ copied to ${path_Scripts_Dir}"
 
+echo " "
+
 # attempting to prepend source file to all scripts 
 for script in $(ls ${path_Scripts_Dir});
 do
@@ -184,6 +201,8 @@ echo "source ${path_Sources_Dir}/${pathz_File}" | cat - ${path_Scripts_Dir}/$scr
 ${path_Scripts_Dir}/temp && mv ${path_Scripts_Dir}/temp ${path_Scripts_Dir}/$script
 echo "source ${path_Sources_Dir}/${pathz_File} prepended to ${path_Scripts_Dir}/$script"
 done
+
+echo " "
 
 for script in $(ls ${path_Scripts_Dir});
 do
