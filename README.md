@@ -6,12 +6,9 @@ Repo design to pull repo and run 1 script to set-up a box the way I want it in p
 Ideally pull repo, run Delpoy_Set-up.sh target the repo directory and have my common directories created with my common scripts imported, bashrc appended to add my newly created and imported scripts directory path. Import my aliases. And source the local paths to all the before mentioned for increased portability of my set-up and scripts.
 
 Todo-
-Test Deploy_setup script, lots of new code added to it. Now outputs to terminal what it is doing. Error checking has been added
-but no stop or exit conditions exist. some exit conditions set, may add more, with more verbose error output to exit messages.
+Deploy_Script is functional and copy and prepend and append of bashrc alias and scripts sucess!!
 
 Make comments more verbose as to what each script and/or alias does within my set-up, and fix indentation where needed.
-
-May move Deploy_Set-up.sh to a sub directory of it's own so it can have it's own source file of functions seperated from the main script.
 
 Write script to add new resolution to xrandr, and set a source for the screenrez script to change to that resolution. (See useful links for guide.)
 
