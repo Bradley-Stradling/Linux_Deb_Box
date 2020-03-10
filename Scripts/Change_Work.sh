@@ -18,7 +18,7 @@ if [ -d ${werkpath} ];
     echo "work_Path=${werkpath} written to ${work_Path_File}"
   else
     echo "Unable to locate ${werkpath}. ${work_Path_File} is unchanged."
-    exit
+    exit 1
 fi
 
 # reset bash shell env
