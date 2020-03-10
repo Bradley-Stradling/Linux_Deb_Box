@@ -10,3 +10,4 @@
 
 # Placeholder for packing up new scripts and updating aliases list.
 # Not sure how I want to tackle this yet but wanted to note it as future work.
+# Script should sanitize files to read write only permissions.
