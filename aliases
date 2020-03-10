@@ -46,7 +46,7 @@ alias cpuinfo='lscpu'
 # Make a new script with name and template start
 alias makescript='Make_Script.sh'
 
-# Find file with 2 parameters script
+# Find file with 1 parameters script
 alias findfile='Find_1_File.sh'
 
 # move work from where it is to working directory
