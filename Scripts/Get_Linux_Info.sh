@@ -46,7 +46,7 @@ if [ ${file_Write} == '1' ];
         (get_Sys_Info) > Sys_Info_Output.txt
           else
             echo "unavailable selection inputed exiting script."
-            exit
+            exit 1
 fi
 
 
