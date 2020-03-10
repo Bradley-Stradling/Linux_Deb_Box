@@ -12,10 +12,8 @@
 #(")_(")  root account? Needs testing. Wherever the target .bashrc is.
 #*******************************************************************************
 
-# Lot of new code added to script needs to be tested.
-
 # Need to look into making functions for some sections as code is getting long
-# May look into creating directories based on prompt input
+# May want to look into creating directories based on prompt input
 
 # Grab current working directory and store in variable cwd
 cwd=$(pwd)
