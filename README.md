@@ -10,6 +10,4 @@ Ideally pull repo, run Delpoy_Set-up.sh target the repo directory and have my co
 Todo-
 Work on getting Pack_Up_Setup flushed out and tested. needs to cleanse lines with source from aliases and scripts.
 
-Make comments more verbose as to what each script and/or alias does within my set-up, and fix indentation where needed.
-
 Write script to add new resolution to xrandr, and set a source for the screenrez script to change to that resolution. (See useful links for guide.)
