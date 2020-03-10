@@ -10,6 +10,8 @@
 #(")_(")  
 #*******************************************************************************
 
+# !!!incomplete and needs more testing!!!
+
 cwd=$(pwd)
 
 # move to home directory (may want to just add path to home to file output)
