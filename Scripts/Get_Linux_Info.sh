@@ -1,4 +1,3 @@
-source /home/bread/Sources/Paths.txt
 #!/bin/bash
 
 #*******************************************************************************
@@ -49,11 +48,3 @@ if [ ${file_Write} == '1' ];
             echo "unavailable selection inputed exiting script."
             exit 1
 fi
-
-
-
-
-
-
-
-
