@@ -12,7 +12,7 @@ Work on getting Pack_Up_Setup flushed out and tested. needs to cleanse lines wit
 
 Write script to add new resolution to xrandr, and set a source for the screenrez script to change to that resolution. (See useful links for guide.)
 
-Testing script changes 3/10
+Testing script changes 3/10/20
 
 Add_Alias is good to go. 
 Back_Me_Up is good to go.
