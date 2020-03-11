@@ -108,12 +108,12 @@ echo " "
 for file in "${list_Files[@]}";
   do
   touch ${file}
-  #if [ -f {$file} ]; # if check for file is not working in this implementation...
-   # then
-    #echo "${file} has been created successfully!"
-    #else
-    #echo "${file} was not created sucessfully :("
-  #fi
+  if [ -e {$file} ]; # if check for file is not working in this implementation...
+    then
+    echo "${file} has been created successfully!"
+    else
+    echo "${file} was not created sucessfully :("
+  fi
 done
 
 
