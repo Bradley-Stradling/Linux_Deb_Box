@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# incomplete and untested as is!!!
+# functional other than confirmation ouput of created files.
 
 #*******************************************************************************
 # (\_/)   Author: Bradley Stradling
