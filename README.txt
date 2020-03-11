@@ -53,8 +53,8 @@ Make_Script.sh - Creates a new script with the passed argument as a name with
 some comment header output pregenerated to the file as well as sets executable 
 permission to user only.
 
-Pack_Up_Setup - Loads up all scripts in scripts directory from local system 
-to repo and removes
+Pack_Up_Setup - Loads up all scripts in scripts directory and aliases from local user on system 
+to repo and removes source lines from them. (Not tested or fully written)
 
 Resolution_Set.sh - Want to add a new resolution thats not shown in xrandr?
 Me too, hopefully this script will make that quick and easy. 
