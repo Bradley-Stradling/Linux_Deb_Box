@@ -34,7 +34,7 @@ echo "" >> ${scripts_Path}/$1.sh
 
 echo "#*******************************************************************************" >> ${scripts_Path}/$1.sh
 
-echo -e "#  (\_/)\tAuthor: Bradley Stradling\n#  (o.o) Hello!\tDate of first revision: $(date)\n# (\")_(\")\tLincense: https://unlicense.org/" >> ${scripts_Path}/$1.sh
+echo -e "#  (\_/)\tAuthor: Bradley Stradling\n#  (o.o)\tDate of first revision: $(date)\n# (\")_(\")\tLincense: https://unlicense.org/" >> ${scripts_Path}/$1.sh
 
 echo "#*******************************************************************************" >> ${scripts_Path}/$1.sh
 
