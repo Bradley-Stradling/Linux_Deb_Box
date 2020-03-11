@@ -11,6 +11,8 @@ source /home/bread/Sources/Paths.txt
 
 # incomplete and untested as is !!!
 
+# missing removal of source line from scripts and alias file
+
 # need to refactor to show what scripts have been changed.
 
 # Script should sanitize files to read write only permissions.
