@@ -1,3 +1,4 @@
+source /home/bread/Sources/Paths.txt
 #*******************************************************************************
 # (\_/)   Author: Bradley Stradling
 # (o.o)   Date of first revision: 3/10/20 (Refactoring ongoing)

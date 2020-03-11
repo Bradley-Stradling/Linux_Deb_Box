@@ -1,3 +1,4 @@
+source /home/bread/Sources/Paths.txt
 #!/bin/bash
 
 #*******************************************************************************
@@ -9,6 +10,9 @@
 # (*.*)   alias to the input'd full path.
 #(")_(")  
 #*******************************************************************************
+
+# script tested and debugged works as is :3
+
 
 read -p "Enter the full path to the new work spot ==>" werkpath
 

@@ -44,19 +44,19 @@ alias pscpu10='ps auxf | sort -nr -k 3 | head -10'
 alias cpuinfo='lscpu'
 
 # Make a new script with name and template start
-alias makescript='Make_Script.sh'
+alias makescript='bash Make_Script.sh'
 
 # Find file with 1 parameters script
-alias findfile='Find_1_File.sh'
+alias findfile='bash Find_1_File.sh'
 
 # move work from where it is to working directory
-alias copynmove='Copy_Contents_Move.sh'
+alias copynmove='bash Copy_Contents_Move.sh'
 
 # change the path for go work
-alias chgwork='Change_Work.sh'
+alias chgwork='bash Change_Work.sh'
 
 # backsup all files in the current directory to a named directory
-alias backmeup='Back_Me_Up.sh'
+alias backmeup='bash Back_Me_Up.sh'
 
 # set screen resolution
 alias screenrez='xrandr --output Virtual1 --mode 1920x1200'

@@ -1,3 +1,4 @@
+source /home/bread/Sources/Paths.txt
 #!/bin/bash
 
 #*******************************************************************************
@@ -10,14 +11,11 @@
 #(")_(")  the back up directory.
 #*******************************************************************************
 
-# incomplete and untested as is !!!
-
-# need to add error checking and maybe change arugment pass to a prompt
+# tested and debugged works :3
 
 # name of new back up directory
 INPUT=$1
 
-# not sure if this will do what I want but want to try it
 # if input string is empty error message and exit script
 if [ -z $1 ];
 then

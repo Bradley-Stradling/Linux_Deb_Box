@@ -1,3 +1,4 @@
+source /home/bread/Sources/Paths.txt
 #!/bin/bash
 
 #*******************************************************************************
@@ -10,7 +11,7 @@
 #(")_(")  the inputs to the aliases file and return to wherever you were.
 #*******************************************************************************
 
-# !!!incomplete and needs more testing!!!
+# Script tested and debugged  works :3
 
 cwd=$(pwd)
 
@@ -19,7 +20,7 @@ cwd=$(pwd)
 cd $HOME
 
 # check if .bash_aliases was located properly.
-if [ !-f .bash_aliases ]; # need to check syntax here
+if [ ! -f .bash_aliases ]; # need to check syntax here
 then
 echo "was not able to locate .bash_aliases in ${HOME} please check script. Exiting."
 #return to working directory
@@ -34,17 +35,17 @@ read -p "what will this alias do? -->" alias_Do
 
 echo " "
 echo "# ${comment} will be written to .bash_aliases"
-echo -e "alias ${alias_Call}=\'${alias_Do}\' will be written to .bash_aliases"
-echo "Does this look correct? y/m -->" check
+echo -e "alias ${alias_Call}='${alias_Do}' will be written to .bash_aliases"
+read -p "Does this look correct? y/n -->" check
 
-if [ ${check} == 'y'];
+if [ ${check} == 'y' ];
 then
 echo "" >> .bash_aliases
 echo "# ${comment}" >> .bash_aliases
-echo -e "alias ${alias_Call}=\'${alias_Do}\'" >> .bash_aliases
+echo -e "alias ${alias_Call}='${alias_Do}'" >> .bash_aliases
 echo " "
 echo "# ${comment} appended to .bash_aliases"
-echo -e "alias ${alias_Call}=\'${alias_Do}\' appened to to .bash_aliases"
+echo -e "alias ${alias_Call}='${alias_Do}' appened to to .bash_aliases"
 #reset bash enviroment to pick up change
 exec bash
 #return to working directory
@@ -55,4 +56,4 @@ echo "Whoops check the script or your inputs and try running again. Exiting."
 #return to working directory
 cd ${cwd}
 exit 1
-
+fi

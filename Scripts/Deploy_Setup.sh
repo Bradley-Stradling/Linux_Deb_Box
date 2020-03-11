@@ -1,3 +1,4 @@
+source /home/bread/Sources/Paths.txt
 #!/bin/bash
 
 # incomplete and untested as is!!!
