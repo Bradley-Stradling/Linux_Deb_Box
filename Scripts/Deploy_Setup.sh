@@ -136,9 +136,9 @@ done
 # write variable for paths to path source file
 echo "source_Path=${path_Sources_Dir}" >> ${path_Sources_Dir}/${pathz_File}
 echo "test_Path=${path_Test_Dir}" >> ${path_Sources_Dir}/${pathz_File}
-echo "test_Path=${path_Test_Dir1}" >> ${path_Sources_Dir}/${pathz_File}
-echo "test_Path=${path_Test_Dir2}" >> ${path_Sources_Dir}/${pathz_File}
-echo "test_Path=${path_Test_Dir3}" >> ${path_Sources_Dir}/${pathz_File}
+echo "test_Path1=${path_Test_Dir1}" >> ${path_Sources_Dir}/${pathz_File}
+echo "test_Path2=${path_Test_Dir2}" >> ${path_Sources_Dir}/${pathz_File}
+echo "test_Path3=${path_Test_Dir3}" >> ${path_Sources_Dir}/${pathz_File}
 echo "scripts_Path=${path_Scripts_Dir}" >> ${path_Sources_Dir}/${pathz_File}
 echo "back_Up_Files_Path=${path_Back_Up_Dir}" >> ${path_Sources_Dir}/${pathz_File}
 echo "repo_Path=${Repo_Path}" >> ${path_Sources_Dir}/${pathz_File}
