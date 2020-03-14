@@ -13,17 +13,13 @@ source /home/bread/Sources/Paths.txt
 #(")_(")  for other scripts on a new box.
 #*******************************************************************************
 
-#***************************  3 directory deep paths  **************************
-
 # Plan to write script to enumerate out to a file a listing of directory paths
 # available in the cwd and below in the tree. want to set a flag for which
 # version/flags will be used for ls. as in ls -l ls -a etc.
 # need to find a way to flag or loop enum directory depth to go as deep as
 # needed without looping into non existent depths.
 
-# just a bit if test script to see if this method can work at all
-
-# don't think this is needed yet but set it anyway.
+# grab current working directory
 cwd=$(pwd)
 
 touch enum_Dir_List
