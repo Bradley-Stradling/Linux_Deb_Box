@@ -10,18 +10,23 @@
 #(")_(")  
 #*******************************************************************************
 
-# incomplete and broken as is !!!
+# working as is, but could do more with with this..
 
 # want to grab user input move to home directory locate the full path to the file
 # and return to the current working directory after outputing the files full 
 # location and name Possibly list all files with duplicate names
 # and their respective location? More work to be done.
 
+cwd=$(pwd)
+
+cd $HOME
+
 read -p "Please enter the name of the file you want to find. -->" file_Name
 
-# this might not be the way to do this but want to redirect output to variable
-locate *${file_Name}*
 
-find -type f -iname *$1*
+# this might not be the way to do this but want to redirect output to variable
+find * -name "*$1*" 2>/dev/null 
+
+cd $cwd
 
 
