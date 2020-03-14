@@ -39,3 +39,25 @@ echo "#***************************  3 directory deep paths  ********************
 ls -la /${cwd}/*/* >> enum_Dir_List
 echo "#***************************  4 directory deep paths  **************************" >> enum_Dir_List
 ls -la /${cwd}/*/*/* >> enum_Dir_List
+echo "#***************************  5 directory deep paths  **************************" >> enum_Dir_List
+ls -la /${cwd}/*/*/*/* >> enum_Dir_List
+echo "#***************************  6 directory deep paths  **************************" >> enum_Dir_List
+ls -la /${cwd}/*/*/*/*/* >> enum_Dir_List
+echo "#***************************  7 directory deep paths  **************************" >> enum_Dir_List
+ls -la /${cwd}/*/*/*/*/*/* >> enum_Dir_List
+echo "#***************************  8 directory deep paths  **************************" >> enum_Dir_List
+ls -la /${cwd}/*/*/*/*/*/*/* >> enum_Dir_List
+echo "#***************************  9 directory deep paths  **************************" >> enum_Dir_List
+ls -la /${cwd}/*/*/*/*/*/*/*/* >> enum_Dir_List
+echo "#*************************** 10 directory deep paths  **************************" >> enum_Dir_List
+ls -la /${cwd}/*/*/*/*/*/*/*/*/* >> enum_Dir_List
+echo "#*************************** 11 directory deep paths  **************************" >> enum_Dir_List
+ls -la /${cwd}/*/*/*/*/*/*/*/*/*/* >> enum_Dir_List
+echo "#*************************** 12 directory deep paths  **************************" >> enum_Dir_List
+ls -la /${cwd}/*/*/*/*/*/*/*/*/*/*/* >> enum_Dir_List
+echo "#*************************** 13 directory deep paths  **************************" >> enum_Dir_List
+ls -la /${cwd}/*/*/*/*/*/*/*/*/*/*/*/* >> enum_Dir_List
+echo "#*************************** 14 directory deep paths  **************************" >> enum_Dir_List
+ls -la /${cwd}/*/*/*/*/*/*/*/*/*/*/*/*/* >> enum_Dir_List
+echo "#*************************** 15 directory deep paths  **************************" >> enum_Dir_List
+ls -la /${cwd}/*/*/*/*/*/*/*/*/*/*/*/*/*/* >> enum_Dir_List
