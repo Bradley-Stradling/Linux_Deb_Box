@@ -11,7 +11,6 @@ repository.
 
 Refactoring of scripts ongoing, some may be broken at any time. 
 Should be tagged (# incomplete and untested !!!)
-But don't rely on me to tag what's not working right :P
 
 These scripts misused or in a broken or untested state may cause file loss. 
 You have been warned.
@@ -71,8 +70,7 @@ Work on getting Pack_Up_Setup flushed out and tested. needs to cleanse lines
 with source from aliases and scripts so it does not have to be done 
 manually when packing up the set-up.
 
-Scripts coming in future: (maybe)
-
+Scripts coming in future: 
 Resolution_set.sh - Write script to add new resolution to xrandr, 
 and set a source for the screenrez script to change to that resolution. 
 (See useful links for guide.)
@@ -86,4 +84,5 @@ Add_Alias is good to go.
 Back_Me_Up is good to go.
 Change_Work is good to go.
 Deploy_setup is working correctly but has error in output confirmation of file check.
+
 .......................End current production notes............................
