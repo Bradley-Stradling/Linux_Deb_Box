@@ -13,7 +13,6 @@ Refactoring of scripts ongoing, some may be broken at any time.
 Should be tagged (# incomplete and untested !!!)
 
 These scripts misused or in a broken or untested state may cause file loss. 
-You have been warned.
 
 --------------------------------Script list------------------------------------
 Add_Alias.sh - Prompts user input for a comment and an alias appends it to the
@@ -24,6 +23,7 @@ immediately available.)
 Back_Me_Up.sh - Copies the contents of the entire current directory to a new 
 directory in back up directory with the name of the passed argument. Meant to 
 back up files in current directory for instance snapshot a repo and date it.
+(maybe append date to passed name?)
 
 Change_Work.sh - Changes the variable source for gowork to change the current 
 focus directory. At will change of gowork alias that simply cd's to the 
@@ -40,7 +40,6 @@ Enum_User_Directory.sh - Enumerate all files and directories below the
 current working directory. (Busted and not even started really yet :P)
 
 Find_1_File.sh - Script to make finding a file easier. 
-(Busted and not even started really :P)
 
 Get_Linux_Info.sh - Script to pull some info about the current system and 
 either display on screen write it to a file in cwd or both.
@@ -55,10 +54,6 @@ permission to user only.
 Pack_Up_Setup - Loads up all scripts in scripts directory and aliases from local user on system 
 to repo and removes source lines from them. (Not tested or fully written)
 
-Resolution_Set.sh - Want to add a new resolution thats not shown in xrandr?
-Me too, hopefully this script will make that quick and easy. 
-(Busted and not even started really :P)
-
 Unzip_and_Move.sh - Needs refactor. But will ideally unzip all files in a 
 target directory and copy them a backup as the .zip still and unpacked to 
 the current working directory.
@@ -66,6 +61,7 @@ the current working directory.
 
 .........................Current production notes..............................
 Todo-
+Refactor Deploy_Setup.sh to make adding directories or files easier. (See comments)
 Work on getting Pack_Up_Setup flushed out and tested. needs to cleanse lines 
 with source from aliases and scripts so it does not have to be done 
 manually when packing up the set-up.
@@ -77,6 +73,8 @@ and set a source for the screenrez script to change to that resolution.
 
 Enum_User_Directory.sh - enumerate and list all files and directories within 
 the current working directory and below.
+
+Debian_Update.sh - not sure if auto update when called or used for a cron job.
 
 Testing script changes 3/10/20
 
