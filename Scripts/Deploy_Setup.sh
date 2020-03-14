@@ -42,9 +42,18 @@ then
   exit 1
 fi
 
+# may replace this section and the concatenating path section with
+# a method or loop that iterates based on list, so later in script method/loop
+# can use them to write the paths to source files based on the same lists, too much
+# code needs to be changed for my liking to add new directorys/files
+# should be able to get it such that adding a new directory/file requires simply 
+# adding to a list or two.
 # these currently help to name directories
 source_Dir=Sources
 test_Dir=Test_Boxs
+test_Dir1=1_Test
+test_Dir2=2_Test
+test_Dir3=3_Test
 scripts_Dir=My_Scripts
 back_Up_Dir=Back_Up_Files
 bashrc_Dir=Set-up
@@ -56,6 +65,9 @@ workz_File=Workpath.txt
 #concatenating paths to easier to work with variables
 path_Sources_Dir=${cwd}/${source_Dir}
 path_Test_Dir=${cwd}/${test_Dir}
+path_Test_Dir1=${cwd}/${test_Dir}/${test_Dir1}
+path_Test_Dir2=${cwd}/${test_Dir}/${test_Dir2}
+path_Test_Dir3=${cwd}/${test_Dir}/${test_Dir3}
 path_Scripts_Dir=${cwd}/${scripts_Dir}
 path_Back_Up_Dir=${cwd}/${back_Up_Dir}
 
@@ -66,6 +78,9 @@ list_Directories=(
 "${path_Scripts_Dir}"
 "${path_Back_Up_Dir}"
 "${path_Back_Up_Dir}/${bashrc_Dir}"
+"${path_Test_Dir1}"
+"${path_Test_Dir2}"
+"${path_Test_Dir3}"
 )
 
 # array of files to be created for iteration
@@ -89,11 +104,10 @@ done
 
 # lock down directories in home or root.
 # this may break this box depending on where deployment is launched from
-# needs further testing and likely if confirmation message
 # read -p "Do you want to set all directories under ${cwd} to user only read \
 # write? y/n -->" permission_Set
 
-#if [ $permission_Set == 'y' ]; # -eq may not be the right conditonal to use
+#if [ $permission_Set == 'y' ];
 #then
  # for directory in $(ls ${cwd});
   # do
@@ -116,9 +130,15 @@ for file in "${list_Files[@]}";
 done
 
 
+# this should be done with a method/loop that takes the below variables 
+# from arrays/lists of paths earlier including confirmation output
+# work to be done.
 # write variable for paths to path source file
 echo "source_Path=${path_Sources_Dir}" >> ${path_Sources_Dir}/${pathz_File}
 echo "test_Path=${path_Test_Dir}" >> ${path_Sources_Dir}/${pathz_File}
+echo "test_Path=${path_Test_Dir1}" >> ${path_Sources_Dir}/${pathz_File}
+echo "test_Path=${path_Test_Dir2}" >> ${path_Sources_Dir}/${pathz_File}
+echo "test_Path=${path_Test_Dir3}" >> ${path_Sources_Dir}/${pathz_File}
 echo "scripts_Path=${path_Scripts_Dir}" >> ${path_Sources_Dir}/${pathz_File}
 echo "back_Up_Files_Path=${path_Back_Up_Dir}" >> ${path_Sources_Dir}/${pathz_File}
 echo "repo_Path=${Repo_Path}" >> ${path_Sources_Dir}/${pathz_File}
