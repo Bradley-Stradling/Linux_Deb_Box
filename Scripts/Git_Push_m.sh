@@ -1,6 +1,6 @@
 #*******************************************************************************
 # (\_/)   Author: Bradley Stradling
-# (o.o)   Date of first revision: 3/9/20 (Refactoring ongoing)
+# (o.o)   Date of first revision: 3/14/20
 #(")_(")  Lincense: https://unlicense.org/
 #*******************************************************************************
 # (\_/)   Takes a comment for a new commit runs git add .
