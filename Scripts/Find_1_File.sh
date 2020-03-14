@@ -17,10 +17,10 @@
 # location and name Possibly list all files with duplicate names
 # and their respective location? More work to be done.
 
-read -p "Please enter the name of the file you want to find." file_Name
+read -p "Please enter the name of the file you want to find. -->" file_Name
 
 # this might not be the way to do this but want to redirect output to variable
-locate ${file_Name}
+locate *${file_Name}*
 
 find -type f -iname *$1*
 
