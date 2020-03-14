@@ -156,8 +156,15 @@ echo "# Added path to my scripts directorys. written to .bashrc"
 echo "export PATH=\"${path_Scripts_Dir}:\$PATH\" written to .bashrc"
 echo "source ${path_Sources_Dir}/${pathz_File} written to .bashrc"
 
+# move current .bash_aliases if it already exists to back up directory.
+if [ -f .bash_aliases ];
+  then
+  echo "Moved previous .bash_aliases to ${path_Back_Up_Dir}/${bashrc_Dir}"
+  echo ""
+  mv .bash_aliases ${path_Back_Up_Dir}/${bashrc_Dir}
+fi
 
-# add aliases file
+# add aliases file from repo
 cp ${Repo_Path}/aliases .bash_aliases
 # confirm to terminal aliases file copied
 if [ -f .bash_aliases ];
