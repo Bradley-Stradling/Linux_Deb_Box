@@ -11,8 +11,6 @@ source /home/bread/Sources/Paths.txt
 #(")_(")  
 #*******************************************************************************
 
-# incomplete and untested as is !!!
-
 cwd=$(pwd)
 
 read -p "Please enter the full path to copy the contents of the current working \
