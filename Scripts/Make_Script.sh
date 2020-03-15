@@ -10,10 +10,6 @@
 #(")_(")  and set permissions on the file.
 #*******************************************************************************
 
-# incomplete and untested as is !!!
-# needs more verbosity of output of what script is doing.
-# need to add output of author and date of first revision
-
 INPUT1=$1 # name for new script
 
 read -p "Create new script with filename of ${1}.sh? y/n -->" create
