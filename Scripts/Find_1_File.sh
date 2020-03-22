@@ -21,10 +21,8 @@ cwd=$(pwd)
 
 cd $HOME
 
-read -p "Please enter the name of the file you want to find. -->" file_Name
+read -p "Please enter the name of the file you want to find. --> " file_Name
 
-
-# this might not be the way to do this but want to redirect output to variable
 find * -name "*$1*" 2>/dev/null 
 
 cd $cwd
