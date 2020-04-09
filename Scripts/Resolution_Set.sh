@@ -10,11 +10,7 @@
 #(")_(")  added to resolution list. Script should be able to create any though.
 #*******************************************************************************
 
-# Place holder for future work to be done.
-
-# want a quick and easy way to add a new resolution setting to a box.
-
-# need to play with xrandr commands and flags before a script is written.
+# incomplete and untested as is
 
 echo -p "Do you want to add 1920px1080p 60hz to xrandr? y/n-->" add_Rez
 
