@@ -25,4 +25,5 @@ if [ -d ${werkpath} ];
 fi
 
 # reset bash shell env
+reset bash
 exec bash
