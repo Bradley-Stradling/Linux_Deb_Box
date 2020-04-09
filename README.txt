@@ -12,7 +12,8 @@ repository.
 Refactoring of scripts ongoing, some may be broken at any time. 
 Should be tagged (# incomplete and untested !!!)
 
-These scripts misused or in a broken or untested state may cause file loss. 
+These scripts misused, in a broken or untested state, or unmonitored may 
+cause file loss. 
 
 --------------------------------Script list------------------------------------
 Add_Alias.sh - Prompts user input for a comment and an alias appends it to the
@@ -33,8 +34,7 @@ Copy_Contents_Move.sh - Copies the entire contents of the current directory
 to the passed target path.
 
 Deploy_Setup.sh - Creates a few directories and sources their local paths 
-to aliases, bashrc, and scripts to ease, after targeting the path to the 
-pulled repo.
+to aliases, bashrc, and scripts to ease setting up a new debian system.
 
 Enum_User_Directory.sh - Enumerate all files and directories below the 
 current working directory. (Busted and not even started really yet :P)
@@ -51,8 +51,8 @@ Make_Script.sh - Creates a new script with the passed argument as a name with
 some comment header output pregenerated to the file as well as sets executable 
 permission to user only.
 
-Pack_Up_Setup - Loads up all scripts in scripts directory and aliases from local user on system 
-to repo and removes source lines from them. (Not tested or fully written)
+Pack_Up_Setup - This script has been removed to lower the chance of malicious 
+code hiding in deployment.
 
 Unzip_and_Move.sh - Needs refactor. But will ideally unzip all files in a 
 target directory and copy them a backup as the .zip still and unpacked to 
