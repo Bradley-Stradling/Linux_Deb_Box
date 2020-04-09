@@ -54,6 +54,8 @@ permission to user only.
 Pack_Up_Setup - This script has been removed to lower the chance of malicious 
 code hiding in deployment.
 
+Update.sh - Will run updates for the the system.
+
 Unzip_and_Move.sh - Needs refactor. But will ideally unzip all files in a 
 target directory and copy them a backup as the .zip still and unpacked to 
 the current working directory.
@@ -61,20 +63,17 @@ the current working directory.
 
 .........................Current production notes..............................
 Todo-
-Refactor Deploy_Setup.sh to make adding directories or files easier. (See comments)
-Work on getting Pack_Up_Setup flushed out and tested. needs to cleanse lines 
-with source from aliases and scripts so it does not have to be done 
-manually when packing up the set-up.
+Clean up and test all scripts in repo.
 
-Scripts coming in future: 
-Resolution_set.sh - Write script to add new resolution to xrandr, 
-and set a source for the screenrez script to change to that resolution. 
-(See useful links for guide.)
+Test:
+Resolution_set.sh - Written to add 1920px1080p 60 hz to xrandr and add the mode
+to the named output device.
 
 Enum_User_Directory.sh - enumerate and list all files and directories within 
 the current working directory and below.
 
-Debian_Update.sh - not sure if auto update when called or used for a cron job.
+Update.sh - Will check if root and run as root if not root.
+will likely change to running as sudo only.
 
 Testing script changes 3/10/20
 
