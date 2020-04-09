@@ -15,3 +15,21 @@
 # want a quick and easy way to add a new resolution setting to a box.
 
 # need to play with xrandr commands and flags before a script is written.
+
+echo -p "Do you want to add 1920px1080p 60hz to xrandr? y/n-->" add_Rez
+
+if [ $setup_Check != 'y' ];
+then
+echo "Alright then don't run the script >.> exiting..."
+echo -e " (\_/)\n (v.v) Sad Rabbit...\n(\")_(\")"
+exit 1
+fi
+
+echo -e "Executing \"xrandr --newmode "1920x1080_60.00"  172.80  1920 2040 2248 2576  1080 1081 1084 1118  -HSync +Vsync\""
+
+xrandr --newmode "1920x1080_60.00"  172.80  1920 2040 2248 2576  1080 1081 1084 1118  -HSync +Vsync
+
+echo -p "Please enter the name of the output in xrandr to add the new mode to. -->" mode_Name
+
+echo -e "executing \"xrandr --addmode ${mode_Name} "1920x1080_60.00\""
+
