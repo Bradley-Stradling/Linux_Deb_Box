@@ -12,6 +12,8 @@
 
 # script tested and debugged works as is :3
 
+# needs to be adjusted so terminal doesnt have to be reloaded.
+
 
 read -p "Enter the full path to the new work spot ==>" werkpath
 
@@ -25,5 +27,4 @@ if [ -d ${werkpath} ];
 fi
 
 # reset bash shell env
-reset bash
 exec bash
