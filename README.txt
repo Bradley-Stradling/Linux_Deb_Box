@@ -65,6 +65,10 @@ the current working directory.
 Todo-
 Clean up and test all scripts in repo.
 
+Add lines to deploy set-up to source a variable for xrandr scripts to increase
+automation of ensuring 1920px1080p 60hz, or completely automating it, into
+the deploy set-up.
+
 Test:
 Resolution_set.sh - Written to add 1920px1080p 60 hz to xrandr and add the mode
 to the named output device.
