@@ -12,12 +12,12 @@ repository.
 Refactoring of scripts ongoing, some may be broken at any time. 
 Should be tagged (# incomplete and untested !!!)
 
-These scripts misused, in a broken or untested state, or unmonitored may 
+These scripts misused, in a broken, untested state, or unmonitored may 
 cause file loss. 
 
 --------------------------------Script list------------------------------------
-Add_Alias.sh - Prompts user input for a comment and an alias appends it to the
-.bash_aliases in the users home directory and returns to whatever directory 
+Add_Alias.sh - Prompts user input for a comment and an alias the appends it to 
+the .bash_aliases in the users home directory and returns to whatever directory 
 the user was in previously. (Also reexecutes the shell so new alias is 
 immediately available.)
 
@@ -33,57 +33,31 @@ variables target path.
 Copy_Contents_Move.sh - Copies the entire contents of the current directory 
 to the passed target path.
 
-Deploy_Setup.sh - Creates a few directories and sources their local paths 
-to aliases, bashrc, and scripts to ease setting up a new debian system.
+Deploy_Setup.sh - Deploys the contents of this repo for immediate use.
+Creates a few directories and sources their local paths to aliases, bashrc, 
+and scripts to ease setting up a new debian system.
 
 Enum_User_Directory.sh - Enumerate all files and directories below the 
-current working directory. (Busted and not even started really yet :P)
-
-Find_1_File.sh - Script to make finding a file easier. 
+current working directory. (Messy)
 
 Get_Linux_Info.sh - Script to pull some info about the current system and 
 either display on screen write it to a file in cwd or both.
 
 Harden_Etc.sh - Sets permissions to root only on some /etc files. 
-Must be run as root. Needs further checking of user status and location.
+Must be run as root. (Needs further checking of user status and location.)
 
 Make_Script.sh - Creates a new script with the passed argument as a name with 
-some comment header output pregenerated to the file as well as sets executable 
-permission to user only.
+my comment header output pregenerated to the file as well as prompts to 
+set executable permission to user only.
 
-Pack_Up_Setup - This script has been removed to lower the chance of malicious 
-code hiding in deployment.
+Resolution_Set.sh - adds 1920x1080p to xrandr with the same mode name as
+the one called in the alias "screenrez". (incomplete untested)
 
-Update.sh - Will run updates for the the system.
+Update.sh - Will run updates for the the system must be have sudoer
+permissions. (Untested)
 
 Unzip_and_Move.sh - Needs refactor. But will ideally unzip all files in a 
 target directory and copy them a backup as the .zip still and unpacked to 
 the current working directory.
+
 ------------------------------Script list end----------------------------------
-
-.........................Current production notes..............................
-Todo-
-Clean up and test all scripts in repo.
-
-Add lines to deploy set-up to source a variable for xrandr scripts to increase
-automation of ensuring 1920px1080p 60hz, or completely automating it, into
-the deploy set-up.
-
-Test:
-Resolution_set.sh - Written to add 1920px1080p 60 hz to xrandr and add the mode
-to the named output device.
-
-Enum_User_Directory.sh - enumerate and list all files and directories within 
-the current working directory and below.
-
-Update.sh - Will check if root and run as root if not root.
-will likely change to running as sudo only.
-
-Testing script changes 3/10/20
-
-Add_Alias is good to go. 
-Back_Me_Up is good to go.
-Change_Work is good to go.
-Deploy_setup is working correctly but has error in output confirmation of file check.
-
-.......................End current production notes............................
