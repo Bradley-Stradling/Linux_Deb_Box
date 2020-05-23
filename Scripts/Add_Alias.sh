@@ -34,7 +34,8 @@ read -p "what will this alias do? -->" alias_Do
 
 echo " "
 echo "# ${comment} will be written to .bash_aliases"
-echo -e "alias ${alias_Call}='${alias_Do}' will be written to .bash_aliases"
+echo -e "alias ${alias_Call}='${alias_Do}'"
+echo "The above will will be written to the end of .bash_aliases"
 read -p "Does this look correct? y/n -->" check
 
 if [ ${check} == 'y' ];
