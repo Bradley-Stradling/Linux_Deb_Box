@@ -4,7 +4,7 @@
 #(")_(")             Lincense: https://unlicense.org/                    (")_(")
 #*******************************************************************************
 Aliases and scripts for my linux debian bash set-up imported and exported via 
-Deploy_Setup.sh and Pack_Up_Setup.sh.
+"Deploy_Setup.sh" and removed and bash env restored by "Clear_Deployment.sh".
 
 Unlicense applies to all files that are tagged with it directly in this 
 repository. Links to websites are not my sites in any manner.
@@ -25,11 +25,14 @@ immediately available.)
 Back_Me_Up.sh - Copies the contents of the entire current directory to a new 
 directory in back up directory with the name of the passed argument. Meant to 
 back up files in current directory for instance snapshot a repo and date it.
-(maybe append date to passed name?)
 
 Change_Work.sh - Changes the variable source for gowork to change the current 
 focus directory. At will change of gowork alias that simply cd's to the 
 variables target path.
+
+Clear_Deployment.sh - Deletes all directories and their contents deployed 
+by "Deploy_Setup.sh", after restoring bash env and aliases file from backup.
+(incomplete and untested)
 
 Copy_Contents_Move.sh - Copies the entire contents of the current directory 
 to the passed target path.
