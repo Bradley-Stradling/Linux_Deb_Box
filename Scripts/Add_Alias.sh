@@ -28,7 +28,7 @@ exit 1
 fi
 
 # need to check that spaces in input and full string is passed to comment variable
-read -p "What will this new alias do? -->" comment
+read -p "What will this new alias do? (comment) -->" comment
 read -p "What will call this alias? -->" alias_Call
 read -p "what will this alias do? -->" alias_Do
 
