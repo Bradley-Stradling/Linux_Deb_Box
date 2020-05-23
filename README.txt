@@ -7,15 +7,16 @@ Aliases and scripts for my linux debian bash set-up imported and exported via
 Deploy_Setup.sh and Pack_Up_Setup.sh.
 
 Unlicense applies to all files that are tagged with it directly in this 
-repository.
+repository. Links to websites are not my sites in any manner.
 
-Refactoring of scripts ongoing, some may be broken at any time. 
-Should be tagged (# incomplete and untested !!!)
+Refactoring of scripts ongoing, some may be broken at any time. Should be 
+updated in list. (Still only human for now though so...)
 
 These scripts misused, in a broken, untested state, or unmonitored may 
 cause file loss. 
 
 --------------------------------Script list------------------------------------
+
 Add_Alias.sh - Prompts user input for a comment and an alias the appends it to 
 the .bash_aliases in the users home directory and returns to whatever directory 
 the user was in previously. (Also reexecutes the shell so new alias is 
@@ -54,10 +55,8 @@ Resolution_Set.sh - adds 1920x1080p to xrandr with the same mode name as
 the one called in the alias "screenrez". (incomplete untested)
 
 Update.sh - Will run updates for the the system must be have sudoer
-permissions. (Untested)
+permissions. (untested)
 
 Unzip_and_Move.sh - Needs refactor. But will ideally unzip all files in a 
 target directory and copy them a backup as the .zip still and unpacked to 
-the current working directory.
-
-------------------------------Script list end----------------------------------
+the current working directory. (incomplete untested)
