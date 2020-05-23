@@ -38,29 +38,38 @@ https://blogs.sans.org/pen-testing/files/2016/05/PowerShellCheatSheet_v41.pdf
 https://wiki.wireshark.org/DisplayFilters
 https://unit42.paloaltonetworks.com/unit42-customizing-wireshark-changing-column-display/
 
+# web app to run and visualize a traceroute
 https://stefansundin.github.io/traceroute-mapper/
 
+# decently long list of cheat sheets for info sec
 https://www.peerlyst.com/posts/the-complete-list-of-infosec-related-cheat-sheets-claus-cramon
 
+# DNS record help
 https://simpledns.plus/help/dns-record-types
 
+# A nmap cheatsheet
 https://www.stationx.net/nmap-cheat-sheet/
 
-Motherload of forensics and IR.
+# Motherload of forensics and IR.
 https://www.jaiminton.com/cheatsheet/DFIR/#
 
-How to store all terminal outputs
+# How to store all terminal outputs
 https://unix.stackexchange.com/questions/200637/save-all-the-terminal-output-to-a-file
 
-Open ssl cheat sheet
+# Open ssl cheat sheet
 https://www.freecodecamp.org/news/openssl-command-cheatsheet-b441be1e8c4a/
 
+# list of some beats for ELK stacks
 https://www.elastic.co/guide/en/beats/libbeat/current/getting-started.html
 
+# gliffy app for making network diagrams
 https://www.gliffy.com/examples/network-diagrams
 
+# Load of coding tutorials
 https://www.w3schools.com/default.asp
 
+# Nice list of sql injections
 https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/SQL%20Injection/MySQL%20Injection.md
 
+# upgrading dummy shells
 https://blog.ropnop.com/upgrading-simple-shells-to-fully-interactive-ttys/
