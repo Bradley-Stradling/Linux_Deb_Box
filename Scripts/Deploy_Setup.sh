@@ -122,6 +122,7 @@ for file in "${list_Files[@]}";
   do
   touch ${file}
   if [ -e {$file} ]; # if check for file is not working in this implementation...
+  # maybe try -f?
     then
     echo "${file} has been created successfully!"
     else
