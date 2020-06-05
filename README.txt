@@ -4,7 +4,7 @@
 #(")_(")             Lincense: https://unlicense.org/                    (")_(")
 #*******************************************************************************
 Aliases and scripts for my linux debian bash set-up imported and exported via 
-"Deploy_Setup.sh" and removed and bash env restored by "Clear_Deployment.sh".
+"Deploy_Setup.sh".
 
 Unlicense applies to all files that are tagged with it directly in this 
 repository. Links to websites are not my sites in any manner.
@@ -13,7 +13,12 @@ Refactoring of scripts ongoing, some may be broken at any time. Should be
 updated in list. (Still only human for now though so...)
 
 These scripts misused, in a broken, untested state, or unmonitored may 
-cause file loss. 
+cause file loss.
+
+This repo may be cloned or pulled to a debian based linux system. Copying the 
+"Deploy_Setup.sh" to the desired user account home directory and executing will
+prompt a confirmation and the path to the repo folder, then deploy my aliases
+and scripts to the enviroment sourcing the local paths where needed.
 
 --------------------------------Script list------------------------------------
 
@@ -29,10 +34,6 @@ back up files in current directory for instance snapshot a repo and date it.
 Change_Work.sh - Changes the variable source for gowork to change the current 
 focus directory. At will change of gowork alias that simply cd's to the 
 variables target path.
-
-Clear_Deployment.sh - Deletes all directories and their contents deployed 
-by "Deploy_Setup.sh", after restoring bash env and aliases file from backup.
-(incomplete and untested)
 
 Copy_Contents_Move.sh - Copies the entire contents of the current directory 
 to the passed target path.
