@@ -3,8 +3,7 @@
 # (o.o)                 Title: Linux_Deb_Repo                             (*.*)
 #(")_(")             Lincense: https://unlicense.org/                    (")_(")
 #*******************************************************************************
-Aliases and scripts for my linux debian bash set-up imported and exported via 
-"Deploy_Setup.sh".
+Aliases and scripts for my linux debian bash set-up imported via "Deploy_Setup.sh".
 
 Unlicense applies to all files that are tagged with it directly in this 
 repository. Links to websites are not my sites in any manner.
