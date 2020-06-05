@@ -12,9 +12,6 @@ repository. Links to websites are not my sites in any manner.
 Refactoring of scripts ongoing, some may be broken at any time. Should be 
 updated in list. (Still only human for now though so...)
 
-These scripts misused, in a broken, untested state, or unmonitored may 
-cause file loss.
-
 This repo may be cloned or pulled to a debian based linux system. Copying the 
 "Deploy_Setup.sh" to the desired user account home directory and executing will
 prompt a confirmation and the path to the repo folder, then deploy my aliases
