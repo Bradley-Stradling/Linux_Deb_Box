@@ -13,7 +13,7 @@
 # incomplete and untested as is
 
 
-echo -p "Do you want to add 1920px1080p 60hz to xrandr? y/n-->" setup_Check
+read -p "Do you want to add 1920px1080p 60hz to xrandr? y/n-->" setup_Check
 
 if [ $setup_Check != 'y' ];
 then
@@ -22,13 +22,14 @@ echo -e " (\_/)\n (v.v) Sad Rabbit...\n(\")_(\")"
 exit 1
 fi
 
-echo -e "Executing \"xrandr --newmode "1920x1080_60.00"  172.80  1920 2040 2248 2576  1080 1081 1084 1118  -HSync +Vsync\""
+echo -e "Executing \"xrandr --newmode "1920x1080"  172.80  1920 2040 2248 2576  1080 1081 1084 1118  -HSync +Vsync\""
 
-xrandr --newmode 1920x1080_60.00 172.80  1920 2040 2248 2576  1080 1081 1084 1118  -HSync +Vsync
+xrandr --newmode 1920x1080 172.80  1920 2040 2248 2576  1080 1081 1084 1118  -HSync +Vsync
 
-echo -p "Please enter the name of the output in xrandr to add the new mode to. -->" mode_Name
+read -p "Please enter the name of the output in xrandr to add the new mode to. -->" output_Name
 
-echo -e "Executing \"xrandr --addmode ${mode_Name} "1920x1080_60.00\""
+echo -e "Executing \"xrandr --addmode ${output_Name} \"1920x1080\"\""
 
-xrandr --addmode ${mode_Name} "1920x1080_60.00"
+xrandr --addmode ${output_Name} "1920x1080"
 
+echo -e "You may now use \"xrandr --output ${output_Name} --mode 1920x1080\" to set the display to 1920x1080"
