@@ -51,8 +51,7 @@ Make_Script.sh - Creates a new script with the passed argument as a name with
 my comment header output pregenerated to the file as well as prompts to 
 set executable permission to user only.
 
-Resolution_Set.sh - adds 1920x1080p to xrandr with the same mode name as
-the one called in the alias "screenrez". (incomplete untested)
+Resolution_Set.sh - adds 1920x1080p to xrandr.
 
 Update.sh - Will run updates for the the system must be have sudoer
 permissions. (untested)
