@@ -10,8 +10,7 @@
 #(")_(")  added to resolution list. Script should be able to create any though.
 #*******************************************************************************
 
-# incomplete and untested as is
-
+# Script is functional as is :3
 
 read -p "Do you want to add 1920px1080p 60hz to xrandr? y/n-->" setup_Check
 
