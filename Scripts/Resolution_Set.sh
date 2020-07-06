@@ -2,7 +2,7 @@
 
 #*******************************************************************************
 # (\_/)   Author: Bradley Stradling
-# (o.o)   Date of first revision: 3/6/20
+# (o.o)   Date of recent revision: 7/4/20
 #(")_(")  Lincense: https://unlicense.org/
 #*******************************************************************************
 # (\_/)   Script to create and set a new mode to xrandr for a resolution not
