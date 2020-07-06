@@ -7,7 +7,7 @@
 #*******************************************************************************
 # (\_/)   Script to create and set a new mode to xrandr for a resolution not
 # (*.*)   already in it's current scope. Specifically want to have 1920x1080
-#(")_(")  added to resolution list. Script should be able to create any though.
+#(")_(")  added to resolution list. 
 #*******************************************************************************
 
 # Script is functional as is :3
