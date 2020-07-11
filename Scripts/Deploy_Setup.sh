@@ -12,8 +12,6 @@
 #(")_(")  root account? Needs testing. Wherever the target .bashrc is.
 #*******************************************************************************
 
-# Need to look into making functions for some sections as code is getting long
-# May want to look into creating directories based on prompt input
 
 # Grab current working directory and store in variable cwd
 cwd=$(pwd)
