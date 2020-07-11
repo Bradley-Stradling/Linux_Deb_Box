@@ -18,7 +18,7 @@ and scripts to the enviroment sourcing the local paths where needed.
 
 --------------------------------Script list------------------------------------
 
-Add_Alias.sh - Prompts user input for a comment and an alias the appends it to 
+Add_Alias.sh - Prompts user input for a comment and an alias then appends it to 
 the .bash_aliases in the users home directory and returns to whatever directory 
 the user was in previously. (Also reexecutes the shell so new alias is 
 immediately available.)
