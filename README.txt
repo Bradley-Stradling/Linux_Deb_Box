@@ -39,7 +39,7 @@ Creates a few directories and sources their local paths to aliases, bashrc,
 and scripts to ease setting up a new debian system.
 
 Enum_User_Directory.sh - Enumerate all files and directories below the 
-current working directory. (Messy)
+current working directory. (needs parsing)
 
 Get_Linux_Info.sh - Script to pull some info about the current system and 
 either display on screen write it to a file in cwd or both.
@@ -57,5 +57,5 @@ Update.sh - Will run updates for the the system must be have sudoer
 permissions. (untested)
 
 Unzip_and_Move.sh - Needs refactor. But will ideally unzip all files in a 
-target directory and copy them a backup as the .zip still and unpacked to 
+target directory and copy them a backup as the .zip still and unpack to 
 the current working directory. (incomplete untested)
