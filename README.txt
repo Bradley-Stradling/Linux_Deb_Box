@@ -11,9 +11,6 @@ Why do something manually if it can be automated. If you have to do it more than
 Unlicense applies to all files that are tagged with it directly in this 
 repository. Links to websites are not my sites in any manner.
 
-Refactoring of scripts ongoing, some may be broken at any time. Should be 
-updated in list.
-
 This repo may be cloned or pulled to a debian based linux system. Copying the 
 "Deploy_Setup.sh" to the desired user account home directory and executing will
 prompt a confirmation and the path to the repo folder, then deploy my aliases
