@@ -3,7 +3,8 @@
 # (o.o)                 Title: Linux_Deb_Repo                             (*.*)
 #(")_(")             Lincense: https://unlicense.org/                    (")_(")
 #*******************************************************************************
-Aliases and scripts for my linux debian bash set-up imported via "Deploy_Setup.sh".
+Aliases and scripts for my linux debian bash user enviroment set-up imported 
+via "Deploy_Setup.sh".
 
 Why do something manually if it can be automated. If you have to do it more than
 1 time, the effort to automate it is always worth.
