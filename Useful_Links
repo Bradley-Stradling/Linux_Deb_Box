@@ -34,6 +34,9 @@ https://www.autopsy.com/support/training/covid-19-free-autopsy-training/
 # Powershell scripting cheat sheet.
 https://blogs.sans.org/pen-testing/files/2016/05/PowerShellCheatSheet_v41.pdf
 
+# windows enum script
+https://github.com/absolomb/WindowsEnum/blob/master/WindowsEnum.ps1
+
 # Some stuff on wireshark filters
 https://wiki.wireshark.org/DisplayFilters
 https://unit42.paloaltonetworks.com/unit42-customizing-wireshark-changing-column-display/
