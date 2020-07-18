@@ -6,9 +6,6 @@
 Aliases and scripts for my linux debian bash user enviroment set-up imported 
 via "Deploy_Setup.sh".
 
-Why do something manually if it can be automated. If you have to do it more than
-1 time, the effort to automate it is often worth it.
-
 Unlicense applies to all files that are tagged with it directly in this 
 repository. Links to websites are not my sites in any manner.
 
