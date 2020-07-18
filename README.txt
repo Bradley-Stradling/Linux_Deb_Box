@@ -58,7 +58,7 @@ Update.sh - Will run updates for the the system must be have sudoer
 permissions. (untested)
 
 Unzip_and_Move.sh - Needs refactor. But will ideally unzip all files in a 
-target directory and copy them a backup as the .zip still and unpack to 
+target directory and copy a backup as the .zip still and unpack to 
 the current working directory. (incomplete untested)
 
 Pcapng_to_pcap.sh - Lickity split script to convert pcapng to pcap.
