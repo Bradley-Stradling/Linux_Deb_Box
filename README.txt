@@ -52,6 +52,9 @@ Make_Script.sh - Creates a new script with the passed argument as a name with
 my comment header output pregenerated to the file as well as prompts to 
 set executable permission to user only.
 
+NVM_Installer.sh - Script to install/uninstall networkminer and dependancies 
+on a debian based system. (incomplete untested)
+
 Resolution_Set.sh - adds 1920x1080p to xrandr.
 
 Update.sh - Will run updates for the the system must be have sudoer
@@ -60,3 +63,6 @@ permissions. (untested)
 Unzip_and_Move.sh - Needs refactor. But will ideally unzip all files in a 
 target directory and copy them a backup as the .zip still and unpack to 
 the current working directory. (incomplete untested)
+
+Pcapng_to_pcap.sh - Lickity split script to convert pcapng to pcap.
+(incomplete untested)
