@@ -8,15 +8,13 @@
 #(")_(")  Lincense: https://unlicense.org/
 #*******************************************************************************
 # (\_/)   This script is intended to be run after pulling the repo to a new box
-# (*.*)   or account. Should be run from home directory? Could be used for a
-#(")_(")  root account? Needs testing. Wherever the target .bashrc is.
+# (*.*)   or account. Replaces the bash_aliases file, and appends an export to
+#(")_(")  add the scripts folder to path.
 #*******************************************************************************
 
 
 # Grab current working directory and store in variable cwd
 cwd=$(pwd)
-
-# Need to add prompt to ask for dependancies before script run y/n
 
 read -p "is the current working directory of ${cwd} where you want to \
 deploy set-up? y/n -->" setup_Check
@@ -40,12 +38,6 @@ then
   exit 1
 fi
 
-# may replace this section and the concatenating path section with
-# a method or loop that iterates based on list, so later in script method/loop
-# can use them to write the paths to source files based on the same lists, too much
-# code needs to be changed for my liking to add new directorys/files
-# should be able to get it such that adding a new directory/file requires simply 
-# adding to a list or two.
 # these currently help to name directories
 source_Dir=Sources
 test_Dir=Test_Boxs
@@ -100,20 +92,6 @@ do
     fi
 done
 
-# lock down directories in home or root.
-# this may break this box depending on where deployment is launched from
-# read -p "Do you want to set all directories under ${cwd} to user only read \
-# write? y/n -->" permission_Set
-
-#if [ $permission_Set == 'y' ];
-#then
- # for directory in $(ls ${cwd});
-  # do
-   # chmod 600 ${path_Scripts_Dir}/${directory}
-  #  echo "Permission set to ${directory} to user only read write"
- # done
-#fi  
-
 echo " "
 
 for file in "${list_Files[@]}";
@@ -127,7 +105,6 @@ for file in "${list_Files[@]}";
     echo "${file} was not created sucessfully :("
   fi
 done
-
 
 # this should be done with a method/loop that takes the below variables 
 # from arrays/lists of paths earlier including confirmation output
@@ -227,5 +204,3 @@ do
 chmod 700 ${path_Scripts_Dir}/$script
 echo "Permission set to ${path_Scripts_Dir}/$script to user only read write execute"
 done
-
-# need to add removal of common unwanted directories
