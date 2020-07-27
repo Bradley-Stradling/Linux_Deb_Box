@@ -11,7 +11,7 @@ repository. Links to websites are not my sites in any manner.
 
 This repo may be cloned or pulled to a debian based linux system. Copying the 
 "Deploy_Setup.sh" to the desired user account home directory and executing will
-prompt a confirmation and the path to the repo folder, then deploy my aliases
+prompt for a confirmation and the path to the repo folder, then deploy my aliases
 and scripts to the enviroment sourcing the local paths where needed.
 
 --------------------------------Script list------------------------------------
@@ -40,7 +40,7 @@ Enum_User_Directory.sh - Enumerate all files and directories below the
 current working directory. (needs parsing)
 
 Get_Linux_Info.sh - Script to pull some info about the current system and 
-either display on screen write it to a file in cwd or both.
+either display on screen, write it to a file in cwd or both.
 
 Harden_Etc.sh - Sets permissions to root only on some /etc files. 
 Must be run as root. (Needs further checking of user status and location.)
