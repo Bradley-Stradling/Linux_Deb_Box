@@ -52,7 +52,8 @@ set executable permission to user only.
 NVM_Installer.sh - Script to install/uninstall networkminer and dependancies 
 on a debian based system. (incomplete untested)
 
-Resolution_Set.sh - adds 1920x1080p to xrandr.
+Resolution_Set.sh - adds 1920x1080p to xrandr. Super useful for virtual
+systems!
 
 Update.sh - Will run updates for the the system must be have sudoer
 permissions. (untested)
