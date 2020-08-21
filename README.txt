@@ -73,3 +73,12 @@ the current working directory. (incomplete untested)
 
 Pcapng_to_pcap.sh - Lickity split script to convert pcapng to pcap.
 (incomplete untested)
+
+---------------------------------- FUTURE -------------------------------------
+
+Determine what common security or CTF tools kali is missing and add a script to
+get them all installed.
+
+Determine baseline security tools needed for penetration testing and create a
+script to get them installed to Ubuntu or a less security oriented dstribution,
+for quick and easy Ubunhack, or Minty Hacks?
