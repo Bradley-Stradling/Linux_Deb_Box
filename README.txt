@@ -14,6 +14,15 @@ This repo may be cloned or pulled to a debian based linux system. Copying the
 prompt for a confirmation and the path to the repo folder, then deploy my aliases
 and scripts to the enviroment sourcing the local paths where needed.
 
+Feel free to clone and make use of this repo on your own, you could replace 
+the entire alias file, change what directories are created, add new scripts
+and reupload to your own repo and have access to your debian setup from
+anywhere with an internet connection.
+
+A little POC or walkthrough (if we can bare to call it a walkthrough)
+
+https://youtu.be/6dLt1Ke5G74
+
 --------------------------------Script list------------------------------------
 
 Add_Alias.sh - Prompts user input for a comment and an alias then appends it to 
