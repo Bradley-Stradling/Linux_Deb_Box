@@ -19,9 +19,7 @@ the entire alias file, change what directories are created, add new scripts
 and reupload to your own repo and have access to your debian setup from
 anywhere with an internet connection.
 
-A little POC or walkthrough (if we can bare to call it a walkthrough)
-
-https://youtu.be/6dLt1Ke5G74
+A little POC (https://youtu.be/6dLt1Ke5G74)
 
 --------------------------------Script list------------------------------------
 
@@ -45,14 +43,8 @@ Deploy_Setup.sh - Deploys the contents of this repo for immediate use.
 Creates a few directories and sources their local paths to aliases, bashrc, 
 and scripts to ease setting up a new debian system.
 
-Enum_User_Directory.sh - Enumerate all files and directories below the 
-current working directory. (needs parsing)
-
 Get_Linux_Info.sh - Script to pull some info about the current system and 
 either display on screen, write it to a file in cwd or both.
-
-Harden_Etc.sh - Sets permissions to root only on some /etc files. 
-Must be run as root. (Needs further checking of user status and location.)
 
 Make_Script.sh - Creates a new script with the passed argument as a name with 
 my comment header output pregenerated to the file as well as prompts to 
@@ -64,20 +56,12 @@ on a debian based system. (incomplete untested)
 Resolution_Set.sh - adds 1920x1080p to xrandr. Super useful for virtual
 systems!
 
-Update.sh - Will run updates for the the system must be have sudoer
-permissions. (untested)
-
-Unzip_and_Move.sh - Needs refactor. But will ideally unzip all files in a 
-target directory and copy a backup as the .zip still and unpack to 
-the current working directory. (incomplete untested)
-
 Pcapng_to_pcap.sh - Lickity split script to convert pcapng to pcap.
-(incomplete untested)
 
 ---------------------------------- FUTURE -------------------------------------
 
-Determine what common security or CTF tools kali is missing and add a script to
-get them all installed.
+Scripts to configure common linux system admin and security functions, password
+policies, file permissions, etc.
 
 Determine baseline security tools needed for penetration testing and create a
 script to get them installed to Ubuntu or a less security oriented dstribution,
