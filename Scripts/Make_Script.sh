@@ -10,8 +10,13 @@
 #(")_(")  and set permissions on the file.
 #*******************************************************************************
 
-INPUT1=$1 # name for new script
+INPUT1=$1
 
+if [ -z $1 ];
+then
+  echo "Please run the script again with a name for the new script passed."
+  exit 1
+fi
 read -p "Create new script with filename of ${1}.sh? y/n -->" create
 
 if [ ${create} == 'y' ];
