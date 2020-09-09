@@ -10,12 +10,8 @@
 #(")_(")  the back up directory.
 #*******************************************************************************
 
-# tested and debugged works :3
-
-# name of new back up directory
 INPUT=$1
 
-# if input string is empty error message and exit script
 if [ -z $1 ];
 then
   echo "Please run the script again with a name for the backup directory passed."
