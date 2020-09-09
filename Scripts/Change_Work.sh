@@ -10,11 +10,6 @@
 #(")_(")  
 #*******************************************************************************
 
-# script tested and debugged works as is :3
-
-# needs to be adjusted so terminal doesnt have to be reloaded.
-
-
 read -p "Enter the full path to the new work spot ==>" werkpath
 
 if [ -d ${werkpath} ];
@@ -26,5 +21,4 @@ if [ -d ${werkpath} ];
     exit 1
 fi
 
-# reset bash shell env
 exec bash
