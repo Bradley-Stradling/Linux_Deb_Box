@@ -10,8 +10,6 @@
 #(")_(")  added to resolution list. 
 #*******************************************************************************
 
-# Script is functional as is :3
-
 read -p "Do you want to add 1920px1080p 60hz to xrandr? y/n-->" setup_Check
 
 if [ $setup_Check != 'y' ];
