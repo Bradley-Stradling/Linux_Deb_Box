@@ -12,8 +12,6 @@
 #(")_(")  add the scripts folder to path.
 #*******************************************************************************
 
-
-# Grab current working directory and store in variable cwd
 cwd=$(pwd)
 
 read -p "is the current working directory of ${cwd} where you want to \
@@ -28,7 +26,6 @@ fi
 
 read -p "Please enter the full path the the Linux_Deb_Box repo -->" Repo_Path
 
-# check repo path is reachable
 if [ -d ${Repo_Path} ];
 then
   echo "Path to linux_Deb_Repo found successfully as ${Repo_Path}"
@@ -38,7 +35,6 @@ then
   exit 1
 fi
 
-# these currently help to name directories
 source_Dir=Sources
 test_Dir=Test_Boxs
 test_Dir1=1_Test
@@ -48,11 +44,9 @@ scripts_Dir=My_Scripts
 back_Up_Dir=Back_Up_Files
 bashrc_Dir=Set-up
 
-# files to be created for writing source paths to
 pathz_File=Paths.txt
 workz_File=Workpath.txt
 
-#concatenating paths to easier to work with variables
 path_Sources_Dir=${cwd}/${source_Dir}
 path_Test_Dir=${cwd}/${test_Dir}
 path_Test_Dir1=${cwd}/${test_Dir}/${test_Dir1}
@@ -61,7 +55,6 @@ path_Test_Dir3=${cwd}/${test_Dir}/${test_Dir3}
 path_Scripts_Dir=${cwd}/${scripts_Dir}
 path_Back_Up_Dir=${cwd}/${back_Up_Dir}
 
-# array of created directories for iteration
 list_Directories=(
 "${path_Sources_Dir}"
 "${path_Test_Dir}"
@@ -106,10 +99,6 @@ for file in "${list_Files[@]}";
   fi
 done
 
-# this should be done with a method/loop that takes the below variables 
-# from arrays/lists of paths earlier including confirmation output
-# work to be done.
-# write variable for paths to path source file
 echo "source_Path=${path_Sources_Dir}" >> ${path_Sources_Dir}/${pathz_File}
 echo "test_Path=${path_Test_Dir}" >> ${path_Sources_Dir}/${pathz_File}
 echo "test_Path1=${path_Test_Dir1}" >> ${path_Sources_Dir}/${pathz_File}
@@ -123,7 +112,6 @@ echo "work_Path_File=${path_Sources_Dir}/${workz_File}" >> ${path_Sources_Dir}/$
 
 echo " "
 
-# confrim to terminal output paths written to files
 echo "source_Path=${path_Sources_Dir} written to ${path_Sources_Dir}/${pathz_File}"
 echo "test_Path=${path_Test_Dir} written to ${path_Sources_Dir}/${pathz_File}"
 echo "scripts_Path=${path_Scripts_Dir} written to ${path_Sources_Dir}/${pathz_File}"
@@ -133,26 +121,22 @@ echo "work_Path_File=${path_Sources_Dir}/${workz_File} written to ${path_Sources
 
 echo " "
 
-# back up the .bashrc
 cp .bashrc ${path_Back_Up_Dir}/${bashrc_Dir}/bashrc.bak
 # confirm to terminal back up of bashrc
 echo ".bashrc backed up to ${path_Back_Up_Dir}/${bashrc_Dir}/bashrc.bak"
 
 echo " "
 
-# add scripts directory to my path.
 echo "# Added path to my scripts directorys." >> .bashrc
 echo "export PATH=\"${path_Scripts_Dir}:\$PATH\"" >> .bashrc
 echo "source ${path_Sources_Dir}/${pathz_File}" >> .bashrc
 
 echo " "
 
-# confrim what is appended to bashrc
 echo "# Added path to my scripts directorys. written to .bashrc"
 echo "export PATH=\"${path_Scripts_Dir}:\$PATH\" written to .bashrc"
 echo "source ${path_Sources_Dir}/${pathz_File} written to .bashrc"
 
-# move current .bash_aliases if it already exists to back up directory.
 if [ -f .bash_aliases ];
   then
   echo "Moved previous .bash_aliases to ${path_Back_Up_Dir}/${bashrc_Dir}"
@@ -160,7 +144,6 @@ if [ -f .bash_aliases ];
   mv .bash_aliases ${path_Back_Up_Dir}/${bashrc_Dir}
 fi
 
-# add aliases file from repo
 cp ${Repo_Path}/aliases .bash_aliases
 # confirm to terminal aliases file copied
 if [ -f .bash_aliases ];
@@ -172,7 +155,6 @@ fi
 
 echo " "
 
-# prepend source of path file to aliases file
 echo "source ${path_Sources_Dir}/${pathz_File}" | cat - .bash_aliases > temp \
  && mv temp .bash_aliases
 echo "source ${path_Sources_Dir}/${pathz_File} prepended to .bash_aliases"
@@ -181,15 +163,11 @@ echo "source ${path_Sources_Dir}/${workz_File}" | cat - .bash_aliases > temp \
  && mv temp .bash_aliases
 echo "source ${path_Sources_Dir}/${workz_File} prepended to .bash_aliases."
 
-# add cp of scripts to Scripts folder from repo
-# may want to change this to loop iteration and check each file as it's copied
-# and output to terminal file copy success for each script
 cp ${Repo_Path}/Scripts/* ${path_Scripts_Dir}
 echo "${Repo_Path}/Scripts/ copied to ${path_Scripts_Dir}"
 
 echo " "
 
-# attempting to prepend source file to all scripts 
 for script in $(ls ${path_Scripts_Dir});
 do
 echo "source ${path_Sources_Dir}/${pathz_File}" | cat - ${path_Scripts_Dir}/$script > \
