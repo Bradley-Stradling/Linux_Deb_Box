@@ -10,8 +10,6 @@
 #(")_(")  
 #*******************************************************************************
 
-# this needs to have the time cut possibly but I'm cool with verbose exact time
-
 cwd=$(pwd)
 
 get_Sys_Info() {
