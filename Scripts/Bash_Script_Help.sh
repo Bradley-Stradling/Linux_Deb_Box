@@ -150,9 +150,9 @@ case $output_Choice in
 		echo -e "defining arrays\n"
 		echo "array_Name=(value_1, value_2, value_3)"
 		echo "or this can be performed by"
-		echo -e array_Name=\"value_1\""
-		echo -e array_Name=\"value_2\""
-		echo -e array_Name=\"value_3\""
+		echo -e "array_Name=\"value_1\""
+		echo -e "array_Name=\"value_2\""
+		echo -e "array_Name=\"value_3\""
 	;;
 	12)
 		echo -e "working on arrays\n"
