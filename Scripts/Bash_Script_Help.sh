@@ -10,6 +10,9 @@
 #(")_(")	Credit and respect to https://devhints.io/bash
 #*******************************************************************************
 
+
+# !!need to check outputs for char's that need to be escaped!!
+
 echo "#**************************************************************"
 
 echo -e "#  (\_/)\t\n#  (o.o)\tWelcome to Bradleys Bash_Script_Helper\n# (\")_(\")\t"
@@ -206,11 +209,11 @@ case $output_Choice in
 	18)
 		echo -e "glob options\n"
 		echo "need to play with these, for more understanding"
-		echo -e "shopt -s nullglob    # Non-matching globs are removed  (\'*.foo' => \'\')"
-		echo -e "shopt -s failglob    # Non-matching globs throw errors"
-		echo -e "shopt -s nocaseglob  # Case insensitive globs"
-		echo -e "shopt -s dotglob     # Wildcards match dotfiles ("*.sh" => ".foo.sh")"
-		echo -e "shopt -s globstar    # Allow ** for recursive matches (\'lib/**/*.rb' => \'lib/a/b/c.rb\')"
+		echo -e "shopt -s nullglob\t # Non-matching globs are removed  (\'*.foo' => \'\')"
+		echo -e "shopt -s failglob\t # Non-matching globs throw errors"
+		echo -e "shopt -s nocaseglob\t # Case insensitive globs"
+		echo -e "shopt -s dotglob\t # Wildcards match dotfiles ("*.sh" => ".foo.sh")"
+		echo -e "shopt -s globstar\t # Allow ** for recursive matches (\'lib/**/*.rb' => \'lib/a/b/c.rb\')"
 		echo -e "Set GLOBIGNORE as a colon-separated list of patterns to be removed from glob matches."
 	
 	;;
