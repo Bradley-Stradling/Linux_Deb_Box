@@ -246,7 +246,7 @@ case $output_Choice in
 	23)
 		echo -e "subshells\n"
 		echo -e "(cd somedir; echo \"I\'m now in $PWD\")"
-		echo "pwd\t # still in first directory"
+		echo -e "pwd\t # still in first directory"
 		
 	;;
 	24)
