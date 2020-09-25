@@ -216,48 +216,68 @@ case $output_Choice in
 	;;
 	19)
 		echo -e "history commands\n"
+		echo -e "history\t #Show history"
+		echo -e "shopt -s histverify\t #Don’t execute expanded result immediately"
 	;;
 	20)
-		echo -e "history expansion\n"
+		echo -e "history expansions\n"
+		echo -e "!$\t #Expand last parameter of most recent command"
+		echo -e "!*\t #Expand all parameters of most recent command"
+		echo -e "!-n\t #Expand nth most recent command"
+		echo -e "!n\t #Expand nth command in history"
+		echo -e "!cmd\t #Expand most recent invocation of command <command>"
 	;;
 	21)
 		echo -e "history operations\n"
+		echo -e ""
 	;;
 	22)
 		echo -e "history slices\n"
+		echo -e ""
 	;;
 	23)
 		echo -e "subshells\n"
+		echo -e ""
 	;;
 	24)
 		echo -e "isnpect a command\n"
+		echo -e ""
 	;;
 	25)
 		echo -e "random number\n"
+		echo -e ""
 	;;
 	26)
 		echo -e "arithemtic\n"
+		echo -e ""
 	;;
 	27)
 		echo -e "getting options\n"
+		echo -e ""
 	;;
 	28)
 		echo -e "redirection\n"
+		echo -e ""
 	;;
 	29)
 		echo -e "trap errors\n"
+		echo -e ""
 	;;
 	30)
 		echo -e "case/switch\n"
+		echo -e ""
 	;;
 	31)
 		echo -e "special variables\n"
+		echo -e ""
 	;;
 	32)
 		echo -e "check cmd result\n"
+		echo -e ""
 	;;
 	33)
 		echo -e "grep check\n"
+		echo -e ""
 	;;
 	*)
 		echo "Exiting Script because I have no clue what you typed o.O"
