@@ -229,55 +229,127 @@ case $output_Choice in
 	;;
 	21)
 		echo -e "history operations\n"
-		echo -e ""
+		echo -e "!!\t #Execute last command again"
+		echo -e "!!:s/<FROM>/<TO>/\t #Replace first occurrence of <FROM> to <TO> in most recent command"
+		echo -e "!!:gs/<FROM>/<TO>/\t #Replace all occurrences of <FROM> to <TO> in most recent command"
+		echo -e "!$:t\t #Expand only basename from last parameter of most recent command"
+		echo -e "!$:h\t #Expand only directory from last parameter of most recent command"
 	;;
 	22)
 		echo -e "history slices\n"
-		echo -e ""
+		echo -e "!!:n\t #Expand only nth token from most recent command (command is 0; first argument is 1)"
+		echo -e "!^\t #Expand first argument from most recent command"
+		echo -e "!$\t #Expand last token from most recent command"
+		echo -e "!!:n-m\t #Expand range of tokens from most recent command"
+		echo -e "!!:n-$\t #Expand nth token to last from most recent command"
 	;;
 	23)
 		echo -e "subshells\n"
-		echo -e ""
+		echo -e "(cd somedir; echo \"I\'m now in $PWD\")"
+		echo "pwd\t # still in first directory"
+		
 	;;
 	24)
 		echo -e "isnpect a command\n"
-		echo -e ""
+		echo -e "command -V cmd"
 	;;
 	25)
 		echo -e "random number\n"
-		echo -e ""
+		echo -e "$(($RANDOM%100))\t # Random number 0..99"
 	;;
 	26)
 		echo -e "arithemtic\n"
-		echo -e ""
+		echo -e "$((x + 100))\t #add 100 to $x"
+		echo -e "$((x - 100))\t #subtract 100 from $x"
+		echo -e "$((x * 100))\t #multiply $x by 100"
+		echo -e "$((x / 100))\t #divide $x by 100"
+		echo -e "$((x % 2))\t #modulus $x by 2 need to check if modulus in bash has sign of dividend"
+		echo -e "$((x ++ 100))\t #post increment $x by 100"
+		echo -e "$((x -- 100))\t #post decrement $x by 100"
+		echo -e "$((x ** 100))\t #exponentiate $x by 100"
 	;;
 	27)
 		echo -e "getting options\n"
-		echo -e ""
+		echo -e "while [[ \"$1\" =~ ^- && ! \"$\1" == \"--\" ]]; do case $1 in"
+		echo -e"\t-V | --version )"
+		echo -e "\t\techo $version"
+		echo -e "\t\texit"
+		echo -e "\t\t;;"
+		echo -e "\t-s | --string )"
+		echo -e "\t\tshift; string=$1"
+		echo -e "\t\t;;"
+		echo -e "\t-f | --flag )"
+		echo -e "\t\tflag=1"
+		echo -e "\t\t;;"
+		echo -e "esac; shift; done"
+		echo -e "if [[ \"$1\" == \'--\' ]]; then shift; fi"
 	;;
 	28)
 		echo -e "redirection\n"
 		echo -e ""
+		echo -e "cmd variable > output.txt\t\t# stdout to (file)"
+		echo -e "cmd variable >> output.txt\t\t# stdout to (file), append"
+		echo -e "cmd variable 2> error.log\t\t# stderr to (file)"
+		echo -e "cmd variable 2>&1\t\t# stderr to stdout""
+		echo -e "cmd variable 2>/dev/null\t\t# stderr to (null)
+		echo -e "cmd variable &>/dev/null\t\t# stdout and stderr to (null)\n"
+		echo -e "cmd script < file.ext\t\t# feed file.ext to stdin for script/cmd"
 	;;
 	29)
 		echo -e "trap errors\n"
-		echo -e ""
+		echo -e "trap \'echo Error at about $LINENO\' ERR"
+		echo "or"
+		echo -e "traperr() {"
+		echo -e "\techo \"ERROR: ${BASH_SOURCE[1]} at about ${BASH_LINENO[0]}\""
+		echo -e "}\n"
+		echo -e "set -o errtrace"
+		echo -e "trap traperr ERR"
 	;;
 	30)
 		echo -e "case/switch\n"
-		echo -e ""
+		echo -e "string"
+		echo -e "case $string in"
+		echo -e "\tstring1)\t #case 1"
+		echo -e "\t\tcmd string"
+		echo -e ";;"
+		echo -e "\tstring2)\t #case 2"
+		echo -e "\t\tcmd string"
+		echo -e ";;"
+		echo -e "\t*)\t #default case"
+		echo -e "\t\tcmd string"
+		echo -e "\t;;"
+		echo -e "esac\n"
+		echo -e "numerical"
+		echo -e "case $variable in"
+		echo -e "\t1)\t #case 1"
+		echo -e "\t\tcmd variable"
+		echo -e ";;"
+		echo -e "\t2)\t #case 2"
+		echo -e "\t\tcmd variable"
+		echo -e ";;"
+		echo -e "\t*)\t #default case"
+		echo -e "\t\tcmd variable"
+		echo -e "\t;;"
+		echo -e "esac"
 	;;
 	31)
 		echo -e "special variables\n"
-		echo -e ""
+		echo -e "$?\t # Exit status of last task"
+		echo -e "$!\t # PID of last background task"
+		echo -e "$$\t #PID of shell"
+		echo -e "$0\t #Filename of the shell script"
 	;;
 	32)
 		echo -e "check cmd result\n"
-		echo -e ""
+		echo -e "if ping -c 1 google.com; then"
+		echo -e "\techo \"It appears you have a working internet connection\""
+		echo -e "fi"
 	;;
 	33)
 		echo -e "grep check\n"
-		echo -e ""
+		echo -e "if grep -q \'foo\' ~/.bash_history; then"
+		echo -e "\techo \"You appear to have typed \'foo\' in the past\""
+		echo -e "fi"
 	;;
 	*)
 		echo "Exiting Script because I have no clue what you typed o.O"
