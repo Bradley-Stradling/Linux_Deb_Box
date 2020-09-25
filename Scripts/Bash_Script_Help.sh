@@ -36,9 +36,9 @@ echo -e "\"19\" history commands\t \"20\" history expansion\t \"21\" history ope
 
 echo -e "\"22\" history slices\t \"23\" subshells\t \"24\" isnpect a command\t"
 
-echo -e "\"25\" history slices\t \"26\" subshells\t \"27\" isnpect a command\t"
+echo -e "\"25\" random number\t \"26\" arithemtic\t \"27\" getting options\t"
 
-echo -e "\"28\" redirection\t \"29\" trap errors\t \"30\" case/switch\t"
+echo -e "\"28\" redirection\t \"29\" trap errors\t \"30\" sourcing\t"
 
 echo -e "\"31\" special variables\t \"32\" check cmd result\t \"33\" grep check\t"
 
@@ -53,11 +53,11 @@ case $output_Choice in
 		echo -e "for i in x; do\n\techo \$i\ndone"
 	;;
 	2)
-		echo -e "\n"
+		echo -e "c-like loop\n"
 		echo -e "for ((i = 0 ; i < 10 ; i++)); do\n\techo \$i\ndone"
 	;;
 	3)
-		echo -e "\n"
+		echo -e "ranged loops\n"
 		echo -e "for i in {5..10}; do\n\techo \"Stay a while and listen $i\"\ndone"
 		echo "With a step size of 3"
 		echo -e "for i in {12..36..3}; do\n\techo \"Stay a while and listen $i\"\ndone"
@@ -67,15 +67,15 @@ case $output_Choice in
 		echo "done"
 	;;
 	4)
-		echo -e "\n"
+		echo -e "line read loop\n"
 		echo -e "cat file | while read line; do\n\t echo $line"
 	;;
 	5)
-		echo -e "\n"
+		echo -e "while loop\n"
 		echo -e "while [[ \"$A\" == \"$B\" ]]; do\n\t {perform an action}\n done"
 	;;
 	6)
-		echo -e "\n"
+		echo -e "conditionals\n"
 		echo -e "if [[ -flag \"$variable\" ]]; then"
 		echo -e "\t cmd \"do a thing\""
 		echo -e "elif [[ -anotherflag \"$variable\" ]]; then"
@@ -102,7 +102,7 @@ case $output_Choice in
 		echo -e "[[ X || Y ]]	Or"
 	;;
 	7)
-		echo -e "\n"
+		echo -e "basic function syntax and call\n"
 		echo -e "do_A_Thing() {"
 		echo -e "\tdoing a thing"
 		echo -e "}"
@@ -115,7 +115,7 @@ case $output_Choice in
 		echo -e "do_A_Thing \"value\""
 	;;
 	8)
-		echo -e "\n"
+		echo -e "brace expansion\n"
 		echo "for all files in array/list from A to C, (A.ext B.ext, C.ext)"
 		echo "cmd {A,C}.ext"
 		echo "for all numbers in range of 15 to 20"
@@ -125,8 +125,7 @@ case $output_Choice in
 		echo "same as 50 75 100 125 150 175 200"
 	;;
 	9)
-		echo -e "\n"
-		echo "Arguments as below"
+		echo -e "arguments\n"
 		echo -e "$#\tnumber of arguments"
 		echo -e "$*\tall arguments"
 		echo -e "$@\tall arguments from first"
@@ -134,8 +133,7 @@ case $output_Choice in
 		echo -e "$_\tlast argument of previous cmd"
 	;;
 	10)
-		echo -e "\n"
-		echo "File Conditionals"
+		echo -e "file conditionals\n"
 		echo -e "[[ -e FILE ]]	Exists?"
 		echo -e "[[ -r FILE ]]	Readable?"
 		echo -e "[[ -h FILE ]]	Symlink?"
@@ -149,7 +147,7 @@ case $output_Choice in
 		echo -e "[[ FILE1 -ef FILE2 ]]	Same files?"
 	;;
 	11)
-		echo -e "\n"
+		echo -e "defining arrays\n"
 		echo "array_Name=(value_1, value_2, value_3)"
 		echo "or this can be performed by"
 		echo -e array_Name=\"value_1\"
@@ -157,7 +155,7 @@ case $output_Choice in
 		echo -e array_Name=\"value_3\"
 	;;
 	12)
-		echo -e "\n"
+		echo -e "working on arrays\n"
 		echo -e "cmd ${array_Name[3]}\t 3rd element"
 		echo -e "cmd ${array_Name[-2]}\t 2nd from last element"
 		echo -e "cmd ${array_Name[@]}\t all elements space seperation"
@@ -168,11 +166,11 @@ case $output_Choice in
 		echo -e "cmd ${!array_Name[@]}\t key of all elements space seperated"
 	;;
 	13)
-		echo -e "\n"
+		echo -e "array operations\n"
 		echo "I need to work on array operations more before i make note of them"
 	;;
 	14)
-		echo -e "\n"
+		echo -e "defining dictionaries\n"
 		echo "aka associative arrays, hence -A"
 		echo "declare -A genre"
 		echo -e "genre[AngelMaker]\"Deathcore\""
@@ -180,7 +178,7 @@ case $output_Choice in
 		echo -e "genre[LambofGod]\"Groove Metal\""
 	;;
 	15)
-		echo -e "\n"
+		echo -e "working on dictionaries\n"
 		echo -e "${genre[AngelMaker]}\t# "
 		echo -e "${genre[@]}\t# all values"
 		echo -e "${!genre[@]}\t# all keys"
@@ -188,8 +186,8 @@ case $output_Choice in
 		echo -e "unset genre[Metallica]\t# delete Metallica"
 	;;
 	16)
-		echo -e "\n"
-		echo "need to check if val actually has to be val, and key"
+		echo -e "dictionary iteration\n"
+		echo "need to check if val actually has to be val, and also key"
 		echo -e "for val in \"${genre[@]}\"; do"
 		echo -e "\tcmd $val"
 		echo "done"
@@ -199,14 +197,14 @@ case $output_Choice in
 		echo "done"
 	;;
 	17)
-		echo -e "\n"
+		echo -e "options\n"
 		echo -e "set -o noclobber\t# Avoid overlay files (echo \"hi\" > foo)"
 		echo -e "set -o errexit\t# Used to exit upon error, avoiding cascading errors"
 		echo -e "set -o pipefail\t# Unveils hidden failures"
 		echo -e "set -o nounset\t# Exposes unset variables"
 	;;
 	18)
-		echo -e "\n"
+		echo -e "glob options\n"
 		echo "need to play with these, for more understanding"
 		echo -e "shopt -s nullglob    # Non-matching globs are removed  ('*.foo' => '')"
 		echo -e "shopt -s failglob    # Non-matching globs throw errors"
@@ -217,49 +215,49 @@ case $output_Choice in
 	
 	;;
 	19)
-		echo -e "\n"
+		echo -e "history commands\n"
 	;;
 	20)
-		echo -e "\n"
+		echo -e "history expansion\n"
 	;;
 	21)
-		echo -e "\n"
+		echo -e "history operations\n"
 	;;
 	22)
-		echo -e "\n"
+		echo -e "history slices\n"
 	;;
 	23)
-		echo -e "\n"
+		echo -e "subshells\n"
 	;;
 	24)
-		echo -e "\n"
+		echo -e "isnpect a command\n"
 	;;
 	25)
-		echo -e "\n"
+		echo -e "random number\n"
 	;;
 	26)
-		echo -e "\n"
+		echo -e "arithemtic\n"
 	;;
 	27)
-		echo -e "\n"
+		echo -e "getting options\n"
 	;;
 	28)
-		echo -e "\n"
+		echo -e "redirection\n"
 	;;
 	29)
-		echo -e "\n"
+		echo -e "trap errors\n"
 	;;
 	30)
-		echo -e "\n"
+		echo -e "case/switch\n"
 	;;
 	31)
-		echo -e "\n"
+		echo -e "special variables\n"
 	;;
 	32)
-		echo -e "\n"
+		echo -e "check cmd result\n"
 	;;
 	33)
-		echo -e "\n"
+		echo -e "grep check\n"
 	;;
 	*)
 		echo "Exiting Script because I have no clue what you typed o.O"
