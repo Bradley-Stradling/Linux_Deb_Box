@@ -49,12 +49,15 @@ echo $output_Choice
 case $output_Choice in
 
 	1)
+		echo -e "basic loop\n"
 		echo -e "for i in x; do\n\techo \$i\ndone"
 	;;
 	2)
+		echo -e "\n"
 		echo -e "for ((i = 0 ; i < 10 ; i++)); do\n\techo \$i\ndone"
 	;;
 	3)
+		echo -e "\n"
 		echo -e "for i in {5..10}; do\n\techo \"Stay a while and listen $i\"\ndone"
 		echo "With a step size of 3"
 		echo -e "for i in {12..36..3}; do\n\techo \"Stay a while and listen $i\"\ndone"
@@ -64,12 +67,15 @@ case $output_Choice in
 		echo "done"
 	;;
 	4)
+		echo -e "\n"
 		echo -e "cat file | while read line; do\n\t echo $line"
 	;;
 	5)
+		echo -e "\n"
 		echo -e "while [[ \"$A\" == \"$B\" ]]; do\n\t {perform an action}\n done"
 	;;
 	6)
+		echo -e "\n"
 		echo -e "if [[ -flag \"$variable\" ]]; then"
 		echo -e "\t cmd \"do a thing\""
 		echo -e "elif [[ -anotherflag \"$variable\" ]]; then"
@@ -96,6 +102,7 @@ case $output_Choice in
 		echo -e "[[ X || Y ]]	Or"
 	;;
 	7)
+		echo -e "\n"
 		echo -e "do_A_Thing() {"
 		echo -e "\tdoing a thing"
 		echo -e "}"
@@ -108,6 +115,7 @@ case $output_Choice in
 		echo -e "do_A_Thing \"value\""
 	;;
 	8)
+		echo -e "\n"
 		echo "for all files in array/list from A to C, (A.ext B.ext, C.ext)"
 		echo "cmd {A,C}.ext"
 		echo "for all numbers in range of 15 to 20"
@@ -117,6 +125,7 @@ case $output_Choice in
 		echo "same as 50 75 100 125 150 175 200"
 	;;
 	9)
+		echo -e "\n"
 		echo "Arguments as below"
 		echo -e "$#\tnumber of arguments"
 		echo -e "$*\tall arguments"
@@ -125,6 +134,7 @@ case $output_Choice in
 		echo -e "$_\tlast argument of previous cmd"
 	;;
 	10)
+		echo -e "\n"
 		echo "File Conditionals"
 		echo -e "[[ -e FILE ]]	Exists?"
 		echo -e "[[ -r FILE ]]	Readable?"
@@ -139,6 +149,7 @@ case $output_Choice in
 		echo -e "[[ FILE1 -ef FILE2 ]]	Same files?"
 	;;
 	11)
+		echo -e "\n"
 		echo "array_Name=(value_1, value_2, value_3)"
 		echo "or this can be performed by"
 		echo -e array_Name=\"value_1\"
@@ -146,6 +157,7 @@ case $output_Choice in
 		echo -e array_Name=\"value_3\"
 	;;
 	12)
+		echo -e "\n"
 		echo -e "cmd ${array_Name[3]}\t 3rd element"
 		echo -e "cmd ${array_Name[-2]}\t 2nd from last element"
 		echo -e "cmd ${array_Name[@]}\t all elements space seperation"
@@ -156,9 +168,11 @@ case $output_Choice in
 		echo -e "cmd ${!array_Name[@]}\t key of all elements space seperated"
 	;;
 	13)
+		echo -e "\n"
 		echo "I need to work on array operations more before i make note of them"
 	;;
 	14)
+		echo -e "\n"
 		echo "aka associative arrays, hence -A"
 		echo "declare -A genre"
 		echo -e "genre[AngelMaker]\"Deathcore\""
@@ -166,6 +180,7 @@ case $output_Choice in
 		echo -e "genre[LambofGod]\"Groove Metal\""
 	;;
 	15)
+		echo -e "\n"
 		echo -e "${genre[AngelMaker]}\t# "
 		echo -e "${genre[@]}\t# all values"
 		echo -e "${!genre[@]}\t# all keys"
@@ -173,6 +188,7 @@ case $output_Choice in
 		echo -e "unset genre[Metallica]\t# delete Metallica"
 	;;
 	16)
+		echo -e "\n"
 		echo "need to check if val actually has to be val, and key"
 		echo -e "for val in \"${genre[@]}\"; do"
 		echo -e "\tcmd $val"
@@ -183,12 +199,14 @@ case $output_Choice in
 		echo "done"
 	;;
 	17)
+		echo -e "\n"
 		echo -e "set -o noclobber\t# Avoid overlay files (echo \"hi\" > foo)"
 		echo -e "set -o errexit\t# Used to exit upon error, avoiding cascading errors"
 		echo -e "set -o pipefail\t# Unveils hidden failures"
 		echo -e "set -o nounset\t# Exposes unset variables"
 	;;
 	18)
+		echo -e "\n"
 		echo "need to play with these, for more understanding"
 		echo -e "shopt -s nullglob    # Non-matching globs are removed  ('*.foo' => '')"
 		echo -e "shopt -s failglob    # Non-matching globs throw errors"
@@ -197,6 +215,51 @@ case $output_Choice in
 		echo -e "shopt -s globstar    # Allow ** for recursive matches ('lib/**/*.rb' => 'lib/a/b/c.rb')"
 		echo -e "Set GLOBIGNORE as a colon-separated list of patterns to be removed from glob matches."
 	
+	;;
+	19)
+		echo -e "\n"
+	;;
+	20)
+		echo -e "\n"
+	;;
+	21)
+		echo -e "\n"
+	;;
+	22)
+		echo -e "\n"
+	;;
+	23)
+		echo -e "\n"
+	;;
+	24)
+		echo -e "\n"
+	;;
+	25)
+		echo -e "\n"
+	;;
+	26)
+		echo -e "\n"
+	;;
+	27)
+		echo -e "\n"
+	;;
+	28)
+		echo -e "\n"
+	;;
+	29)
+		echo -e "\n"
+	;;
+	30)
+		echo -e "\n"
+	;;
+	31)
+		echo -e "\n"
+	;;
+	32)
+		echo -e "\n"
+	;;
+	33)
+		echo -e "\n"
 	;;
 	*)
 		echo "Exiting Script because I have no clue what you typed o.O"
