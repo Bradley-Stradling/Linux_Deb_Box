@@ -160,7 +160,7 @@ case $output_Choice in
 		echo -e "cmd ${array_Name[-2]}\t 2nd from last element"
 		echo -e "cmd ${array_Name[@]}\t all elements space seperation"
 		echo -e "cmd ${#array_Name[@]}\t numbers of elements"
-		echo -e "cmd ${\#array_Name}\t string length of 1st element"
+		echo -e "cmd ${#array_Name}\t string length of 1st element"
 		echo -e "cmd ${#array_Name[n]}\t string length of nth element"
 		echo -e "cmd ${array_Name[@]:p:l}\t range from position p to length l"
 		echo -e "cmd ${!array_Name[@]}\t key of all elements space seperated"
@@ -206,18 +206,18 @@ case $output_Choice in
 	18)
 		echo -e "glob options\n"
 		echo "need to play with these, for more understanding"
-		echo -e "shopt -s nullglob    # Non-matching globs are removed  ('*.foo' => '')"
+		echo -e "shopt -s nullglob    # Non-matching globs are removed  (\'*.foo' => \'\')"
 		echo -e "shopt -s failglob    # Non-matching globs throw errors"
 		echo -e "shopt -s nocaseglob  # Case insensitive globs"
 		echo -e "shopt -s dotglob     # Wildcards match dotfiles ("*.sh" => ".foo.sh")"
-		echo -e "shopt -s globstar    # Allow ** for recursive matches ('lib/**/*.rb' => 'lib/a/b/c.rb')"
+		echo -e "shopt -s globstar    # Allow ** for recursive matches (\'lib/**/*.rb' => \'lib/a/b/c.rb\')"
 		echo -e "Set GLOBIGNORE as a colon-separated list of patterns to be removed from glob matches."
 	
 	;;
 	19)
 		echo -e "history commands\n"
 		echo -e "history\t #Show history"
-		echo -e "shopt -s histverify\t #Don’t execute expanded result immediately"
+		echo -e "shopt -s histverify\t #Don\’t execute expanded result immediately"
 	;;
 	20)
 		echo -e "history expansions\n"
