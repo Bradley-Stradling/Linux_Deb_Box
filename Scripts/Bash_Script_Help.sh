@@ -160,7 +160,7 @@ case $output_Choice in
 		echo -e "cmd ${array_Name[-2]}\t 2nd from last element"
 		echo -e "cmd ${array_Name[@]}\t all elements space seperation"
 		echo -e "cmd ${#array_Name[@]}\t numbers of elements"
-		echo -e "cmd ${#array_Name}\t string length of 1st element"
+		echo -e "cmd ${\#array_Name}\t string length of 1st element"
 		echo -e "cmd ${#array_Name[n]}\t string length of nth element"
 		echo -e "cmd ${array_Name[@]:p:l}\t range from position p to length l"
 		echo -e "cmd ${!array_Name[@]}\t key of all elements space seperated"
