@@ -37,7 +37,7 @@ echo -e "\"16\" dictionary iteration\t \"17\" options\t \"18\" glob options\t"
 
 echo -e "\"19\" history commands\t \"20\" history expansion\t \"21\" history operations\t"
 
-echo -e "\"22\" history slices\t \"23\" subshells\t \"24\" isnpect a command\t"
+echo -e "\"22\" history slices\t \"23\" subshells\t \"24\" inspect a command\t"
 
 echo -e "\"25\" random number\t \"26\" arithemtic\t \"27\" getting options\t"
 
