@@ -32,9 +32,12 @@ Back_Me_Up.sh - Copies the contents of the entire current directory to a new
 directory in back up directory with the name of the passed argument. Meant to 
 back up files in current directory for instance snapshot a repo and date it.
 
-Change_Work.sh - Changes the variable source for gowork to change the current 
-focus directory. At will change of gowork alias that simply cd's to the 
-variables target path.
+Bash_Script_Help.sh - A case script with notes on the syntax of many bash 
+functions and options used in scripts. Loop syntax for example. 33 option
+notes so far.
+
+Change_Work.sh - Changes the variable sources for the gowork aliases,
+theres now 3 gowork aliases! so up to 3 paths can be stored and recalled.
 
 Copy_Contents_Move.sh - Copies the entire contents of the current directory 
 to the passed target path.
