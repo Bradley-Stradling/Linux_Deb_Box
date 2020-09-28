@@ -7,7 +7,8 @@ Aliases and scripts for my linux debian bash user enviroment set-up imported
 via "Deploy_Setup.sh".
 
 ***** "Deploy_Setup.sh" has had big changes without testing as of 9/28/20, 
-use caution!!! likely broken? hopefully not though*****
+use caution!!! likely broken? hopefully not though
+please see commit f5527ac for last known good state*****
 
 Unlicense applies to all files that are tagged with it directly in this 
 repository. Links to websites are not my sites in any manner.
