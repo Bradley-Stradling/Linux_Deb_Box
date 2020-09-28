@@ -61,6 +61,10 @@ systems!
 
 Pcapng_to_pcap.sh - Lickity split script to convert pcapng to pcap.
 
+Pentest_Help.sh - A Case script listing some of the needed commands during
+Penetration testing, basically blank for now, but intended to house commands
+such as upgrading a dummy shell with python, or a quick python server etc.
+
 ---------------------------------- FUTURE -------------------------------------
 
 Scripts to configure common linux system admin and security functions, password
