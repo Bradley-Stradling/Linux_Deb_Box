@@ -45,7 +45,9 @@ back_Up_Dir=Back_Up_Files
 bashrc_Dir=Set-up
 
 pathz_File=Paths.txt
-workz_File=Workpath.txt
+workz_File_1=Workpath1.txt
+workz_File_2=Workpath2.txt
+workz_File_3=Workpath3.txt
 
 path_Sources_Dir=${cwd}/${source_Dir}
 path_Test_Dir=${cwd}/${test_Dir}
@@ -69,7 +71,9 @@ list_Directories=(
 # array of files to be created for iteration
 list_Files=(
 "${path_Sources_Dir}/${pathz_File}"
-"${path_Sources_Dir}/${workz_File}"
+"${path_Sources_Dir}/${workz_File_1}"
+"${path_Sources_Dir}/${workz_File_2}"
+"${path_Sources_Dir}/${workz_File_3}"
 )
 
 echo " "
@@ -108,7 +112,9 @@ echo "scripts_Path=${path_Scripts_Dir}" >> ${path_Sources_Dir}/${pathz_File}
 echo "back_Up_Files_Path=${path_Back_Up_Dir}" >> ${path_Sources_Dir}/${pathz_File}
 echo "repo_Path=${Repo_Path}" >> ${path_Sources_Dir}/${pathz_File}
 # target for change work to change work target with go work alias
-echo "work_Path_File=${path_Sources_Dir}/${workz_File}" >> ${path_Sources_Dir}/${pathz_File}
+echo "work_Path_1=${path_Sources_Dir}/${workz_File_1}" >> ${path_Sources_Dir}/${pathz_File}
+echo "work_Path_2=${path_Sources_Dir}/${workz_File_2}" >> ${path_Sources_Dir}/${pathz_File}
+echo "work_Path_3=${path_Sources_Dir}/${workz_File_3}" >> ${path_Sources_Dir}/${pathz_File}
 
 echo " "
 
@@ -117,7 +123,9 @@ echo "test_Path=${path_Test_Dir} written to ${path_Sources_Dir}/${pathz_File}"
 echo "scripts_Path=${path_Scripts_Dir} written to ${path_Sources_Dir}/${pathz_File}"
 echo "back_Up_Files_Path=${path_Back_Up_Dir} written to ${path_Sources_Dir}/${pathz_File}"
 # target for change work to change work target with go work alias
-echo "work_Path_File=${path_Sources_Dir}/${workz_File} written to ${path_Sources_Dir}/${pathz_File}"
+echo "work_Path_1=${path_Sources_Dir}/${workz_File_1} written to ${path_Sources_Dir}/${pathz_File}"
+echo "work_Path_2=${path_Sources_Dir}/${workz_File_2} written to ${path_Sources_Dir}/${pathz_File}"
+echo "work_Path_3=${path_Sources_Dir}/${workz_File_3} written to ${path_Sources_Dir}/${pathz_File}"
 
 echo " "
 
@@ -159,9 +167,15 @@ echo "source ${path_Sources_Dir}/${pathz_File}" | cat - .bash_aliases > temp \
  && mv temp .bash_aliases
 echo "source ${path_Sources_Dir}/${pathz_File} prepended to .bash_aliases"
 # prepend
-echo "source ${path_Sources_Dir}/${workz_File}" | cat - .bash_aliases > temp \
+echo "source ${path_Sources_Dir}/${workz_File_1}" | cat - .bash_aliases > temp \
  && mv temp .bash_aliases
-echo "source ${path_Sources_Dir}/${workz_File} prepended to .bash_aliases."
+echo "source ${path_Sources_Dir}/${workz_File_1} prepended to .bash_aliases."
+echo "source ${path_Sources_Dir}/${workz_File_2}" | cat - .bash_aliases > temp \
+ && mv temp .bash_aliases
+echo "source ${path_Sources_Dir}/${workz_File_2} prepended to .bash_aliases."
+echo "source ${path_Sources_Dir}/${workz_File_3}" | cat - .bash_aliases > temp \
+ && mv temp .bash_aliases
+echo "source ${path_Sources_Dir}/${workz_File_3} prepended to .bash_aliases."
 
 cp ${Repo_Path}/Scripts/* ${path_Scripts_Dir}
 echo "${Repo_Path}/Scripts/ copied to ${path_Scripts_Dir}"
