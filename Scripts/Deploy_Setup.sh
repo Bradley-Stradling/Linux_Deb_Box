@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# functional other than confirmation ouput of created files.
-
 #*******************************************************************************
 # (\_/)   Author: Bradley Stradling
 # (o.o)   Date of first revision: 3/6/20 (Refactoring ongoing)
@@ -11,6 +9,8 @@
 # (*.*)   or account. Replaces the bash_aliases file, and appends an export to
 #(")_(")  add the scripts folder to path.
 #*******************************************************************************
+
+# need to test new gowork paths with change work
 
 cwd=$(pwd)
 
