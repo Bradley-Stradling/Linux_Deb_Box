@@ -68,7 +68,7 @@ such as upgrading a dummy shell with python, or a quick python server etc.
 ---------------------------------- FUTURE -------------------------------------
 
 Scripts to configure common linux system admin and security functions, password
-policies, file permissions, etc.
+policies, file permissions, system hardening. Automate some tripwire setup maybe?
 
 Determine baseline security tools needed for penetration testing and create a
 script to get them installed to Ubuntu or a less security oriented dstribution,
