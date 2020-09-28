@@ -47,6 +47,7 @@ test_Dir3=3_Test
 scripts_Dir=My_Scripts
 back_Up_Dir=Back_Up_Files
 bashrc_Dir=Set-up
+back_Up_Scripts=Scripts_Back_Up
 
 pathz_File=Paths.txt
 workz_File_1=Workpath1.txt
@@ -67,6 +68,7 @@ list_Directories=(
 "${path_Scripts_Dir}"
 "${path_Back_Up_Dir}"
 "${path_Back_Up_Dir}/${bashrc_Dir}"
+"${path_Back_Up_Dir}/"${back_Up_Scripts}"
 "${path_Test_Dir1}"
 "${path_Test_Dir2}"
 "${path_Test_Dir3}"
@@ -150,9 +152,13 @@ echo "work_Path_3=${path_Sources_Dir}/${workz_File_3} written to ${path_Sources_
 
 echo " "
 
-cp .bashrc ${path_Back_Up_Dir}/${bashrc_Dir}/bashrc.bak
-# confirm to terminal back up of bashrc
-echo ".bashrc backed up to ${path_Back_Up_Dir}/${bashrc_Dir}/bashrc.bak"
+if [-s ${path_Back_Up_Dir}/${bashrc_Dir}/bashrc1.bak ]; then
+  echo "restored .bashrc to state from before 1st run after backing up current .bashrc"
+  cp .bashrc ${path_Back_Up_Dir}/${bashrc_Dir}/bashrc.bak 
+  cp ${path_Back_Up_Dir}/${bashrc_Dir}/bashrc1.bak .bashrc
+   else
+    cp .bashrc ${path_Back_Up_Dir}/${bashrc_Dir}/bashrc1.bak
+fi
 
 echo " "
 
@@ -166,8 +172,14 @@ echo "# Added path to my scripts directorys. written to .bashrc"
 echo "export PATH=\"${path_Scripts_Dir}:\$PATH\" written to .bashrc"
 echo "source ${path_Sources_Dir}/${pathz_File} written to .bashrc"
 
-if [ -f .bash_aliases ];
-  then
+if [ -f .bash_aliases ]; then
+  if [-f ${path_Back_Up_Dir}/${bashrc_Dir}/.bash_aliases ]; then
+    read -p "Looks like .bash_aliases already exists in ${path_Back_Up_Dir}/${bashrc_Dir} would you like to overwrite it with the current .bash_aliases? y/n -->" overwrite_Aliases
+    if [ ${overwrite_Aliases} == y ]; then
+      echo "clearing back up .bash_aliases from ${path_Back_Up_Dir}/${bashrc_Dir}"
+      rm ${path_Back_Up_Dir}/${bashrc_Dir}/.bash_aliases
+    fi
+  fi
   echo "Moved previous .bash_aliases to ${path_Back_Up_Dir}/${bashrc_Dir}"
   echo ""
   mv .bash_aliases ${path_Back_Up_Dir}/${bashrc_Dir}
@@ -198,11 +210,32 @@ echo "source ${path_Sources_Dir}/${workz_File_3}" | cat - .bash_aliases > temp \
  && mv temp .bash_aliases
 echo "source ${path_Sources_Dir}/${workz_File_3} prepended to .bash_aliases."
 
-cp ${Repo_Path}/Scripts/* ${path_Scripts_Dir}
-echo "${Repo_Path}/Scripts/ copied to ${path_Scripts_Dir}"
-
 echo " "
 
+if [ -s ${path_Scripts_Dir}/Change_Work.sh ]; # new conditional flag have not used it yet, hopefully it works as intended
+  read -p "Looks like a ${path_Scripts_Dir} directory already exists with some scripts would you like to back them up?" back_Up_Scripts
+  if [ ${back_Up_Scripts} == y ]; then
+    if [ -s ${path_Back_Up_Dir}/"${back_Up_Scripts}/Change_Work.sh ]; then
+      read -p "Looks like ${path_Back_Up_Dir}/"${back_Up_Scripts} already has some scripts as well are you sure you want to overwrite it?" overwrite_back_Up_Scripts
+      if [ ${overwrite_back_Up_Scripts} == y ]; then
+        rm ${path_Back_Up_Dir}/"${back_Up_Scripts}/*
+        echo "Back up scripts cleared out from ${path_Back_Up_Dir}/"${back_Up_Scripts}"
+         elif [ ${overwrite_back_Up_Scripts} != y ]; then
+          echo "please save your work before running the Deploy.sh silly head exiting.."
+          exit 1
+      fi
+    fi
+    echo "Backing up scripts to ${path_Back_Up_Dir}/"${back_Up_Scripts}"
+    mv ${path_Scripts_Dir}/* ${path_Back_Up_Dir}/"${back_Up_Scripts}
+    elif [ ${back_Up_Scripts} != y ]; then
+      echo "please save your work before running the Deploy.sh silly head exiting.."
+      exit 1
+  fi
+else 
+cp ${Repo_Path}/Scripts/* ${path_Scripts_Dir}
+echo "${Repo_Path}/Scripts/ copied to ${path_Scripts_Dir}"
+fi
+  
 for script in $(ls ${path_Scripts_Dir});
 do
 echo "source ${path_Sources_Dir}/${pathz_File}" | cat - ${path_Scripts_Dir}/$script > \
