@@ -22,42 +22,50 @@ fi
 
 cwd=$(pwd)
 
-echo -p "Would you like to install or remove networkminer and all of its dependancies? i/r"
+read -p "Would you like to install or remove networkminer and all of its dependancies? i/r" install_Remove
 
+case $install_Remove in
+1)
+  ## Installing dependancies
+  apt-get install libmono-system-windows-forms4.0-cil
+  apt-get install libmono-system-web4.0-cil
+  apt-get install libmono-system-net4.0-cil
+  apt-get install libmono-system-runtime-serialization4.0-cil
+  apt-get install libmono-system-xml-linq4.0-cil
 
+  ## Fetching and unzipping networkminer files
+  wget https://www.netresec.com/?download=NetworkMiner -O /tmp/nm.zip
+  sudo unzip /tmp/nm.zip -d /opt/
+  cd /opt/NetworkMiner*
+  sudo chmod +x NetworkMiner.exe
+  sudo chmod -R go+w AssembledFiles/
+  sudo chmod -R go+w Captures/
+  nvm_path=$(pwd)
 
-## Installing dependancies
-apt-get install libmono-system-windows-forms4.0-cil
-apt-get install libmono-system-web4.0-cil
-apt-get install libmono-system-net4.0-cil
-apt-get install libmono-system-runtime-serialization4.0-cil
-apt-get install libmono-system-xml-linq4.0-cil
+  ## Building networkminer for the first time
+  mono NetworkMiner.exe --noupdatecheck
 
-## Fetching and unzipping networkminer files
-wget https://www.netresec.com/?download=NetworkMiner -O /tmp/nm.zip
-sudo unzip /tmp/nm.zip -d /opt/
-cd /opt/NetworkMiner*
-sudo chmod +x NetworkMiner.exe
-sudo chmod -R go+w AssembledFiles/
-sudo chmod -R go+w Captures/
-nvm_path=$(pwd)
+  ## add new bash alias to open networkminer from the console
+  # move to home directory (may want to just add path to home to file output)
+  # or source path to home directory through variable
+  cd $HOME ## this needs to set to either users directory, or who am i kinding networkminer needs root.. ?
 
-## Building networkminer for the first time
-mono NetworkMiner.exe --noupdatecheck
-
-## add new bash alias to open networkminer from the console
-# move to home directory (may want to just add path to home to file output)
-# or source path to home directory through variable
-cd $HOME ## this needs to set to either users directory, or who am i kinding networkminer needs root..?
-
-# check if .bash_aliases was located properly.
-if [ -f .bash_aliases ]; # need to check syntax here
-then
-echo "alias networkminer='/opt/networkminer'"
-else
-echo "Was not able to locate .bash_aliases in ${HOME} please check script."
-echo -e "/"networkminer/" alias was not added to the enviroment. 
-cd ${cwd}
-fi
-
+  # check if .bash_aliases was located properly.
+  if [ -f .bash_aliases ]; # need to check syntax here
+  then
+  echo "alias networkminer='/opt/networkminer'"
+  else
+  echo "Was not able to locate .bash_aliases in ${HOME} please check script."
+  echo -e "/"networkminer/" alias was not added to the enviroment. 
+  cd ${cwd}
+  fi
+;;
+2)
+  echo "Removal scripting pending"
+;;
+*)
+  echo "Yo man I said i/r not whatever $install_Remove is. exiting..."
+  exit 1
+;;
+esac
 
