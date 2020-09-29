@@ -30,3 +30,5 @@ echo -e "Executing \"xrandr --addmode ${output_Name} \"1920x1080\"\""
 xrandr --addmode ${output_Name} "1920x1080"
 
 echo -e "You may now use \"xrandr --output ${output_Name} --mode 1920x1080\" to set the display to 1920x1080"
+
+echo "Try out the Add_Alias script to get this added as an alias for ezpz"
