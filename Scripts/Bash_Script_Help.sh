@@ -273,7 +273,7 @@ case $output_Choice in
 	;;
 	27)
 		echo -e "getting options\n"
-		echo -e "while [[ \"$1\" =~ ^- && ! \"$\1" == \"--\" ]]; do case $1 in"
+		echo -e "while [[ \"$1\" =~ ^- && ! \"$\1" == \"--\" ]]\; do case $1 in"
 		echo -e "\t-V | --version )"
 		echo -e "\t\techo $version"
 		echo -e "\t\texit"
