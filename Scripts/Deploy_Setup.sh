@@ -66,12 +66,15 @@ list_Directories=(
 "${path_Sources_Dir}"
 "${path_Test_Dir}"
 "${path_Scripts_Dir}"
-"${path_Back_Up_Dir}"
-"${path_Back_Up_Dir}/${bashrc_Dir}"
-"${path_Back_Up_Dir}/"${back_Up_Scripts}"
 "${path_Test_Dir1}"
 "${path_Test_Dir2}"
 "${path_Test_Dir3}"
+)
+
+list_Back_Up_Directories=(
+"${path_Back_Up_Dir}"
+"${path_Back_Up_Dir}/${bashrc_Dir}"
+"${path_Back_Up_Dir}/${back_Up_Scripts}"
 )
 
 # array of files to be created for iteration
@@ -84,31 +87,46 @@ list_Files=(
 
 echo " "
 
+for back_Up_Dir in "${list_Back_Up_Directories[@]}"
+do
+  if [ -d $back_up_Dir ]; then
+    echo "${back_up_Dir} detected. Will not create another :)"
+      else
+      mkdir ${back_up_Dir}
+      if [ -d ${back_up_Dir} ]; then
+        echo "New directory path created as: ${back_up_Dir}"
+          else
+            echo "Failed to created directory path as: ${back_up_Dir}"
+      fi
+  fi
+done
+
 # make new directories and check them
 for directory in "${list_Directories[@]}";
 do
     if [ -d ${directory} ]; then
-        if [ -d ${path_Back_Up_Dir}/${directory} ]; then
-          echo "looks like ${directory} and ${path_Back_Up_Dir}/${directory} already exist"
-          read -p "would you like to overwrite the ${path_Back_Up_Dir}/${directory} with ${directory} and it's contents? y/n -->" overwrite_Dir
+        if [ -d ${path_Back_Up_Dir}${directory} ]; then
+          echo "looks like ${directory} and ${path_Back_Up_Dir}${directory} already exist"
+          read -p "would you like to overwrite the ${path_Back_Up_Dir}${directory} with ${directory} and its contents? y/n --\> " overwrite_Dir
           if [ $overwrite_Dir == y]; then
-            echo "clearing back up location at ${path_Back_Up_Dir}/${directory}"
-            rm -rf ${path_Back_Up_Dir}/${directory}
+            echo "clearing back up location at ${path_Back_Up_Dir}${directory}"
+            rm -rf ${path_Back_Up_Dir}${directory}
             elif [ $overwrite_Dir != y]; then
               echo "then please save your work and clear directories before deployment!! exiting.."
-              exit 1
+              exit 1;
           fi
         fi
-      echo "${directory} already exists, backing up to ${path_Back_Up_Dir}/${directory}"
-      mv ${directory} ${path_Back_Up_Dir}/${directory}
-    fi
-    
-  mkdir ${directory}
-  
-    if [ -d ${directory} ]; then
-      echo "New directory path created as: ${directory}"
-       else
-         echo "Failed to created directory path as: ${directory}"
+      echo "${directory} already exists, backing up to ${path_Back_Up_Dir}${directory}"
+      mkdir -p ${path_Back_Up_Dir}${directory}
+      mv ${directory} ${path_Back_Up_Dir}${directory}
+      mkdir ${directory}
+      else
+      mkdir ${directory}
+      if [ -d ${directory} ]; then
+        echo "New directory path created as: ${directory}"
+          else
+            echo "Failed to created directory path as: ${directory}"
+      fi
     fi
 done
 
@@ -117,12 +135,10 @@ echo " "
 for file in "${list_Files[@]}";
   do
   touch ${file}
-  if [ -e {$file} ]; # if check for file is not working in this implementation...
-  # maybe try -f?
-    then
+  if [ -f ${file} ]; then
     echo "${file} has been created successfully!"
-    else
-    echo "${file} was not created sucessfully :("
+      else
+      echo "${file} was not created sucessfully :("
   fi
 done
 
@@ -150,9 +166,7 @@ echo "work_Path_1=${path_Sources_Dir}/${workz_File_1} written to ${path_Sources_
 echo "work_Path_2=${path_Sources_Dir}/${workz_File_2} written to ${path_Sources_Dir}/${pathz_File}"
 echo "work_Path_3=${path_Sources_Dir}/${workz_File_3} written to ${path_Sources_Dir}/${pathz_File}"
 
-echo " "
-
-if [-s ${path_Back_Up_Dir}/${bashrc_Dir}/bashrc1.bak ]; then
+if [ -f ${path_Back_Up_Dir}/${bashrc_Dir}/bashrc1.bak ]; then
   echo "restored .bashrc to state from before 1st run after backing up current .bashrc"
   cp .bashrc ${path_Back_Up_Dir}/${bashrc_Dir}/bashrc.bak 
   cp ${path_Back_Up_Dir}/${bashrc_Dir}/bashrc1.bak .bashrc
@@ -173,16 +187,15 @@ echo "export PATH=\"${path_Scripts_Dir}:\$PATH\" written to .bashrc"
 echo "source ${path_Sources_Dir}/${pathz_File} written to .bashrc"
 
 if [ -f .bash_aliases ]; then
-  if [-f ${path_Back_Up_Dir}/${bashrc_Dir}/.bash_aliases ]; then
-    read -p "Looks like .bash_aliases already exists in ${path_Back_Up_Dir}/${bashrc_Dir} would you like to overwrite it with the current .bash_aliases? y/n -->" overwrite_Aliases
+  if [ -f ${path_Back_Up_Dir}/${bashrc_Dir}/bash_aliases.bak ]; then
+    read -p "Looks like .bash_aliases already exists in ${path_Back_Up_Dir}/${bashrc_Dir} would you like to overwrite it with the current .bash_aliases? y/n --" overwrite_Aliases
     if [ ${overwrite_Aliases} == y ]; then
       echo "clearing back up .bash_aliases from ${path_Back_Up_Dir}/${bashrc_Dir}"
-      rm ${path_Back_Up_Dir}/${bashrc_Dir}/.bash_aliases
+      rm "${path_Back_Up_Dir}/${bashrc_Dir}/bash_aliases.bak"
     fi
   fi
   echo "Moved previous .bash_aliases to ${path_Back_Up_Dir}/${bashrc_Dir}"
-  echo ""
-  mv .bash_aliases ${path_Back_Up_Dir}/${bashrc_Dir}
+  mv .bash_aliases "${path_Back_Up_Dir}/${bashrc_Dir}/bash_aliases.bak"
 fi
 
 cp ${Repo_Path}/aliases .bash_aliases
@@ -212,28 +225,28 @@ echo "source ${path_Sources_Dir}/${workz_File_3} prepended to .bash_aliases."
 
 echo " "
 
-if [ -s ${path_Scripts_Dir}/Change_Work.sh ]; # new conditional flag have not used it yet, hopefully it works as intended
-  read -p "Looks like a ${path_Scripts_Dir} directory already exists with some scripts would you like to back them up?" back_Up_Scripts
-  if [ ${back_Up_Scripts} == y ]; then
-    if [ -s ${path_Back_Up_Dir}/"${back_Up_Scripts}/Change_Work.sh ]; then
-      read -p "Looks like ${path_Back_Up_Dir}/"${back_Up_Scripts} already has some scripts as well are you sure you want to overwrite it?" overwrite_back_Up_Scripts
-      if [ ${overwrite_back_Up_Scripts} == y ]; then
-        rm ${path_Back_Up_Dir}/"${back_Up_Scripts}/*
-        echo "Back up scripts cleared out from ${path_Back_Up_Dir}/"${back_Up_Scripts}"
-         elif [ ${overwrite_back_Up_Scripts} != y ]; then
-          echo "please save your work before running the Deploy.sh silly head exiting.."
-          exit 1
+if [ -f ${path_Scripts_Dir}/Change_Work.sh ]; then # new conditional flag have not used it yet, hopefully it works as intended
+    read -p "Looks like a ${path_Scripts_Dir} directory already exists with some scripts would you like to back them up? y/n -->" bak_Up_Scripts
+    if [ ${bak_Up_Scripts} == y ]; then
+      if [ -f ${path_Back_Up_Dir}/${back_Up_Scripts}/Change_Work.sh ]; then
+        read -p "Looks like ${path_Back_Up_Dir}/${back_Up_Scripts} already has some scripts as well are you sure you want to overwrite it? y/n -->" overwrite_back_Up_Scripts
+        if [ ${overwrite_back_Up_Scripts} == y ]; then
+          rm ${path_Back_Up_Dir}/${back_Up_Scripts}/*
+          echo "Back up scripts cleared out from ${path_Back_Up_Dir}/${back_Up_Scripts}"
+            elif [ ${overwrite_back_Up_Scripts} != y ]; then
+            echo "please save your work before running the Deploy.sh silly head exiting.."
+            exit 1
+        fi
       fi
+        echo "Backing up scripts to ${path_Back_Up_Dir}/${back_Up_Scripts}"
+        mv ${path_Scripts_Dir}/* ${path_Back_Up_Dir}/${back_Up_Scripts}
+      elif [ ${back_Up_Scripts} != y ]; then
+        echo "please save your work before running the Deploy.sh silly head exiting.."
+        exit 1
     fi
-    echo "Backing up scripts to ${path_Back_Up_Dir}/"${back_Up_Scripts}"
-    mv ${path_Scripts_Dir}/* ${path_Back_Up_Dir}/"${back_Up_Scripts}
-    elif [ ${back_Up_Scripts} != y ]; then
-      echo "please save your work before running the Deploy.sh silly head exiting.."
-      exit 1
-  fi
-else 
-cp ${Repo_Path}/Scripts/* ${path_Scripts_Dir}
-echo "${Repo_Path}/Scripts/ copied to ${path_Scripts_Dir}"
+  else 
+    cp ${Repo_Path}/Scripts/* ${path_Scripts_Dir}
+    echo "${Repo_Path}/Scripts/ copied to ${path_Scripts_Dir}"
 fi
   
 for script in $(ls ${path_Scripts_Dir});
