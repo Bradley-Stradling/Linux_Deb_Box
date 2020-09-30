@@ -11,7 +11,8 @@
 #*******************************************************************************
 
 
-# !!need to check outputs for char's that need to be escaped!!
+# syntax should be, need to manually check outputs for readbility
+# might be a really good opportunity to dip into coloring outputs
 
 echo "#**************************************************************"
 
@@ -23,33 +24,42 @@ echo -e "\n"
 
 echo "credit to https://devhints.io/bash for the info"
 
-echo -e "\"1\" basic loop\t\t \"2\" c-like loop\t \"3\" ranged loops\t"
+echo -e "\"1\" basic loop\t\t\t \"2\" c-like loop\t\t \"3\" ranged loops\t"
 
-echo -e "\"4\" line read loop\t\t \"5\" while loop\t \"6\" conditionals\t"
+echo -e "\"4\" line read loop\t\t \"5\" while loop\t\t\t \"6\" conditionals\t"
 
-echo -e "\"7\" basic function syntax and call\t \"8\" brace expansion\t \"9\" arguments\t"
+echo -e "\"7\" basic function syntax\t \"8\" brace expansion\t\t \"9\" arguments\t"
 
-echo -e "\"10\" file conditionals\t \"11\" defining arrays\t \"12\" working on arrays\t"
+echo -e "\"10\" file conditionals\t\t \"11\" defining arrays\t\t \"12\" working on arrays\t"
 
-echo -e "\"13\" array operations\t \"14\" defining dictionaries\t \"15\" working on dictionaries\t"
+echo -e "\"13\" array operations\t\t \"14\" defining dictionaries\t \"15\" working on dictionaries\t"
 
-echo -e "\"16\" dictionary iteration\t \"17\" options\t \"18\" glob options\t"
+echo -e "\"16\" dictionary iteration\t \"17\" options\t\t\t \"18\" glob options\t"
 
-echo -e "\"19\" history commands\t \"20\" history expansion\t \"21\" history operations\t"
+echo -e "\"19\" history commands\t\t \"20\" history expansion\t\t \"21\" history operations\t"
 
-echo -e "\"22\" history slices\t \"23\" subshells\t \"24\" inspect a command\t"
+echo -e "\"22\" history slices\t\t \"23\" subshells\t\t\t \"24\" inspect a command\t"
 
-echo -e "\"25\" random number\t \"26\" arithemtic\t \"27\" getting options\t"
+echo -e "\"25\" random number\t\t \"26\" arithemtic\t\t \"27\" getting options\t"
 
-echo -e "\"28\" redirection\t \"29\" trap errors\t \"30\" sourcing\t"
+echo -e "\"28\" redirection\t\t \"29\" trap errors\t\t \"30\" sourcing\t"
 
-echo -e "\"31\" special variables\t \"32\" check cmd result\t \"33\" grep check\t"
+echo -e "\"31\" special variables\t\t \"32\" check cmd result\t\t \"33\" grep check\t"
 
-read -p "What can the rabbit assist you with on this fine day? <--" output_Choice
+while [[ ${output_Choice} != "e" ]]; do
 
-echo $output_Choice
+echo " "
 
-case $output_Choice in
+read -p "What can the rabbit assist you with on this fine day? e to exit <--" output_Choice
+
+if [[ ${output_Choice} == "e" ]]; then
+	echo "Exiting script, hope this was helpful :)"
+	exit 0
+fi
+
+echo " "
+
+case ${output_Choice} in
 
 	1)
 		echo -e "basic loop\n"
@@ -61,27 +71,28 @@ case $output_Choice in
 	;;
 	3)
 		echo -e "ranged loops\n"
-		echo -e "for i in {5..10}; do\n\techo \"Stay a while and listen $i\"\ndone"
+		echo -e "for i in {5..10}; do\n\techo \"Stay a while and listen \$i\"\ndone\n"
 		echo "With a step size of 3"
-		echo -e "for i in {12..36..3}; do\n\techo \"Stay a while and listen $i\"\ndone"
+		echo -e "for i in {12..36..3}; do\n\techo \"Stay a while and listen \$i\"\ndone\n"
 		echo "iterating an array"
-		echo -e "for i in \"${array_Name[@]}\"; do"
-		echo "cmd $i"
+		echo -e "for i in \"\${array_Name[@]}\"; do"
+		echo "cmd \$i"
 		echo "done"
 	;;
 	4)
 		echo -e "line read loop\n"
-		echo -e "cat file | while read line; do\n\t echo $line"
+		echo -e "cat file | while read line; do\n\t echo \$line"
+		echo "done"
 	;;
 	5)
 		echo -e "while loop\n"
-		echo -e "while [[ \"$A\" == \"$B\" ]]; do\n\t {perform an action}\n done"
+		echo -e "while [[ \"\$A\" == \"\$B\" ]]; do\n\t {perform an action}\ndone"
 	;;
 	6)
 		echo -e "conditionals\n"
-		echo -e "if [[ -flag \"$variable\" ]]; then"
+		echo -e "if [[ -flag \"\$variable\" ]]; then"
 		echo -e "\t cmd \"do a thing\""
-		echo -e "elif [[ -anotherflag \"$variable\" ]]; then"
+		echo -e "elif [[ -anotherflag \"\$variable\" ]]; then"
 		echo -e "\t cmd \"do a thing\""
 		echo "fi"
 		
@@ -105,35 +116,35 @@ case $output_Choice in
 		echo -e "[[ X || Y ]]\t\t # Or"
 	;;
 	7)
-		echo -e "basic function syntax and call\n"
+		echo -e "basic function syntax\n"
 		echo "do_A_Thing() {"
 		echo -e "\tdoing a thing"
 		echo "}"
-		echo -e "cmd $(do_A_Thing)"
+		echo -e "cmd \$(do_A_Thing)\n"
 		
-		echo -e "passing values into function, \"function\" can be used to declare a function but not needed"
+		echo -e "passing values into function, \"function\" can be used to declare a function but not needed\n"
 		echo "function do_A_Thing() {"
-		echo -e "cmd \"do a thing with $1\""
+		echo -e "cmd \"do a thing with \$1\""
 		echo "}"
 		echo -e "do_A_Thing \"value\""
 	;;
 	8)
 		echo -e "brace expansion\n"
-		echo "for all files in array/list from A to C, (A.ext B.ext, C.ext)"
-		echo "cmd {A,C}.ext"
-		echo "for all numbers in range of 15 to 20"
-		echo "{15..20}"
-		echo "for brace expansion with variable step size"
-		echo "{50..200..25}"
-		echo "same as 50 75 100 125 150 175 200"
+		echo "for all files in array/list from A to C, (A.ext B.ext, C.ext)\n"
+		echo "cmd {A,C}.ext\n"
+		echo "for all numbers in range of 15 to 20\n"
+		echo "{15..20}\n"
+		echo "for brace expansion with variable step size\n"
+		echo "{50..200..25}\n"
+		echo "same as 50 75 100 125 150 175 200\n"
 	;;
 	9)
 		echo -e "arguments\n"
-		echo -e "$#\tnumber of arguments"
-		echo -e "$*\tall arguments"
-		echo -e "$@\tall arguments from first"
-		echo -e "$(number)\t1st, 2nd, 3rd etc argument"
-		echo -e "$_\tlast argument of previous cmd"
+		echo -e "\$#\t# number of arguments"
+		echo -e "\$*\t# all arguments"
+		echo -e "\$@\t# all arguments from first"
+		echo -e "\$(number)\t# 1st, 2nd, 3rd etc argument"
+		echo -e "\$_\t# last argument of previous cmd"
 	;;
 	10)
 		echo -e "file conditionals\n"
@@ -159,14 +170,14 @@ case $output_Choice in
 	;;
 	12)
 		echo -e "working on arrays\n"
-		echo -e "cmd ${array_Name[3]}\t 3rd element"
-		echo -e "cmd ${array_Name[-2]}\t 2nd from last element"
-		echo -e "cmd ${array_Name[@]}\t all elements space seperation"
-		echo -e "cmd ${#array_Name[@]}\t numbers of elements"
-		echo -e "cmd ${#array_Name}\t string length of 1st element"
-		echo -e "cmd ${#array_Name[n]}\t string length of nth element"
-		echo -e "cmd ${array_Name[@]:p:l}\t range from position p to length l"
-		echo -e "cmd ${!array_Name[@]}\t key of all elements space seperated"
+		echo -e "cmd \${array_Name[3]}\t# 3rd element"
+		echo -e "cmd \${array_Name[-2]}\t# 2nd from last element"
+		echo -e "cmd \${array_Name[@]}\t# all elements space seperation"
+		echo -e "cmd \${#array_Name[@]}\t# numbers of elements"
+		echo -e "cmd \${#array_Name}\t# string length of 1st element"
+		echo -e "cmd \${#array_Name[n]}\t# string length of nth element"
+		echo -e "cmd \${array_Name[@]:p:l}\t# range from position p to length l"
+		echo -e "cmd \${!array_Name[@]}\t# key of all elements space seperated"
 	;;
 	13)
 		echo -e "array operations\n"
@@ -174,7 +185,7 @@ case $output_Choice in
 	;;
 	14)
 		echo -e "defining dictionaries\n"
-		echo "aka associative arrays, hence -A"
+		echo "aka associative arrays, hence -A\n"
 		echo "declare -A genre"
 		echo -e "genre[AngelMaker]=\"Deathcore\""
 		echo -e "genre[Metallica]=\"Metal\""
@@ -182,21 +193,21 @@ case $output_Choice in
 	;;
 	15)
 		echo -e "working on dictionaries\n"
-		echo -e "${genre[AngelMaker]}\t # value at "
-		echo -e "${genre[@]}\t # all values"
-		echo -e "${!genre[@]}\t # all keys"
-		echo -e "${#genre[@]}\t # number of elements"
+		echo -e "\${genre[AngelMaker]}\t # value at "
+		echo -e "\${genre[@]}\t # all values"
+		echo -e "\${!genre[@]}\t # all keys"
+		echo -e "\${#genre[@]}\t # number of elements"
 		echo -e "unset genre[Metallica]\t # delete Metallica"
 	;;
 	16)
 		echo -e "dictionary iteration\n"
 		echo "need to check if val actually has to be val, and also key"
-		echo -e "for val in \"${genre[@]}\"; do"
-		echo -e "\tcmd $val"
+		echo -e "for val in \"\${genre[@]}\"; do"
+		echo -e "\tcmd \$val"
 		echo "done"
 		echo "iteration over keys"
-		echo -e "for key in \"${!genre[@]}\"; do"
-		echo -e "\tcmd $key"
+		echo -e "for key in \"\${!genre[@]}\"; do"
+		echo -e "\tcmd \$key"
 		echo "done"
 	;;
 	17)
@@ -212,7 +223,7 @@ case $output_Choice in
 		echo -e "shopt -s nullglob\t # Non-matching globs are removed  (\'*.foo' => \'\')"
 		echo -e "shopt -s failglob\t # Non-matching globs throw errors"
 		echo -e "shopt -s nocaseglob\t # Case insensitive globs"
-		echo -e "shopt -s dotglob\t # Wildcards match dotfiles ("*.sh" => ".foo.sh")"
+		echo -e "shopt -s dotglob\t # Wildcards match dotfiles (\"*.sh\" => \".foo.sh\")"
 		echo -e "shopt -s globstar\t # Allow ** for recursive matches (\'lib/**/*.rb' => \'lib/a/b/c.rb\')"
 		echo -e "Set GLOBIGNORE as a colon-separated list of patterns to be removed from glob matches."
 	
@@ -248,7 +259,7 @@ case $output_Choice in
 	;;
 	23)
 		echo -e "subshells\n"
-		echo -e "(cd somedir; echo \"I\'m now in $PWD\")"
+		echo -e "(cd somedir; echo \"I\'m now in \$PWD\")"
 		echo -e "pwd\t # still in first directory"
 		
 	;;
@@ -258,34 +269,34 @@ case $output_Choice in
 	;;
 	25)
 		echo -e "random number\n"
-		echo -e "$(($RANDOM%100))\t # Random number 0..99"
+		echo -e "\$((\$RANDOM%100))\t # Random number 0..99"
 	;;
 	26)
 		echo -e "arithemtic\n"
-		echo -e "$((x + 100))\t #add 100 to $x"
-		echo -e "$((x - 100))\t #subtract 100 from $x"
-		echo -e "$((x * 100))\t #multiply $x by 100"
-		echo -e "$((x / 100))\t #divide $x by 100"
-		echo -e "$((x % 2))\t #modulus $x by 2 need to check if modulus in bash has sign of dividend"
-		echo -e "$((x ++ 100))\t #post increment $x by 100"
-		echo -e "$((x -- 100))\t #post decrement $x by 100"
-		echo -e "$((x ** 100))\t #exponentiate $x by 100"
+		echo -e "\$((x + 100))\t #add 100 to \$x"
+		echo -e "\$((x - 100))\t #subtract 100 from \$x"
+		echo -e "\$((x * 100))\t #multiply \$x by 100"
+		echo -e "\$((x / 100))\t #divide \$x by 100"
+		echo -e "\$((x % 2))\t #modulus \$x by 2 need to check if modulus in bash has sign of dividend"
+		echo -e "\$((x ++ 100))\t #post increment \$x by 100"
+		echo -e "\$((x -- 100))\t #post decrement \$x by 100"
+		echo -e "\$((x ** 100))\t #exponentiate \$x by 100"
 	;;
 	27)
 		echo -e "getting options\n"
-		echo -e "while [[ \"$1\" =~ ^- && ! \"$\1" == \"--\" ]]; do case $1 in"
-		echo -e "\t-V | --version )"
-		echo -e "\t\techo $version"
+		echo -e "while [[ \"\$1\" =~ ^- && ! \"\$1\" == \"--\" ]]; do case \$1 in"
+		echo -e "\t-V | --version \)"
+		echo -e "\t\techo \$version"
 		echo -e "\t\texit"
 		echo -e "\t\t;;"
 		echo -e "\t-s | --string )"
-		echo -e "\t\tshift; string=$1"
+		echo -e "\t\tshift; string=\$1"
 		echo -e "\t\t;;"
 		echo -e "\t-f | --flag )"
 		echo -e "\t\tflag=1"
 		echo -e "\t\t;;"
 		echo -e "esac; shift; done"
-		echo -e "if [[ \"$1\" == \'--\' ]]; then shift; fi"
+		echo -e "if [[ \"\$1\" == \'--\' ]]; then shift; fi"
 	;;
 	28)
 		echo -e "redirection\n"
@@ -293,25 +304,25 @@ case $output_Choice in
 		echo -e "cmd variable > output.txt\t\t# stdout to (file)"
 		echo -e "cmd variable >> output.txt\t\t# stdout to (file), append"
 		echo -e "cmd variable 2> error.log\t\t# stderr to (file)"
-		echo -e "cmd variable 2>&1\t\t# stderr to stdout""
-		echo -e "cmd variable 2>/dev/null\t\t# stderr to (null)
+		echo -e "cmd variable 2>&1\t\t# stderr to stdout"
+		echo -e "cmd variable 2>/dev/null\t\t# stderr to (null)"
 		echo -e "cmd variable &>/dev/null\t\t# stdout and stderr to (null)\n"
 		echo -e "cmd script < file.ext\t\t# feed file.ext to stdin for script/cmd"
 	;;
 	29)
 		echo -e "trap errors\n"
-		echo -e "trap \'echo Error at about $LINENO\' ERR"
+		echo -e "trap \'echo Error at about \$LINENO\' ERR"
 		echo "or"
 		echo -e "traperr() {"
-		echo -e "\techo \"ERROR: ${BASH_SOURCE[1]} at about ${BASH_LINENO[0]}\""
+		echo -e "\techo \"ERROR: \${BASH_SOURCE[1]} at about \${BASH_LINENO[0]}\""
 		echo -e "}\n"
 		echo -e "set -o errtrace"
-		echo -e "trap traperr ERR"
+		echo -e "\trap traperr ERR"
 	;;
 	30)
-		echo -e "case/switch\n"
+		echo -e "\case/switch\n"
 		echo -e "string"
-		echo -e "case $string in"
+		echo -e "case \$string in"
 		echo -e "\tstring1)\t #case 1"
 		echo -e "\t\tcmd string"
 		echo -e ";;"
@@ -323,7 +334,7 @@ case $output_Choice in
 		echo -e "\t;;"
 		echo -e "esac\n"
 		echo -e "numerical"
-		echo -e "case $variable in"
+		echo -e "case \$variable in"
 		echo -e "\t1)\t #case 1"
 		echo -e "\t\tcmd variable"
 		echo -e ";;"
@@ -337,10 +348,10 @@ case $output_Choice in
 	;;
 	31)
 		echo -e "special variables\n"
-		echo -e "$?\t # Exit status of last task"
-		echo -e "$!\t # PID of last background task"
-		echo -e "$$\t #PID of shell"
-		echo -e "$0\t #Filename of the shell script"
+		echo -e "\$?\t # Exit status of last task"
+		echo -e "\$!\t # PID of last background task"
+		echo -e "\$$\t #PID of shell"
+		echo -e "\$0\t #Filename of the shell script"
 	;;
 	32)
 		echo -e "check cmd result\n"
@@ -358,3 +369,5 @@ case $output_Choice in
 		echo "Exiting Script because I have no clue what you typed o.O"
 	;;
 esac
+
+done
