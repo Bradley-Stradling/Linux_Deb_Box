@@ -87,16 +87,16 @@ list_Files=(
 
 echo " "
 
-for back_Up_Dir in "${list_Back_Up_Directories[@]}"
+for dir_Back_Up in "${list_Back_Up_Directories[@]}"
 do
-  if [ -d $back_up_Dir ]; then
-    echo "${back_up_Dir} detected. Will not create another :)"
+  if [ -d ${dir_Back_Up} ]; then
+    echo "${dir_Back_Up} detected. Will not create another :)"
       else
-      mkdir ${back_up_Dir}
-      if [ -d ${back_up_Dir} ]; then
-        echo "New directory path created as: ${back_up_Dir}"
+      mkdir ${dir_Back_Up}
+      if [ -d ${dir_Back_Up} ]; then
+        echo "New directory path created as: ${dir_Back_Up}"
           else
-            echo "Failed to created directory path as: ${back_up_Dir}"
+            echo "Failed to created directory path as: ${dir_Back_Up}"
       fi
   fi
 done
