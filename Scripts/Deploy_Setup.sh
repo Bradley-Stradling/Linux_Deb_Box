@@ -10,14 +10,6 @@
 #(")_(")  add the scripts folder to path.
 #*******************************************************************************
 
-# need to test new gowork paths with change work
-
-# need to refactor script for reuse, as in if deployment has already taken place,
-# need to setup checks if directories are already present and back their contents
-# before overwriting them with newer content from the repo
-
-# 1st and 2nd run off no issues, 3rd run .bash aliases replace logic needs a look
-
 cwd=$(pwd)
 
 read -p "is the current working directory of ${cwd} where you want to \
