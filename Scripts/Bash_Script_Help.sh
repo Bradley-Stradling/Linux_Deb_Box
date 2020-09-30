@@ -40,7 +40,7 @@ echo -e "\"19\" history commands\t\t \"20\" history expansion\t\t \"21\" history
 
 echo -e "\"22\" history slices\t\t \"23\" subshells\t\t\t \"24\" inspect a command\t"
 
-echo -e "\"25\" random number\t\t \"26\" arithemtic\t\t \"27\" getting options\t"
+echo -e "\"25\" random number\t\t \"26\" arithemetic\t\t \"27\" getting options\t"
 
 echo -e "\"28\" redirection\t\t \"29\" trap errors\t\t \"30\" sourcing\t"
 
