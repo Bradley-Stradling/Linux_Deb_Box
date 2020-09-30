@@ -108,10 +108,10 @@ do
         if [ -d ${path_Back_Up_Dir}${directory} ]; then
           echo "looks like ${directory} and ${path_Back_Up_Dir}${directory} already exist"
           read -p "would you like to overwrite the ${path_Back_Up_Dir}${directory} with ${directory} and its contents? y/n --\> " overwrite_Dir
-          if [ $overwrite_Dir == y]; then
+          if [ $overwrite_Dir == y ]; then
             echo "clearing back up location at ${path_Back_Up_Dir}${directory}"
             rm -rf ${path_Back_Up_Dir}${directory}
-            elif [ $overwrite_Dir != y]; then
+            elif [ $overwrite_Dir != y ]; then
               echo "then please save your work and clear directories before deployment!! exiting.."
               exit 1;
           fi
