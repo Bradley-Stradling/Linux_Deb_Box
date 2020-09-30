@@ -6,9 +6,8 @@
 Aliases and scripts for my linux debian bash user enviroment set-up imported 
 via "Deploy_Setup.sh".
 
-***** "Deploy_Setup.sh" has had big changes without testing as of 9/28/20, 
-use caution!!! likely broken? hopefully not though
-please see commit f5527ac for last known good state*****
+9/29/20 Deploy_Setup.sh can now be run multiple times without having to manually clear 
+anything screen outputs and confirmations are not pretty though.
 
 Unlicense applies to all files that are tagged with it directly in this 
 repository. Links to websites are not my sites in any manner.
@@ -48,7 +47,8 @@ to the passed target path.
 
 Deploy_Setup.sh - Deploys the contents of this repo for immediate use.
 Creates a few directories and sources their local paths to aliases, bashrc, 
-and scripts to ease setting up a new debian system.
+and scripts to ease setting up a new debian system. This can be run multiple
+times without creating a mess of files or directories
 
 Get_Linux_Info.sh - Script to pull some info about the current system and 
 either display on screen, write it to a file in cwd or both.
