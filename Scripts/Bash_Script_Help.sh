@@ -367,6 +367,7 @@ case ${output_Choice} in
 	;;
 	*)
 		echo "Exiting Script because I have no clue what you typed o.O"
+		exit 1
 	;;
 esac
 
