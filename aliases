@@ -59,7 +59,7 @@ alias chgwork='bash Change_Work.sh'
 alias backmeup='bash Back_Me_Up.sh'
 
 # set screen resolution
-alias fixrez='xrandr --output Virtual1 --mode 1920x1080_60.00'
+alias fixrez='xrandr --output Virtual1 --mode 1920x1080'
 
 # goes to home directory
 alias gohome='cd $HOME'
