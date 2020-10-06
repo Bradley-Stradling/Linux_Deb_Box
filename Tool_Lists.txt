@@ -4,28 +4,28 @@
 # alias would also serve that purpose without adding sources to bashrc
 # this file should house lists to names of tools as well as links to tools with commented accreditation if it is known
 
-tools_CTF={
+tools_CTF=(
 ""
-}
+)
 
-tools_Pentest={
+tools_Pentest=(
 ""
-}
+)
 
-tools_Bug_Bounty={
+tools_Bug_Bounty=(
 ""
-}
+)
 
-tools_OSINT={
+tools_OSINT=(
 ""
-}
+)
 
-tools_Edit={
+tools_Edit=(
 ""
-}
+)
 
 # Combing all lists into nested list. or might be better to concatenate and dedupe.
 # concantenating likely simpler for deduping?
-tools_All={
+tools_All=(
 ""
-}
+)
