@@ -14,6 +14,16 @@
 # syntax should be, need to manually check outputs for readbility
 # might be a really good opportunity to dip into coloring outputs
 
+###
+echo "!!!NOTE this is untested!!!!"
+read -p " Are you sure you meant to run this script before it's been fully tested?? y/n -->" run_Script
+
+if [[ ${run_Script} != y ]]; then
+  echo -e "Then please be careful running scripts that are unfinished \:P exiting.."
+  exit 1
+fi
+###
+
 echo "#**************************************************************"
 
 echo -e "#  (\_/)\t\n#  (o.o)\tWelcome to Bradleys Bash_Script_Helper\n# (\")_(\")\t"
