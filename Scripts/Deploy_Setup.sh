@@ -39,6 +39,7 @@ test_Dir1=1_Test
 test_Dir2=2_Test
 test_Dir3=3_Test
 scripts_Dir=My_Scripts
+tools_Dir=My_Tools
 back_Up_Dir=Back_Up_Files
 bashrc_Dir=Set-up
 back_Up_Scripts=Scripts_Back_Up
@@ -54,12 +55,14 @@ path_Test_Dir1=${cwd}/${test_Dir}/${test_Dir1}
 path_Test_Dir2=${cwd}/${test_Dir}/${test_Dir2}
 path_Test_Dir3=${cwd}/${test_Dir}/${test_Dir3}
 path_Scripts_Dir=${cwd}/${scripts_Dir}
+path_Tools_Dir=$${cwd}/{$tools_Dir}
 path_Back_Up_Dir=${cwd}/${back_Up_Dir}
 
 list_Directories=(
 "${path_Sources_Dir}"
 "${path_Test_Dir}"
 "${path_Scripts_Dir}"
+"${path_Tools_Dir}"
 "${path_Test_Dir1}"
 "${path_Test_Dir2}"
 "${path_Test_Dir3}"
@@ -172,13 +175,24 @@ echo " "
 
 echo "# Added path to my scripts directorys." >> .bashrc
 echo "export PATH=\"${path_Scripts_Dir}:\$PATH\"" >> .bashrc
+echo "# Added path to my tools directorys." >> .bashrc
+echo "export PATH=\"{path_Tools_Dir}:\$PATH\"" >> .bashrc
+echo "# Added sourcing of paths file" >> .bashrc
 echo "source ${path_Sources_Dir}/${pathz_File}" >> .bashrc
 
 echo " "
 
 echo "# Added path to my scripts directorys. written to .bashrc"
 echo "export PATH=\"${path_Scripts_Dir}:\$PATH\" written to .bashrc"
+echo "# Added path to my tools directorys. written to .bashrc"
+echo "export PATH=\"${path_Tools_Dir}:\$PATH\" written to .bashrc"
+echo "# Added sourcing of paths file"
 echo "source ${path_Sources_Dir}/${pathz_File} written to .bashrc"
+
+echo " "
+
+echo "# Added path to my tools directorys. written to .bashrc"
+echo "export PATH=\"${path_Tools_Dir}:\$PATH\" written to .bashrc"
 
 if [ -f .bash_aliases ]; then
   if [ -f ${path_Back_Up_Dir}/${bashrc_Dir}/bash_aliases.bak ]; then
