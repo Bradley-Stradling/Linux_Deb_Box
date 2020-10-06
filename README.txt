@@ -6,9 +6,6 @@
 Aliases and scripts for my linux debian bash user enviroment set-up imported 
 via "Deploy_Setup.sh".
 
-Once this repo reaches a certain point of usefullness and friendliness to an 
-end user a more in depth .md walkthrough will be generated.
-
 -----
 10/6/20 Adding new My_Tools directory to Deploy_Setup.sh, added to path as well
 so that when tools are installed by deploy setup they have a home that lets them
