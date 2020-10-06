@@ -11,6 +11,14 @@
 #(")_(")  
 #*******************************************************************************
 
+echo -e "!!! NOTE\: This script is likely unfinished and untested !!!
+read -p " Are you sure you meant to run this script before it's been tested?? y/n -->" run_Script
+
+if [[ ${run_Script} != y ]]; then
+  echo -e "Then please be careful running scripts that are unfinished \:P exiting.."
+  exit 1
+fi
+
 read -p "Would you like to clear out previous deployment of Linux_Deb_Box? y/n -->" clr_Deploy
 
 if [ ${clr_Deploy} == y ]; then
