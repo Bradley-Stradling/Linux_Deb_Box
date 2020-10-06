@@ -9,7 +9,7 @@ via "Deploy_Setup.sh".
 10/6/20 Adding new My_Tools directory to Deploy_Setup.sh, added to path as well
 so that when tools are installed by deploy setup they have a home that lets them
 be called from path. My_Tools will eventually house penetration testing tools.
-Accreditation should be added when applicable!
+Accreditation should be added when applicable for each tool!
 
 Unlicense applies to all files that are tagged with it directly in this 
 repository. Links to websites are not my sites in any manner.
