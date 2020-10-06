@@ -203,18 +203,18 @@ echo "# Added path to my scripts directorys." >> .bashrc
 echo "export PATH=\"${path_Scripts_Dir}:\$PATH\"" >> .bashrc
 echo "# Added sourcing of paths file" >> .bashrc
 echo "source ${path_Sources_Dir}/${pathz_File}" >> .bashrc
-
+echo "# Added path to my tools directorys." >> .bashrc
+echo "export PATH=\"${path_Tools_Dir}:\$PATH\"" >> written to .bashrc
 echo " "
 
 echo "# Added path to my scripts directorys. written to .bashrc"
 echo "export PATH=\"${path_Scripts_Dir}:\$PATH\" written to .bashrc"
 echo "# Added sourcing of paths file"
 echo "source ${path_Sources_Dir}/${pathz_File} written to .bashrc"
-
-echo " "
-
 echo "# Added path to my tools directorys. written to .bashrc"
 echo "export PATH=\"${path_Tools_Dir}:\$PATH\" written to .bashrc"
+
+echo " "
 
 if [ -f .bash_aliases ]; then
   if [ -f ${path_Back_Up_Dir}/${bashrc_Dir}/bash_aliases.bak ]; then
