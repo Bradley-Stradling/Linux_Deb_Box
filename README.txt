@@ -7,11 +7,14 @@ Aliases and scripts for my linux debian bash user enviroment set-up imported
 via "Deploy_Setup.sh". (And eventually tools for bug bounty hunting and 
 penetration testing)
 
+-----
 10/6/20 Adding new My_Tools directory to Deploy_Setup.sh, added to path as well
 so that when tools are installed by deploy setup they have a home that lets them
 be called from path. My_Tools will eventually house penetration testing tools.
-Accreditation should be added when applicable for each tool! (tools likely to
+
+Accreditation should be added when applicable for each tool! (tools likely to be
 deployed by secondary script within this repository more to come later!)
+-----
 
 Unlicense applies to all files that are tagged with it directly in this 
 repository. Links to websites are not my sites in any manner.
@@ -76,8 +79,4 @@ such as upgrading a dummy shell with python, or a quick python server etc.
 ---------------------------------- FUTURE -------------------------------------
 
 Scripts to configure common linux system admin and security functions, password
-policies, file permissions, system hardening. Automate some tripwire setup maybe?
-
-Determine baseline security tools needed for penetration testing and create a
-script to get them installed to Ubuntu or a less security oriented dstribution,
-for quick and easy Ubunhack, or Minty Hacks?
+policies, file permissions, system hardening.
