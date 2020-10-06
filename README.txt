@@ -1,6 +1,6 @@
 #*******************************************************************************
 # (\_/)                Author: Bradley Stradling                          (\_/)
-# (o.o)                 Title: Linux_Deb_Repo                             (*.*)
+# (o.o)                 Title: Linux_Deb_Box                              (*.*)
 #(")_(")             Lincense: https://unlicense.org/                    (")_(")
 #*******************************************************************************
 Aliases and scripts for my linux debian bash user enviroment set-up imported 
