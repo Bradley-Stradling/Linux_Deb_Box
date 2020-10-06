@@ -4,7 +4,8 @@
 #(")_(")             Lincense: https://unlicense.org/                    (")_(")
 #*******************************************************************************
 Aliases and scripts for my linux debian bash user enviroment set-up imported 
-via "Deploy_Setup.sh".
+via "Deploy_Setup.sh". (And eventually tools for bug bounty hunting and 
+penetration testing)
 
 10/6/20 Adding new My_Tools directory to Deploy_Setup.sh, added to path as well
 so that when tools are installed by deploy setup they have a home that lets them
