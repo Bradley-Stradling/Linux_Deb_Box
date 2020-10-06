@@ -7,21 +7,14 @@ Aliases and scripts for my linux debian bash user enviroment set-up imported
 via "Deploy_Setup.sh".
 
 -----
-10/6/20 Adding new My_Tools directory to Deploy_Setup.sh, added to path as well
-so that when tools are installed by deploy setup they have a home that lets them
-be called from path. My_Tools will eventually house penetration testing tools.
-
-Accreditation should be added when applicable for each tool! (tools likely to be
-deployed by secondary script within this repository more to come later as 
-Deploy_Tools.sh)
+10/6/20 Adding new My_Tools directory and list file to Deploy_Setup.sh, in 
+preparation of the next deploy script. Should likely make this a flag? Such
+that if someone does not want to add any tools from the lists, Deploy_Setup.sh
+will not bother with making the directory or importing the tool lists.
 
 changes have likely left Deploy_Setup.sh broken in current state, please see
 https://github.com/Bradley-Stradling/Linux_Deb_Box/tree/3910b1c2555a5aa19196116dec3107fc611cc34c
 for last known functioning commit.
-
-My_Tools directory creation/update/removal should be handled by Deploy_Tools.sh, 
-sourcing local paths, such that it can be run standalone, and branched off as it's
-own repository as well as hanging out with this repo.
 -----
 
 Unlicense applies to all files that are tagged with it directly in this 
@@ -64,6 +57,11 @@ Deploy_Setup.sh - Deploys the contents of this repo for immediate use.
 Creates a few directories and sources their local paths to aliases, bashrc, 
 and scripts to ease setting up a new debian system. This can be run multiple
 times without creating a mess of files or directories
+
+Deploy_Tools.sh - (Far from complete)A script and accompanying list of lists 
+of cyber tools, that prompts user input and installs/downloads a list of 
+tools related to a cyber subject. IE forensics, Reversing, Bug bounties, 
+General CTF, Pentesting. ETC.
 
 Get_Linux_Info.sh - Script to pull some info about the current system and 
 either display on screen, write it to a file in cwd or both.
