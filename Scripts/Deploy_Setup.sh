@@ -63,7 +63,7 @@ list_Directories=(
 "${path_Sources_Dir}"
 "${path_Test_Dir}"
 "${path_Scripts_Dir}"
-"${path_Tools_Dir}" # 
+"${path_Tools_Dir}"
 "${path_Test_Dir1}"
 "${path_Test_Dir2}"
 "${path_Test_Dir3}"
@@ -106,20 +106,21 @@ done
 # make new directories and check them
 for directory in "${list_Directories[@]}";
 do
-  # Loops in loops, hopefully this works the way its intended to skip a dir if its in the skip no back up list
-  # may want to roll back this change and move to dealing with My_Tools entirely with Deploy_Tools
-    for no_Back_Up_Directory in "${list_No_Back_Up_Dirs[@]}"
-    do
-      if [[ ${directory} == ${no_Back_Up_Directory} ]]; then
-      skip_Dir="1"
-      break
-      fi
-    done
+    if [ -d ${directory} ]; then
+        # Loops in loops, hopefully this works the way its intended to skip a dir if its in the skip no back up list
+        # may want to roll back this change and move to dealing with My_Tools entirely with Deploy_Tools
+        for no_Back_Up_Directory in "${list_No_Back_Up_Dirs[@]}"
+          do
+            if [[ ${directory} == ${no_Back_Up_Directory} ]]; then
+              skip_Dir="1"
+              echo "${directory} already exists and is handled by another script."
+              break
+            fi
+          done
           if [[ ${skip_Dir} == 1 ]]; then
             skip_Dir="0"
-            break
+            continue
           fi
-    if [ -d ${directory} ]; then
         if [ -d ${path_Back_Up_Dir}${directory} ]; then
           echo "looks like ${directory} and ${path_Back_Up_Dir}${directory} already exist"
           read -p "would you like to overwrite the ${path_Back_Up_Dir}${directory} with ${directory} and its contents? y/n --\> " overwrite_Dir
@@ -157,6 +158,7 @@ for file in "${list_Files[@]}";
   fi
 done
 
+# this section is missing outputs from
 echo "source_Path=${path_Sources_Dir}" >> ${path_Sources_Dir}/${pathz_File}
 echo "test_Path=${path_Test_Dir}" >> ${path_Sources_Dir}/${pathz_File}
 echo "test_Path1=${path_Test_Dir1}" >> ${path_Sources_Dir}/${pathz_File}
@@ -165,6 +167,7 @@ echo "test_Path3=${path_Test_Dir3}" >> ${path_Sources_Dir}/${pathz_File}
 echo "scripts_Path=${path_Scripts_Dir}" >> ${path_Sources_Dir}/${pathz_File}
 echo "back_Up_Files_Path=${path_Back_Up_Dir}" >> ${path_Sources_Dir}/${pathz_File}
 echo "repo_Path=${Repo_Path}" >> ${path_Sources_Dir}/${pathz_File}
+echo "tools_List_Path=${path_Tools_Dir}/${tool_Lists_File}" >> ${path_Sources_Dir}/${pathz_File}
 # target for change work to change work target with go work alias
 echo "work_Path_1=${path_Sources_Dir}/${workz_File_1}" >> ${path_Sources_Dir}/${pathz_File}
 echo "work_Path_2=${path_Sources_Dir}/${workz_File_2}" >> ${path_Sources_Dir}/${pathz_File}
@@ -174,8 +177,13 @@ echo " "
 
 echo "source_Path=${path_Sources_Dir} written to ${path_Sources_Dir}/${pathz_File}"
 echo "test_Path=${path_Test_Dir} written to ${path_Sources_Dir}/${pathz_File}"
+echo "test_Path1=${path_Test_Dir1} written to ${path_Sources_Dir}/${pathz_File}"
+echo "test_Path2=${path_Test_Dir2} written to ${path_Sources_Dir}/${pathz_File}"
+echo "test_Path3=${path_Test_Dir3} written to ${path_Sources_Dir}/${pathz_File}"
 echo "scripts_Path=${path_Scripts_Dir} written to ${path_Sources_Dir}/${pathz_File}"
 echo "back_Up_Files_Path=${path_Back_Up_Dir} written to ${path_Sources_Dir}/${pathz_File}"
+echo "repo_Path=${Repo_Path}" >> ${path_Sources_Dir}/${pathz_File}"
+echo "tools_List_Path=${path_Tools_Dir}/${tool_Lists_File} written to ${path_Sources_Dir}/${pathz_File}"
 # target for change work to change work target with go work alias
 echo "work_Path_1=${path_Sources_Dir}/${workz_File_1} written to ${path_Sources_Dir}/${pathz_File}"
 echo "work_Path_2=${path_Sources_Dir}/${workz_File_2} written to ${path_Sources_Dir}/${pathz_File}"
@@ -193,8 +201,6 @@ echo " "
 
 echo "# Added path to my scripts directorys." >> .bashrc
 echo "export PATH=\"${path_Scripts_Dir}:\$PATH\"" >> .bashrc
-echo "# Added path to my tools directorys." >> .bashrc
-echo "export PATH=\"{path_Tools_Dir}:\$PATH\"" >> .bashrc
 echo "# Added sourcing of paths file" >> .bashrc
 echo "source ${path_Sources_Dir}/${pathz_File}" >> .bashrc
 
@@ -202,8 +208,6 @@ echo " "
 
 echo "# Added path to my scripts directorys. written to .bashrc"
 echo "export PATH=\"${path_Scripts_Dir}:\$PATH\" written to .bashrc"
-echo "# Added path to my tools directorys. written to .bashrc"
-echo "export PATH=\"${path_Tools_Dir}:\$PATH\" written to .bashrc"
 echo "# Added sourcing of paths file"
 echo "source ${path_Sources_Dir}/${pathz_File} written to .bashrc"
 
@@ -212,8 +216,6 @@ echo " "
 echo "# Added path to my tools directorys. written to .bashrc"
 echo "export PATH=\"${path_Tools_Dir}:\$PATH\" written to .bashrc"
 
-# Dupe this section and futz with it to place ${Repo_Path}/${tool_Lists_File} from repo to "${path_Tools_Dir}
-# place backup 
 if [ -f .bash_aliases ]; then
   if [ -f ${path_Back_Up_Dir}/${bashrc_Dir}/bash_aliases.bak ]; then
     read -p "Looks like .bash_aliases already exists in ${path_Back_Up_Dir}/${bashrc_Dir} would you like to overwrite it with the current .bash_aliases? y/n --" overwrite_Aliases
@@ -233,7 +235,29 @@ if [ -f .bash_aliases ];
   else
   echo "${Repo_Path}/aliases was not copied to .bash_aliases"
 fi
-# end of needed dupe
+
+echo " "
+
+if [ -f ${path_Tools_Dir}/${tool_Lists_File} ]; then
+  if [ -f ${path_Back_Up_Dir}/${tool_Lists_File}.bak ]; then
+    read -p "Looks like ${tool_Lists_File} already exists as ${path_Back_Up_Dir}/${tool_Lists_File}.bak would you like to overwrite \
+    it with the current ${path_Tools_Dir}/${tool_Lists_File} ? y/n --" overwrite_Tools_List
+    if [ ${overwrite_Tools_List} == y ]; then
+      echo "clearing back up ${tool_Lists_File}. from ${path_Back_Up_Dir}"
+      rm "${path_Back_Up_Dir}/${tool_Lists_File}.bak"
+    fi
+  fi
+  echo "Moved previous ${tool_Lists_File} to ${path_Back_Up_Dir}/${tool_Lists_File}.bak"
+  mv "${path_Tools_Dir}/${tool_Lists_File}" "${path_Back_Up_Dir}/${tool_Lists_File}.bak"
+fi
+cp "${Repo_Path}/${tool_Lists_File}" "${path_Tools_Dir}/${tool_Lists_File}"
+# confirm to terminal aliases file copied
+if [ -f .bash_aliases ];
+  then
+  echo "${Repo_Path}/${tool_Lists_File} copied to ${path_Tools_Dir}/${tool_Lists_File}"
+  else
+  echo "${Repo_Path}/${tool_Lists_File} was not copied to ${path_Tools_Dir}/${tool_Lists_File}"
+fi
 
 echo " "
 
