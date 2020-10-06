@@ -36,6 +36,13 @@ if [[ ${run_Script} != y ]]; then
 fi
 ###
 
+# add tools directory to my path
+echo "# Added path to my tools directorys. written to .bashrc"
+echo "export PATH=\"${path_Tools_Dir}:\$PATH\" written to .bashrc"
+echo "# Added path to my tools directorys." >> .bashrc
+echo "export PATH=\"{path_Tools_Dir}:\$PATH\"" >> .bashrc
+
+
 echo "Note: these are community tools and are not mine unless directly stated."
 echo "Tool accredidations and sources can be found within Tool_Accredidation in the Repo"
 
