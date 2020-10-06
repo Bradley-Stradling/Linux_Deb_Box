@@ -6,8 +6,10 @@
 Aliases and scripts for my linux debian bash user enviroment set-up imported 
 via "Deploy_Setup.sh".
 
-9/29/20 Deploy_Setup.sh can now be run multiple times without having to manually clear 
-anything screen outputs and confirmations are not pretty though.
+10/6/20 Adding new My_Tools directory to Deploy_Setup.sh, added to path as well
+so that when tools are installed by deploy setup they have a home that lets them
+be called from path. My_Tools will eventually house penetration testing tools.
+Accreditation should be added when applicable!
 
 Unlicense applies to all files that are tagged with it directly in this 
 repository. Links to websites are not my sites in any manner.
