@@ -48,6 +48,7 @@ pathz_File=Paths.txt
 workz_File_1=Workpath1.txt
 workz_File_2=Workpath2.txt
 workz_File_3=Workpath3.txt
+tool_Lists_File=Tool_Lists.txt
 
 path_Sources_Dir=${cwd}/${source_Dir}
 path_Test_Dir=${cwd}/${test_Dir}
@@ -62,7 +63,7 @@ list_Directories=(
 "${path_Sources_Dir}"
 "${path_Test_Dir}"
 "${path_Scripts_Dir}"
-"${path_Tools_Dir}"
+"${path_Tools_Dir}" # 
 "${path_Test_Dir1}"
 "${path_Test_Dir2}"
 "${path_Test_Dir3}"
@@ -74,7 +75,11 @@ list_Back_Up_Directories=(
 "${path_Back_Up_Dir}/${back_Up_Scripts}"
 )
 
-# array of files to be created for iteration
+list_No_Back_Up_Dirs={
+"${path_Tools_Dir}"
+}
+
+# array of files to be created for iteration, may want to rename list to list_Create_Files
 list_Files=(
 "${path_Sources_Dir}/${pathz_File}"
 "${path_Sources_Dir}/${workz_File_1}"
@@ -101,6 +106,19 @@ done
 # make new directories and check them
 for directory in "${list_Directories[@]}";
 do
+  # Loops in loops, hopefully this works the way its intended to skip a dir if its in the skip no back up list
+  # may want to roll back this change and move to dealing with My_Tools entirely with Deploy_Tools
+    for no_Back_Up_Directory in "${list_No_Back_Up_Dirs[@]}"
+    do
+      if [[ ${directory} == ${no_Back_Up_Directory} ]]; then
+      skip_Dir="1"
+      break
+      fi
+    done
+          if [[ ${skip_Dir} == 1 ]]; then
+            skip_Dir="0"
+            break
+          fi
     if [ -d ${directory} ]; then
         if [ -d ${path_Back_Up_Dir}${directory} ]; then
           echo "looks like ${directory} and ${path_Back_Up_Dir}${directory} already exist"
@@ -194,6 +212,8 @@ echo " "
 echo "# Added path to my tools directorys. written to .bashrc"
 echo "export PATH=\"${path_Tools_Dir}:\$PATH\" written to .bashrc"
 
+# Dupe this section and futz with it to place ${Repo_Path}/${tool_Lists_File} from repo to "${path_Tools_Dir}
+# place backup 
 if [ -f .bash_aliases ]; then
   if [ -f ${path_Back_Up_Dir}/${bashrc_Dir}/bash_aliases.bak ]; then
     read -p "Looks like .bash_aliases already exists in ${path_Back_Up_Dir}/${bashrc_Dir} would you like to overwrite it with the current .bash_aliases? y/n --" overwrite_Aliases
@@ -205,7 +225,6 @@ if [ -f .bash_aliases ]; then
   echo "Moved previous .bash_aliases to ${path_Back_Up_Dir}/${bashrc_Dir}"
   mv .bash_aliases "${path_Back_Up_Dir}/${bashrc_Dir}/bash_aliases.bak"
 fi
-
 cp ${Repo_Path}/aliases .bash_aliases
 # confirm to terminal aliases file copied
 if [ -f .bash_aliases ];
@@ -214,6 +233,7 @@ if [ -f .bash_aliases ];
   else
   echo "${Repo_Path}/aliases was not copied to .bash_aliases"
 fi
+# end of needed dupe
 
 echo " "
 
