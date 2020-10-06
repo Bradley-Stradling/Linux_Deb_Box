@@ -14,6 +14,14 @@ be called from path. My_Tools will eventually house penetration testing tools.
 Accreditation should be added when applicable for each tool! (tools likely to be
 deployed by secondary script within this repository more to come later as 
 Deploy_Tools.sh)
+
+changes have likely left Deploy_Setup.sh broken in current state, please see
+https://github.com/Bradley-Stradling/Linux_Deb_Box/tree/3910b1c2555a5aa19196116dec3107fc611cc34c
+for last known functioning commit.
+
+My_Tools directory creation/update/removal should be handled by Deploy_Tools.sh, 
+sourcing local paths, such that it can be run standalone, and branched off as it's
+own repository as well as hanging out with this repo.
 -----
 
 Unlicense applies to all files that are tagged with it directly in this 
