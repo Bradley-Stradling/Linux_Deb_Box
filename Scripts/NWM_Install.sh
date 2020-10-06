@@ -15,6 +15,14 @@
 
 #### Must be run from root ####
 
+echo -e "!!!! NOTE\: This script is untested and may install dependancies you are not in want of..!!!!"
+read -p " Are you sure you meant to run this script before it's been tested?? y/n -->" run_Script
+
+if [[ ${run_Script} != y ]]; then
+  echo -e "Then please be careful running scripts that are unfinished \:P exiting.."
+  exit 1
+fi
+
 if [ euid != 0 ] # syntax for euid variable is nowhere close to correct!!!
 echo "you must run this script as root or with root permissions sorry"
 exit 1
