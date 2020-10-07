@@ -16,7 +16,7 @@ changes have likely left Deploy_Setup.sh broken in current state, please see
 https://github.com/Bradley-Stradling/Linux_Deb_Box/tree/3910b1c2555a5aa19196116dec3107fc611cc34c
 for last known functioning commit.
 
-Deploy_Tools.sh should be spun off into it's own repo. And install of each 
+Deploy_Tools.sh should be spun off into it's own repo. And each 
 individual tool should have it's own install script. Required dependancies should
 have there own install scripts as well. This should make the Deploy_Tools.sh repo
 modular and allow someone to pick and choose individual tools if they want.
