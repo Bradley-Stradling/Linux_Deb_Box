@@ -36,49 +36,83 @@ if [[ ${run_Script} != y ]]; then
 fi
 ###
 
+tool_Path_Add()= {
 # add tools directory to my path
 echo "# Added path to my tools directorys. written to .bashrc"
 echo "export PATH=\"${path_Tools_Dir}:\$PATH\" written to .bashrc"
 echo "# Added path to my tools directorys." >> .bashrc
 echo "export PATH=\"{path_Tools_Dir}:\$PATH\"" >> .bashrc
+}
 
+main_Menu
+note=0
+if [[ ${note} == 0 ]]; then
+  echo "Note: these are community tools and are not mine unless directly stated."
+  echo "Tool accredidations and sources can be found within Tool_Accredidation in the Repo"
+  $note=1 # theres likely a few ways to do this want to try this for now
+fi
 
+tool_List_Menu() {
 echo "Note: these are community tools and are not mine unless directly stated."
 echo "Tool accredidations and sources can be found within Tool_Accredidation in the Repo"
-
-# Tools should be checked for dependancies and prereq's and prompt user for input.
-
-# Convert below outputs to a function, so it may be called more than once in a loop
-
+echo -e "\(0\) To exit the script"
 echo -e "\(1\) ALL THE TOOLS"
 echo -e "\(2\) CTF tools"
 echo -e "\(3\) Penetration testing tools"
 echo -e "\(4\) Bug bounty tools"
 echo -e "\(5\) OSINT tools"
 echo -e "\(6\) Editing tools \(code/text\)" # need to check if / needs to be escaped
+}
 
+getouttahere() {
+echo -e "Exiting script!"
+exit 0
+}
+
+tool_Set_Choice=0
+get_Tool_List_Choice() {
 read -p "Which set of tools would you like to deploy? --> " tool_Set_Choice
 
 case ${tool_Set_Choice} in
 
   1)
-
+    echo " Your choice was ${tool_Set_Choice}"
+    # do I need to actively return ${tool_Set_Choice} or will the variable be changed by the function input outside of the function
+    # will find out during testing
   ;;
   2)
-
+    echo " Your choice was ${tool_Set_Choice}"
   ;;
   3)
-
+    echo " Your choice was ${tool_Set_Choice}"
   ;;
   4)
-
+    echo " Your choice was ${tool_Set_Choice}"
   ;;
   5)
-
+    echo " Your choice was ${tool_Set_Choice}"
   ;;
   6)
-
+    echo " Your choice was ${tool_Set_Choice}"
   ;;
   7)
-
+    echo " Your choice was ${tool_Set_Choice}"
   ;;
+  *)
+    echo " Your choice was not indicated in the menu options, what're you doing o.O"
+    getouttahere
+  ;;
+esac
+}
+
+while [[ ${tool_Set_Choice} != 0 ]]; do
+
+main_Menu
+
+tool_List_Menu
+
+get_Tool_List_Choice
+
+done
+
+getouttahere
