@@ -19,7 +19,8 @@ for last known functioning commit.
 Deploy_Tools.sh should be spun off into it's own repo. And each 
 individual tool should have it's own install script. Required dependancies should
 have there own install scripts as well. This should make the Deploy_Tools.sh repo
-modular and allow someone to pick and choose individual tools if they want.
+modular and allow someone to pick and choose individual tools if they want. Options
+to remove anything deployed should be present as well.
 -----
 
 Unlicense applies to all files that are tagged with it directly in this 
