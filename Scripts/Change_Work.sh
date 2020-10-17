@@ -19,8 +19,8 @@ case $which_Werk in
 
     if [ -d ${werkpath} ];
       then
-       echo "work_Path_1=${werkpath}" > ${work_Path_1}
-       echo "work_Path_1=${werkpath} written to ${work_Path_1}"
+       echo "go_Work_Path_1=${werkpath}" > ${work_Path_1}
+       echo "go_Work_Path_1=${werkpath} written to ${work_Path_1}"
         else
           echo "Unable to locate ${werkpath}. ${work_Path_1} is unchanged."
           exit 1
@@ -31,10 +31,10 @@ case $which_Werk in
 
     if [ -d ${werkpath} ];
       then
-       echo "work_Path_2=${werkpath}" > ${work_Path_2}
-       echo "work_Path_2=${werkpath} written to ${work_Path_2}"
+       echo "go_Work_Path_2=${werkpath}" > ${work_Path_2}
+       echo "go_Work_Path_2=${werkpath} written to ${work_Path_2}"
         else
-          echo "Unable to locate ${werkpath}. ${work_Path_2} is unchanged."
+          echo "Unable to locate ${werkpath}. ${go_Work_Path_2} is unchanged."
           exit 1
     fi
   ;;
@@ -43,10 +43,10 @@ case $which_Werk in
 
     if [ -d ${werkpath} ];
       then
-       echo "work_Path_3=${werkpath}" > ${work_Path_3}
-       echo "work_Path_3=${werkpath} written to ${work_Path_3}"
+       echo "go_Work_Path_3=${werkpath}" > ${work_Path_3}
+       echo "go_Work_Path_3=${werkpath} written to ${work_Path_3}"
      else
-        echo "Unable to locate ${werkpath}. ${work_Path_3} is unchanged."
+        echo "Unable to locate ${werkpath}. ${go_work_Path_3} is unchanged."
         exit 1
     fi
   ;;
