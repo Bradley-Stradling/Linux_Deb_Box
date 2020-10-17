@@ -83,8 +83,8 @@ alias gobackup='cd ${back_Up_Files_Path}'
 alias goscripts='cd ${scripts_Path}'
 
 # gowork will go to the set path in work path file changed by change_work
-alias 1gowork='cd ${work_Path_1}'
+alias 1gowork='cd ${go_Work_Path_1}'
 
-alias 2gowork='cd ${work_Path_2}'
+alias 2gowork='cd ${go_Work_Path_2}'
 
-alias 3gowork='cd ${work_Path_3}'
+alias 3gowork='cd ${go_Work_Path_3}'
