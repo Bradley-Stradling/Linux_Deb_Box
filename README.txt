@@ -52,11 +52,6 @@ Creates a few directories and sources their local paths to aliases, bashrc,
 and scripts to ease setting up a new debian system. This can be run multiple
 times without creating a mess of files or directories
 
-Deploy_Tools.sh - (Far from complete)A script and accompanying list of lists 
-of cyber tools, that prompts user input and installs/downloads a list of 
-tools related to a cyber subject. IE forensics, Reversing, Bug bounties, 
-General CTF, Pentesting. ETC.
-
 Get_Linux_Info.sh - Script to pull some info about the current system and 
 either display on screen, write it to a file in cwd or both.
 
