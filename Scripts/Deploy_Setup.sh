@@ -145,9 +145,6 @@ echo "scripts_Path=${path_Scripts_Dir}" >> ${path_Sources_Dir}/${pathz_File}
 echo "back_Up_Files_Path=${path_Back_Up_Dir}" >> ${path_Sources_Dir}/${pathz_File}
 echo "repo_Path=${Repo_Path}" >> ${path_Sources_Dir}/${pathz_File}
 # target for change work to change work target with go work alias
-echo "work_Path_1=${path_Sources_Dir}/${workz_File_1}" >> ${path_Sources_Dir}/${pathz_File}
-echo "work_Path_2=${path_Sources_Dir}/${workz_File_2}" >> ${path_Sources_Dir}/${pathz_File}
-echo "work_Path_3=${path_Sources_Dir}/${workz_File_3}" >> ${path_Sources_Dir}/${pathz_File}
 
 echo " "
 
@@ -156,9 +153,6 @@ echo "test_Path=${path_Test_Dir} written to ${path_Sources_Dir}/${pathz_File}"
 echo "scripts_Path=${path_Scripts_Dir} written to ${path_Sources_Dir}/${pathz_File}"
 echo "back_Up_Files_Path=${path_Back_Up_Dir} written to ${path_Sources_Dir}/${pathz_File}"
 # target for change work to change work target with go work alias
-echo "work_Path_1=${path_Sources_Dir}/${workz_File_1} written to ${path_Sources_Dir}/${pathz_File}"
-echo "work_Path_2=${path_Sources_Dir}/${workz_File_2} written to ${path_Sources_Dir}/${pathz_File}"
-echo "work_Path_3=${path_Sources_Dir}/${workz_File_3} written to ${path_Sources_Dir}/${pathz_File}"
 
 if [ -f ${path_Back_Up_Dir}/${bashrc_Dir}/bashrc1.bak ]; then
   echo "restored .bashrc to state from before 1st run after backing up current .bashrc"
