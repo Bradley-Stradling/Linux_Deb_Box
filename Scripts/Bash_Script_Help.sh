@@ -195,7 +195,7 @@ case ${output_Choice} in
 	;;
 	14)
 		echo -e "defining dictionaries\n"
-		echo "aka associative arrays, hence -A\n"
+		echo -e "aka associative arrays, hence -A\n"
 		echo "declare -A genre"
 		echo -e "genre[AngelMaker]=\"Deathcore\""
 		echo -e "genre[Metallica]=\"Metal\""
