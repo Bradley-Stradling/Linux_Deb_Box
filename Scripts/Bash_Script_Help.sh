@@ -140,13 +140,13 @@ case ${output_Choice} in
 	;;
 	8)
 		echo -e "brace expansion\n"
-		echo "for all files in array/list from A to C, (A.ext B.ext, C.ext)\n"
-		echo "cmd {A,C}.ext\n"
-		echo "for all numbers in range of 15 to 20\n"
-		echo "{15..20}\n"
-		echo "for brace expansion with variable step size\n"
-		echo "{50..200..25}\n"
-		echo "same as 50 75 100 125 150 175 200\n"
+		echo -e "for all files in array/list from A to C, (A.ext B.ext, C.ext)\n"
+		echo -e "cmd {A,C}.ext\n"
+		echo -e "for all numbers in range of 15 to 20\n"
+		echo -e "{15..20}\n"
+		echo -e "for brace expansion with variable step size\n"
+		echo -e "{50..200..25}\n"
+		echo -e "same as 50 75 100 125 150 175 200\n"
 	;;
 	9)
 		echo -e "arguments\n"
