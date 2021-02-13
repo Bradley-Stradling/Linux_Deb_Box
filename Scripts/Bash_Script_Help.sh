@@ -10,20 +10,6 @@
 #(")_(")	Credit and respect to https://devhints.io/bash
 #*******************************************************************************
 
-
-# syntax should be, need to manually check outputs for readbility
-# might be a really good opportunity to dip into coloring outputs
-
-###
-echo "!!!NOTE this is untested!!!!"
-read -p " Are you sure you meant to run this script before it's been fully tested?? y/n -->" run_Script
-
-if [[ ${run_Script} != y ]]; then
-  echo -e "Then please be careful running scripts that are unfinished \:P exiting.."
-  exit 1
-fi
-###
-
 echo "#**************************************************************"
 
 echo -e "#  (\_/)\t\n#  (o.o)\tWelcome to Bradleys Bash_Script_Helper\n# (\")_(\")\t"
@@ -112,12 +98,12 @@ case ${output_Choice} in
 		echo -e "[[ -n STRING ]]\t\t # Not empty string"
 		echo -e "[[ STRING == STRING ]]\t # Equal"
 		echo -e "[[ STRING != STRING ]]\t # Not Equal"
-		echo -e "[[ NUM -eq NUM ]]\t # Equal"
-		echo -e "[[ NUM -ne NUM ]]\t # Not equal"
-		echo -e "[[ NUM -lt NUM ]]\t # Less than"
-		echo -e "[[ NUM -le NUM ]]\t # Less than or equal"
-		echo -e "[[ NUM -gt NUM ]]\t # Greater than"
-		echo -e "[[ NUM -ge NUM ]]\t # Greater than or equal"
+		echo -e "[[ NUM -eq NUM ]]\t\t # Equal"
+		echo -e "[[ NUM -ne NUM ]]\t\t # Not equal"
+		echo -e "[[ NUM -lt NUM ]]\t\t # Less than"
+		echo -e "[[ NUM -le NUM ]]\t\t # Less than or equal"
+		echo -e "[[ NUM -gt NUM ]]\t\t # Greater than"
+		echo -e "[[ NUM -ge NUM ]]\t\t # Greater than or equal"
 		echo -e "[[ STRING =~ STRING ]]\t # Regexp"
 		echo -e "(( NUM < NUM ))\t\t # Numeric conditions"
 		echo -e "[[ -o noclobber ]]\t\t # If OPTIONNAME is enabled"
@@ -172,22 +158,29 @@ case ${output_Choice} in
 	;;
 	11)
 		echo -e "defining arrays\n"
-		echo "array_Name=(value_1, value_2, value_3)"
-		echo "or this can be performed by"
+		echo "array_Name=(value_1, value_2, value_3)\n"
+		echo -e "or this can be performed by\n"
 		echo -e "array_Name=\"value_1\""
 		echo -e "array_Name=\"value_2\""
-		echo -e "array_Name=\"value_3\""
+		echo -e "array_Name=\"value_3\"\n"
+
+		echo -e "Additionally like so\n"
+		echo -e "array_Name=("
+		echo -e "\"value_1\""
+		echo -e "\"value_2\""
+		echo -e "\"value_3\""
+		echo -e ")"
 	;;
 	12)
 		echo -e "working on arrays\n"
-		echo -e "cmd \${array_Name[3]}\t# 3rd element"
-		echo -e "cmd \${array_Name[-2]}\t# 2nd from last element"
-		echo -e "cmd \${array_Name[@]}\t# all elements space seperation"
-		echo -e "cmd \${#array_Name[@]}\t# numbers of elements"
-		echo -e "cmd \${#array_Name}\t# string length of 1st element"
-		echo -e "cmd \${#array_Name[n]}\t# string length of nth element"
+		echo -e "cmd \${array_Name[3]}\t\t# 3rd element"
+		echo -e "cmd \${array_Name[-2]}\t\t# 2nd from last element"
+		echo -e "cmd \${array_Name[@]}\t\t# all elements space seperation"
+		echo -e "cmd \${#array_Name[@]}\t\t# numbers of elements"
+		echo -e "cmd \${#array_Name}\t\t# string length of 1st element"
+		echo -e "cmd \${#array_Name[n]}\t\t# string length of nth element"
 		echo -e "cmd \${array_Name[@]:p:l}\t# range from position p to length l"
-		echo -e "cmd \${!array_Name[@]}\t# key of all elements space seperated"
+		echo -e "cmd \${!array_Name[@]}\t\t# key of all elements space seperated"
 	;;
 	13)
 		echo -e "array operations\n"
@@ -204,9 +197,9 @@ case ${output_Choice} in
 	15)
 		echo -e "working on dictionaries\n"
 		echo -e "\${genre[AngelMaker]}\t # value at "
-		echo -e "\${genre[@]}\t # all values"
-		echo -e "\${!genre[@]}\t # all keys"
-		echo -e "\${#genre[@]}\t # number of elements"
+		echo -e "\${genre[@]}\t\t # all values"
+		echo -e "\${!genre[@]}\t\t # all keys"
+		echo -e "\${#genre[@]}\t\t # number of elements"
 		echo -e "unset genre[Metallica]\t # delete Metallica"
 	;;
 	16)
@@ -214,7 +207,7 @@ case ${output_Choice} in
 		echo "need to check if val actually has to be val, and also key"
 		echo -e "for val in \"\${genre[@]}\"; do"
 		echo -e "\tcmd \$val"
-		echo "done"
+		echo -e "done\n"
 		echo "iteration over keys"
 		echo -e "for key in \"\${!genre[@]}\"; do"
 		echo -e "\tcmd \$key"
@@ -223,25 +216,24 @@ case ${output_Choice} in
 	17)
 		echo -e "options\n"
 		echo -e "set -o noclobber\t# Avoid overlay files (echo \"hi\" > foo)"
-		echo -e "set -o errexit\t# Used to exit upon error, avoiding cascading errors"
-		echo -e "set -o pipefail\t# Unveils hidden failures"
-		echo -e "set -o nounset\t# Exposes unset variables"
+		echo -e "set -o errexit\t\t# Used to exit upon error, avoiding cascading errors"
+		echo -e "set -o pipefail\t\t# Unveils hidden failures"
+		echo -e "set -o nounset\t\t# Exposes unset variables"
 	;;
 	18)
 		echo -e "glob options\n"
-		echo "need to play with these, for more understanding"
 		echo -e "shopt -s nullglob\t # Non-matching globs are removed  (\'*.foo' => \'\')"
 		echo -e "shopt -s failglob\t # Non-matching globs throw errors"
 		echo -e "shopt -s nocaseglob\t # Case insensitive globs"
 		echo -e "shopt -s dotglob\t # Wildcards match dotfiles (\"*.sh\" => \".foo.sh\")"
-		echo -e "shopt -s globstar\t # Allow ** for recursive matches (\'lib/**/*.rb' => \'lib/a/b/c.rb\')"
+		echo -e "shopt -s globstar\t # Allow ** for recursive matches (\'lib/**/*.rb' => \'lib/a/b/c.rb\')\n"
 		echo -e "Set GLOBIGNORE as a colon-separated list of patterns to be removed from glob matches."
 	
 	;;
 	19)
 		echo -e "history commands\n"
-		echo -e "history\t #Show history"
-		echo -e "shopt -s histverify\t #Don\’t execute expanded result immediately"
+		echo -e "history\t\t\t #Show history"
+		echo -e "shopt -s histverify\t #Don’t execute expanded result immediately"
 	;;
 	20)
 		echo -e "history expansions\n"
@@ -253,11 +245,11 @@ case ${output_Choice} in
 	;;
 	21)
 		echo -e "history operations\n"
-		echo -e "!!\t #Execute last command again"
+		echo -e "!!\t\t\t #Execute last command again"
 		echo -e "!!:s/<FROM>/<TO>/\t #Replace first occurrence of <FROM> to <TO> in most recent command"
 		echo -e "!!:gs/<FROM>/<TO>/\t #Replace all occurrences of <FROM> to <TO> in most recent command"
-		echo -e "!$:t\t #Expand only basename from last parameter of most recent command"
-		echo -e "!$:h\t #Expand only directory from last parameter of most recent command"
+		echo -e "!$:t\t\t\t #Expand only basename from last parameter of most recent command"
+		echo -e "!$:h\t\t\t #Expand only directory from last parameter of most recent command"
 	;;
 	22)
 		echo -e "history slices\n"
@@ -269,13 +261,14 @@ case ${output_Choice} in
 	;;
 	23)
 		echo -e "subshells\n"
-		echo -e "(cd somedir; echo \"I\'m now in \$PWD\")"
+		echo -e "pwd\t # in the first directory\n"
+		echo -e "(cd somedir; echo \"I\'m now in \$somedir\")\n"
 		echo -e "pwd\t # still in first directory"
 		
 	;;
 	24)
 		echo -e "isnpect a command\n"
-		echo -e "command -V cmd"
+		echo -e "command -V \$cmd"
 	;;
 	25)
 		echo -e "random number\n"
@@ -314,10 +307,10 @@ case ${output_Choice} in
 		echo -e "cmd variable > output.txt\t\t# stdout to (file)"
 		echo -e "cmd variable >> output.txt\t\t# stdout to (file), append"
 		echo -e "cmd variable 2> error.log\t\t# stderr to (file)"
-		echo -e "cmd variable 2>&1\t\t# stderr to stdout"
+		echo -e "cmd variable 2>&1\t\t\t# stderr to stdout"
 		echo -e "cmd variable 2>/dev/null\t\t# stderr to (null)"
 		echo -e "cmd variable &>/dev/null\t\t# stdout and stderr to (null)\n"
-		echo -e "cmd script < file.ext\t\t# feed file.ext to stdin for script/cmd"
+		echo -e "cmd script < file.ext\t\t\t# feed file.ext to stdin for script/cmd"
 	;;
 	29)
 		echo -e "trap errors\n"
