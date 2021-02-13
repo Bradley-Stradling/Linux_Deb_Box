@@ -185,6 +185,7 @@ case ${output_Choice} in
 	13)
 		echo -e "array operations\n"
 		echo "I need to work on array operations more before i make note of them"
+		echo "Should be ver ysimilar to dictionaries though"
 	;;
 	14)
 		echo -e "defining dictionaries\n"
