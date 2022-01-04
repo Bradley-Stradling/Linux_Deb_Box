@@ -140,7 +140,7 @@ https://virustotal.github.io/yara/
 Some very neat pf elk log help
 https://github.com/3ilson/pfelk
 
-https://regex101.com/
+
 
 https://safepass.me/2020/02/25/finding-pwned-passwords-in-active-directory/
 
@@ -163,6 +163,8 @@ https://github.com/AbhishekSinhaCoder/Collection-of-Useful-Scripts
 
 beat your head vs keyboard to learn regex?
 https://regexcrossword.com/
+https://regex101.com/
+https://regexr.com/
 
 need to check this site before using
 https://www.shellcheck.net/
@@ -214,3 +216,5 @@ https://namechk.com/
 
 # snip / screenshot sharing tool
 https://gyazo.com/en
+
+https://github.com/DavyLandman/csvtools
