@@ -161,12 +161,12 @@ https://www.reddit.com/r/sysadmin/comments/jjtpnp/script_to_silently_uninstall_b
 
 https://github.com/AbhishekSinhaCoder/Collection-of-Useful-Scripts
 
-beat your head vs keyboard to learn regex?
+
 https://regexcrossword.com/
 https://regex101.com/
 https://regexr.com/
 
-need to check this site before using
+need to check site saftey before using
 https://www.shellcheck.net/
 
 mmm tasty?
