@@ -218,3 +218,5 @@ https://namechk.com/
 https://gyazo.com/en
 
 https://github.com/DavyLandman/csvtools
+
+https://github.com/orlikoski/CyLR
